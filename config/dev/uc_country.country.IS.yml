@@ -1,0 +1,27 @@
+uuid: f40bbbc6-c826-402b-9c54-0981a140a692
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: Gr-RnFzxHkLtsVgpCNuhJwcsqK2UTFSEqdqeQB9LK7Q
+name: Islande
+alpha_2: IS
+alpha_3: ISL
+numeric: 352
+zones:
+  IS-7: Austurland
+  IS-1: 'Höfuðborgarsvæði utan Reykjavíkur'
+  IS-6: 'Norðurland eystra'
+  IS-5: 'Norðurland vestra'
+  IS-0: Reykjavík
+  IS-8: Suðurland
+  IS-2: Suðurnes
+  IS-4: Vestfirðir
+  IS-3: Vesturland
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!postal_code !city'
+  - '!country_name_if'

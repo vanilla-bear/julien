@@ -1,0 +1,131 @@
+uuid: fc2736c4-1a4d-49a5-ba6f-7f0b42cdfff6
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: wFV5Ni810Tu_OeGKtpBIfmrrRtidW5osZZyGSj0x_w0
+name: Italie
+alpha_2: IT
+alpha_3: ITA
+numeric: 380
+zones:
+  AG: Agrigente
+  AL: Alexandrie
+  AN: Ancône
+  AO: Aoste
+  AP: 'Ascoli Piceno'
+  AQ: 'L''Aquila'
+  AR: Arezzo
+  AT: Asti
+  AV: Avellino
+  BA: Bari
+  BG: Bergame
+  BI: Biella
+  BL: Bellune
+  BN: Bénévent
+  BO: Bologne
+  BR: Brindisi
+  BS: Brescia
+  BT: Barletta-Andria-Trani
+  BZ: Bolzano
+  CA: Cagliari
+  CB: Campobasso
+  CE: Caserte
+  CH: Chieti
+  CI: Carbonia-Iglesias
+  CL: Caltanissetta
+  CN: Coni
+  CO: Côme
+  CR: Crémone
+  CS: Cosenza
+  CT: Catane
+  CZ: Catanzaro
+  EN: Enna
+  FC: Forlì-Cesena
+  FE: Ferrare
+  FG: Foggia
+  FI: Florence
+  FM: Fermo
+  FR: Frosinone
+  GE: Gênes
+  GO: Gorizia
+  GR: Grosseto
+  IM: Imperia
+  IS: Isernia
+  KR: Crotone
+  LC: Lecco
+  LE: Lecce
+  LI: Livourne
+  LO: Lodi
+  LT: Latina
+  LU: Lucques
+  MB: 'Monza e Brianza'
+  MC: Macerata
+  ME: Messine
+  MI: Milan
+  MN: Mantoue
+  MO: Modène
+  MS: 'Massa e Carrara'
+  MT: Matera
+  NA: Napoli
+  'NO': Novare
+  NU: Nuoro
+  OG: Ogliastra
+  OR: Oristano
+  OT: Olbia-Tempio
+  PA: Palerme
+  PC: Plaisance
+  PD: Padoue
+  PE: Pescara
+  PG: Pérouse
+  PI: Pise
+  PN: Pordenone
+  PO: Prato
+  PR: Parme
+  PU: 'Pesaro et d''Urbino'
+  PT: Pistoia
+  PV: Pavie
+  PZ: Potenza
+  RA: Ravenne
+  RC: 'Reggio de Calabre'
+  RE: 'Reggio d''Émilie'
+  RG: Raguse
+  RI: Rieti
+  RM: Rome
+  RN: Rimini
+  RO: Rovigo
+  SA: Salerne
+  SI: Sienne
+  SO: Sondrio
+  SP: 'La Spezia'
+  SR: Syracuse
+  SS: Sassari
+  SV: Savone
+  TA: Tarente
+  TE: Teramo
+  TN: Trente
+  TO: Turin
+  TP: Trapani
+  TR: Terni
+  TS: Trieste
+  TV: Trévise
+  UD: Udine
+  VA: Varèse
+  VB: Verbano-Cusio-Ossola
+  VC: Verceil
+  VE: Venise
+  VI: Vicence
+  VR: Vérone
+  VS: 'Medio Campidano'
+  VT: Viterbe
+  VV: 'Vibo Valentia'
+  RSM: 'Rep San Marino'
+  CTV: 'Città del Vaticano'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!postal_code, !city'
+  - '!zone_code'
+  - '!country_name_if'

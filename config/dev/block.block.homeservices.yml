@@ -1,0 +1,51 @@
+uuid: a01d168f-5281-4973-889d-be318b32c779
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_page
+  content:
+    - 'block_content:bloc_3_colonnes:8deb455c-6ec7-4064-8607-c72faeaad39e'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: homeservices
+theme: hawell
+region: '-1'
+weight: 0
+provider: null
+plugin: 'block_content:8deb455c-6ec7-4064-8607-c72faeaad39e'
+settings:
+  id: 'block_content:8deb455c-6ec7-4064-8607-c72faeaad39e'
+  label: 'Home services'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_page
+    context_mapping: {  }

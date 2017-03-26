@@ -1,0 +1,70 @@
+{% if shop_menu_style is not empty %}
+	{% set menu_style = shop_menu_style %}
+{% endif %}
+{% if shop_topbar is not empty %}
+	{% set topbar = shop_topbar %}
+{% endif %}
+{% if shop_page_title_style is not empty %}
+	{% set page_title_style = shop_page_title_style %}
+{% endif %}
+{% if shop_page_title_class is not empty %}
+	{% set page_title_class = shop_page_title_class %}
+{% endif %}
+{% if shop_slogan is not empty %}
+	{% set slogan = shop_slogan %}
+{% endif %}
+{% if shop_page_title_bgimage is not empty %}
+	{% set page_title_image = shop_page_title_bgimage %}
+{% endif %}
+{% if shop_footer_style is not empty %}
+	{% set footer_style = shop_footer_style %}
+{% endif %}
+{% set shop_layout_temp = 'layout'|get_path_param %}
+{% if shop_layout_temp %}
+	{% set shop_layout = shop_layout_temp %}
+{% endif %}
+{% if shop_layout is empty %}
+	{% set shop_layout = '2colsidebar' %}
+{% endif %}
+{% include directory ~ '/templates/layout/header-page.html.twig' %}
+{{ messages }}
+<!-- CONTENT -->
+<div class="page-section p-140-cont">
+	<div class="container">
+		<div class="row">
+		{% if shop_layout == '4colfullwidth' %}
+			<!-- CONTENT -->
+            <div class="col-sm-12">
+            	<div class="clearfix mb-70">
+                  	<div>
+                     	{{ drupal_block('exposedform_hawell_productspage_sort') }}
+                  	</div>
+                </div>
+				{{ page.content }}
+			</div>
+		{% else	%}
+			<!-- CONTENT -->
+            <div class="col-sm-8">
+            	<div class="clearfix mb-70">
+                  	<div>
+                     	{{ drupal_block('exposedform_hawell_productspage_sort') }}
+                  	</div>
+                </div>
+				{{ page.content }}
+            </div>
+            {% if page.sidebar %}
+			<!-- SIDEBAR -->
+            <div class="col-sm-4 col-md-3 col-md-offset-1">
+				{{ page.sidebar }}
+            </div>
+            {% endif %}
+		{% endif %}
+		</div>
+	</div>
+</div>
+{{ page.section }}
+{{ page.page_bt }}
+{% include directory ~ '/templates/layout/footer.html.twig' %}
+{% if  menu_style == 'min_menu' %}
+</div> <!-- sliding-content -->
+{% endif %}

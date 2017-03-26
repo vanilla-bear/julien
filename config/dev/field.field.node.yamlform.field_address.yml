@@ -1,0 +1,19 @@
+uuid: 3f084fc2-e97e-472f-90e7-2da4676e32af
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.yamlform
+id: node.yamlform.field_address
+field_name: field_address
+entity_type: node
+bundle: yamlform
+label: Address
+description: 'The address on the map.This address display on google map'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

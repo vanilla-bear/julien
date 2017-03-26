@@ -1,0 +1,13 @@
+uuid: 14717276-8980-40c0-8f28-d4859508c776
+langcode: fr
+status: true
+dependencies:
+  module:
+    - uc_cart
+_core:
+  default_config_hash: ActTVmbyxydmHJ15ExC207Gior_xFTeqM_a3dQFZhDQ
+id: uc_cart_add_product_action
+label: 'Ajouter au panier'
+type: node
+plugin: uc_cart_add_product_action
+configuration: {  }

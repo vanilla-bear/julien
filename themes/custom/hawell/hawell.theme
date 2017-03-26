@@ -1,0 +1,479 @@
+<?php
+use Drupal\Views\ViewExecutable;
+use Drupal\file\Entity\File;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\NodeInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\HeaderBag;
+use Drupal\Component\Utility\Html;
+use Symfony\Component\HttpFoundation\Response;
+use Drupal\Core\Url;
+global $base_url;
+
+
+//function hawell_preprocess_page(&$variables) {
+//    if ($variables['is_front']) {
+//        $variables['#attached']['library'][] = 'hawell/home-scripts';
+//    }
+//}
+
+function hawell_preprocess_block(&$variables) {
+	switch ($variables['base_plugin_id']) {
+	case 'system_branding_block':
+	$variables['site_logo'] = '';
+	if ($variables['content']['site_logo']['#access'] && $variables['content']['site_logo']['#uri']) {
+		$variables['site_logo'] = str_replace('.svg', '.png', $variables['content']['site_logo']['#uri']);
+	}
+	break;
+	}
+	if (!empty($variables['elements']['#id'])) {
+    	$block = entity_load('block', $variables['elements']['#id']);
+		$region = $block->getRegion();
+        $variables['block_region'] = $region;
+  	}
+
+}
+// Implements hook_views_pre_render().
+function hawell_views_pre_render(ViewExecutable $view) {
+  if($view->id() == 'frontpage' && $view->current_display == 'page_1') {
+    // Use some or all of the following 3 lines to remove specific
+    // 'no results' behaviors
+    unset($view->empty['area_text_custom']);
+    unset($view->empty['node_listing_empty']);
+    unset($view->empty['title']);
+  }
+
+
+    if ($view->current_display == '_hawell_block_section' && $view->id() == 'block_services_style3') {
+        $view->init_pager();
+        $view->set_items_per_page('2');
+    }
+}
+
+function hawell_preprocess_views_view(&$variables) {
+    $variables['title'] = $variables['view']->getTitle();
+//    kint($variables['args']['view']->getTitle());
+}
+
+function hawell_preprocess_node(&$variables) {
+    // Getting the node creation time stamp from the node object.
+    $date = $variables['node']->getCreatedTime();
+    // Here you can use drupal's format_date() function, or some custom PHP date formatting.
+    $variables['node_date'] = \Drupal::service('date.formatter')->format($date, 'd F Y, G:i');
+
+    //  if($variables['elements']['#node']->getType() == "page_generales" && $variables["teaser"]){
+    if($variables['elements']['#node']->getType() == "projet" ){
+        if (isset($variables['elements']['#node']->get('field_categorie')->getValue()[0]["target_id"])) {
+            $variables["term_id"] = $variables['elements']['#node']->get('field_categorie')->getValue()[0]["target_id"];
+        }
+        $term = \Drupal\taxonomy\Entity\Term::load($variables['elements']['#node']->get('field_categorie')->getValue()[0]["target_id"]);
+        $variables["term_name"] = $term->getName();
+
+    }
+
+
+}
+function hawell_preprocess_page(&$variables) {
+    if ($variables['is_front']) {
+        $variables['#attached']['library'][] = 'hawell/home-scripts';
+    }
+  	if (($node = \Drupal::routeMatch()->getParameter('node')) && $node instanceof \Drupal\node\NodeInterface) {
+        $variables['node_title'] = $node->title->value;
+    }
+    $config = \Drupal::config('system.site');
+    $variables['site_name'] = $config->get('name');
+    $variables['site_slogan'] = $config->get('slogan');
+//    $variables['site_name'] = \Drupal::config('system.site')->get('name');
+    $request = \Drupal::request();
+    $route_match = \Drupal::routeMatch();
+    $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+    $variables['current_page_title'] = $page_title;
+    $current_path = \Drupal::service('path.current')->getPath();
+    $variables['current_path'] = $current_path;
+    $path_args = explode('/', $current_path);
+    //$code = $request->attributes->get('exception')->getStatusCode();
+    if (isset($variables['node'])) {
+        $node = $variables['node'];
+        if ($node->__isset('field_blog_comments')) {
+            $field_blog_comments = $node->get('field_blog_comments');
+            $variables['blog_comments'] = $field_blog_comments->view();
+        }
+
+    }
+}
+function hawell_preprocess_comment(&$variables) {
+    $comment = $variables['elements']['#comment'];
+    $variables['comment_created'] = format_date($comment->created->value, "custom", "d M Y, G:iA");
+}
+function hawell_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  	// Add content type suggestions.
+  	if ($node = \Drupal::request()->attributes->get('node')) {
+    	array_splice($suggestions, 1, 0, 'page__' . $node->getType());
+  	}
+    if (\Drupal::routeMatch()->getRouteName() == 'blog') {
+        $suggestions[] = 'page__blog';
+    }
+}
+
+function hawell_theme_suggestions_image_alter(array &$suggestions, array $variables) {
+//    var_dump($variables);
+//    die();
+}
+
+function hawell_theme_suggestions_yamlform_alter(array &$suggestions, array $variables) {
+    if ($variables['element']['#form_id'] == 'yamlform_submission_contact_form_2_form') {
+        $suggestions[] = 'yamlform__contact_form2';
+    }
+}
+function hawell_form_comment_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    $form['#theme'] = 'form__comment_form';
+    $form['subject']['#access'] = False;
+    if($form['author']['name']['#access']) {
+        $form['author']['name']['#prefix'] = '<div class="row"><div><div class="col-md-6 mb-30">';
+        $form['author']['name']['#suffix'] = '</div>';
+        $form['field_email']['#prefix']  = '<div class="col-md-6 mb-30">';
+        $form['field_email']['#suffix'] = '</div></div></div>';
+    } else {
+        $form['field_email']['#access'] = False;
+    }
+    $form['field_email']['#title'] = False;
+    $form['author']['name']['#title'] = False;
+    $form['author']['name']['#attributes']['placeholder'] = 'NAME';
+    $form['author']['name']['#attributes']['class'][] = 'form-control';
+    $form['actions']['submit']['#attributes']['value'] = t('SEND MESSAGE');
+    $form['field_comment_body']['#prefix'] = '<div class="row"><div class="col-md-12 mb-40">';
+    $form['field_comment_body']['#title'] = False;
+    $form['field_comment_body']['#suffix'] = '</div></div>';
+    $form['actions']['submit']['#prefix'] = '<div class="row"><div class="col-md-12">';
+    $form['actions']['submit']['#suffix'] = '</div></div>';
+    $form['actions']['submit']['#attributes']['class'][] = 'button medium gray';
+    $form['actions']['preview']['#access'] = False;
+}
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function hawell_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+    if ($variables['element']['#form_id'] == 'search_form') {
+        $suggestions[] = 'form__search_page_form';
+    }
+    if ($variables['element']['#form_id'] == 'search_block_form') {
+        $suggestions[] = 'form__search_block_form';
+    }
+    if (strpos($variables['element']['#form_id'], 'views_exposed_form') !== FALSE) {
+        $suggestions[] = 'form__views_exposed_form';
+    }
+    if ($variables['element']['#form_id'] == 'user_login_form') {
+        $suggestions[] = 'form__user_login_form';
+    }
+    if ($variables['element']['#form_id'] == 'user_register_form') {
+        $suggestions[] = 'form__user_register_form';
+    }
+    if ($variables['element']['#form_id'] == 'user_pass') {
+        $suggestions[] = 'form__user_pass_form';
+    }
+    if (strpos($variables['element']['#form_id'], 'uc_product_add_to_cart_form') !== FALSE) {
+        $suggestions[] = 'form__add_to_cart';
+    }
+}
+
+function hawell_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    if($form_id == 'search_block_form') {
+        $form['keys']['#attributes']['placeholder'] = 'Search';
+        $form['keys']['#attributes']['class'][] = 'input-search-widget';
+        $form['actions']['submit']['#value'] = Html::decodeEntities('&#xf002;');
+    }
+    // if($form_id == 'search_form') {
+    //     //print_r($form['basic']['submit']);
+    //     $form['basic']['keys']['#title'] = False;
+    //     $form['basic']['keys']['#attributes']['placeholder'] = 'Type your word again...';
+    //     $form['basic']['submit']['#value'] = Html::decodeEntities('&#xf002;');
+    // }
+    if($form_id == 'yamlform_submission_contact_form_1_form') {
+        $form['elements']['your_name']['#prefix']  = '<div class="row">';
+        $form['elements']['your_name']['#suffix'] = '</div>';
+        $form['elements']['email']['#prefix']  = '<div class="row">';
+        $form['elements']['email']['#suffix'] = '</div>';
+        $form['elements']['message']['#prefix']  = '<div class="row">';
+        $form['elements']['message']['#suffix'] = '</div>';
+        $form['elements']['prestation']['#prefix']  = '<div class="row">';
+        $form['elements']['prestation']['#suffix'] = '</div>';
+        $form['elements']['telephone']['#prefix']  = '<div class="row">';
+        $form['elements']['telephone']['#suffix'] = '</div>';
+        $form['elements']['adresse']['#prefix']  = '<div class="row">';
+        $form['elements']['adresse']['#suffix'] = '</div>';
+        $form['elements']['code_postal']['#prefix']  = '<div class="row">';
+        $form['elements']['code_postal']['#suffix'] = '</div>';
+        $form['elements']['ville']['#prefix']  = '<div class="row">';
+        $form['elements']['ville']['#suffix'] = '</div>';
+        $form['actions']['submit']['#attributes']['class'][] = 'button medium gray';
+        $form['actions']['submit']['#prefix']  = '<div class="row"><div class="col-md-12">';
+        $form['actions']['submit']['#suffix'] = '</div></div>';
+    }
+    if($form_id == 'yamlform_submission_contact_form_2_form') {
+        $form['elements']['name']['#prefix']  = '<div class="col-md-6"><div class="row"><div class="col-md-12 mb-23">';
+        $form['elements']['name']['#suffix'] = '</div>';
+        $form['elements']['email']['#prefix']  = '<div class="col-md-12 mb-23">';
+        $form['elements']['email']['#suffix'] = '</div></div></div>';
+        $form['elements']['message']['#prefix']  = '<div class="col-md-6">';
+        $form['actions']['submit']['#attributes']['class'][] = 'button medium gray mt-40';
+        $form['actions']['submit']['#prefix']  = '<div class="text-right">';
+        $form['actions']['submit']['#suffix'] = '</div></div>';
+    }
+    if(strpos($form['#id'], 'simplenews-subscriptions-block') !== FALSE) {
+        $form['actions']['subscribe']['#value'] = 'SUBSCRIBE';
+        $form['actions']['subscribe']['#attributes']['class'][]= 'button medium gray';
+        $form['mail']['widget'][0]['value']['#title'] = FALSE;
+        $form['mail']['widget'][0]['value']['#description'] = FALSE;
+        $form['mail']['widget'][0]['value']['#attributes']['placeholder'] = 'Enter your email';
+        $form['mail']['widget'][0]['value']['#attributes']['class'][] = 'email nl-email-input';
+        $form['message']['#access'] = FALSE;
+    }
+    if(strpos($form['#id'], 'views-exposed-form--hawell-products-page-product-search') !== FALSE) {
+        $form['#attributes']['class'][] = 'form-search widget-search-form';
+        $form['actions']['submit']['#value'] = Html::decodeEntities('&#xf002;');
+        $form['title']['#attributes']['placeholder'] = 'Search';
+        $form['title']['#attributes']['class'][] = 'input-search-widget';
+    }
+    if(strpos($form['#id'], 'views-exposed-form--hawell-products-page-product-filter') !== FALSE) {
+        $form['#attributes']['class'][] = 'form';
+        $form['actions']['submit']['#value'] = 'FILTER';
+        $form['price']['min']['#attributes']['placeholder'] = 'FROM';
+        $form['price']['max']['#attributes']['placeholder'] = 'TO';
+        $form['price']['min']['#prefix']  = '<div class="row mb-20"><div class="col-xs-6">';
+        $form['price']['min']['#suffix'] = '</div>';
+        $form['price']['max']['#prefix']  = '<div class="col-xs-6">';
+        $form['price']['min']['#attributes']['class'][] = 'input-md round form-control font-12';
+        $form['price']['max']['#attributes']['class'][] = 'input-md round form-control font-12';
+        $form['price']['max']['#suffix'] = '</div></div>';
+        $form['price']['max']['#title'] = FALSE;
+        $form['actions']['submit']['#attributes']['class'][] = 'button medium gray-light btn-block';
+        //print_r($form);
+    }
+    if(strpos($form['#id'], 'views-exposed-form--hawell-products-page-sort') !== FALSE) {
+        $form['#attributes']['class'][] = 'form';
+        $form['actions']['submit']['#attributes']['class'][] = 'small gray-light uppercase';
+        $form['sort_by']['#attributes']['class'][] = 'select-md';
+        $form['sort_order']['#attributes']['class'][] = 'select-md';
+        //print_r($form);
+    }
+
+
+    // if ($form['#id'] == 'user-login-form') {
+    //     $form['name']['#prefix']  = '<div class="field">';
+    //     $form['name']['#suffix'] = '</div>';
+    //     $form['name']['#description'] = FALSE;
+    //     $form['name']['#title'] = FALSE;
+    //     $form['name']['#attributes']['placeholder'] = 'Username';
+    //     $form['pass']['#prefix']  = '<div class="field">';
+    //     $form['pass']['#suffix'] = '</div>';
+    //     $form['pass']['#description'] = FALSE;
+    //     $form['pass']['#attributes']['placeholder'] = 'Password';
+    //     $form['pass']['#title'] = FALSE;
+    //     $form['actions']['submit']['#value'] = t("LOG IN");
+    //     $form['actions']['submit']['#prefix']  = '<div class="field">';
+    //     $form['actions']['submit']['#suffix'] = '</div>';
+    //     $form['actions']['submit']['#attributes']['class'][] = 'theme-btn';
+    // }
+    // if ($form['#id'] =='user-register-form') {
+    //     //print_r($form['actions']);
+    //     $form['account']['mail']['#prefix']  = '<div class="field">';
+    //     $form['account']['mail']['#suffix'] = '</div>';
+    //     $form['account']['mail']['#title'] = FALSE;
+    //     $form['account']['mail']['#attributes']['placeholder'] = 'Email';
+    //     $form['account']['name']['#description'] = FALSE;
+    //     $form['account']['name']['#title'] = FALSE;
+    //     $form['account']['name']['#attributes']['placeholder'] = 'Username';
+    //     $form['account']['name']['#prefix']  = '<div class="field">';
+    //     $form['account']['name']['#suffix'] = '</div>';
+    //     $form['account']['mail']['#title'] = FALSE;
+    //     $form['account']['mail']['#description'] = FALSE;
+    //     $form['actions']['submit']['#prefix']  = '<div class="field">';
+    //     $form['actions']['submit']['#suffix'] = '</div>';
+    //     $form['actions']['submit']['#attributes']['class'][] = 'theme-btn';
+    //     $form['actions']['submit']['#value'] = t("Submit");
+    //     $form['field_display_name']['widget'][0]['#prefix']  = '<div class="field">';
+    //     $form['field_display_name']['widget'][0]['#suffix'] = '</div>';
+    //     $form['field_display_name']['widget']['#title'] = FALSE;
+    //     $form['field_display_name']['widget']['#attributes']['placeholder'] = 'Display name';
+
+    // }
+    // if ($form['#id'] == 'user-pass') {
+    //     $form['name']['#prefix']  = '<div class="field">';
+    //     $form['name']['#suffix'] = '</div>';
+    //     $form['name']['#title'] = FALSE;
+    //     $form['name']['#attributes']['placeholder'] = 'Username or Email';
+    //     $form['actions']['submit']['#value'] = t("Submit");
+    //     $form['actions']['submit']['#prefix']  = '<div class="field">';
+    //     $form['actions']['submit']['#suffix'] = '</div>';
+    //     $form['actions']['submit']['#attributes']['class'][] = 'theme-btn';
+    // }
+    if (strpos($form['#id'], 'uc-product-add-to-cart-form') !== FALSE) {
+        $form['actions']['submit']['#value'] = 'ADD TO CART';
+        $form['actions']['submit']['#attributes']['class'][] = 'medium gray shop-add-btn';
+        $form['attributes'][2]['#prefix']  = '<div class="row"><div class="col-sm-6 mb-30">';
+        $form['attributes'][2]['#suffix']  = '</div>';
+        $form['attributes'][2]['#attributes']['class'][] = 'select-md input-border w-100';
+        $form['attributes'][1]['#prefix']  = '<div class="col-sm-6 mb-30">';
+        $form['attributes'][1]['#suffix']  = '</div></div><hr class="mt-0 mb-30">';
+        $form['attributes'][1]['#attributes']['class'][] = 'select-md input-border w-100';
+        $form['qty']['#prefix']  = '<div class="row mb-30"><div class="col-xs-4 col-sm-2 col-md-2 ">';
+        $form['qty']['#suffix']  = '</div>';
+        $form['qty']['#title'] = FALSE;
+        $form['qty']['#attributes']['class'][] = 'input-border';
+        $form['actions']['submit']['#prefix'] = '<div class="col-xs-8 col-sm-10 col-md-6"><div class="post-prev-more-cont clearfix"><div class="shop-add-btn-cont">';
+        $form['actions']['submit']['#suffix']  = '</div><span class="share"></span></div></div></div>';
+    }
+    // if (strpos($form['#id'], 'uc-product-buy-it-now-form') !== FALSE) {
+    //     $form['actions']['submit']['#value'] = Html::decodeEntities('&#xf290;');
+    //     $form['actions']['submit']['#attributes']['class'][] = 'add-to-cart';
+    // }
+}
+
+
+function hawell_preprocess(&$variables) {
+    global $base_url;
+//    kint($variables);
+
+    //Get default logo in theme
+    $variables['logo'] = theme_get_setting('logo.url');
+//    $variables['logo'] = $base_url.'/'.drupal_get_path('theme','hawell').'/logo.svg';
+//    $variables['logo'] = str_replace('.svg', '.png', $variables['logo']);
+    $variables['base_path'] = base_path();
+    $variables['home_url'] = $base_url;
+    $variables['base_path_theme'] = $base_url.'/'.drupal_get_path('theme','hawell');
+//    kint($variables);
+//    die();
+    //Set variables for theme
+    //Get header seettings
+    $variables['menu_style'] = theme_get_setting('menu_style', 'hawell');
+    $variables['topbar'] = theme_get_setting('topbar', 'hawell');
+    $variables['blog_topbar'] = theme_get_setting('blog_topbar', 'hawell');
+    $variables['shop_topbar'] = theme_get_setting('shop_topbar', 'hawell');
+    $variables['page_topbar'] = theme_get_setting('page_topbar', 'hawell');
+    $variables['footer_style'] = theme_get_setting('footer_style', 'hawell');
+    $variables['footer_copyright_message'] = theme_get_setting('footer_copyright_message', 'hawell');
+    $boxed_background_image = theme_get_setting('boxed_background_image','hawell');
+    if($boxed_background_image) {
+        $file = File::load($boxed_background_image[0]);
+        $path = file_create_url($file->getFileUri());
+        $variables['boxed_background_image'] = $path;
+    } else $variables['boxed_background_image'] = '';
+
+    //Get portfolio settings
+    $variables['portfolio_menu_style'] = theme_get_setting('portfolio_menu_style', 'hawell');
+    $variables['portfolio_style'] = theme_get_setting('portfolio_style', 'hawell');
+    $variables['portfolio_footer_style'] = theme_get_setting('portfolio_footer_style', 'hawell');
+    $variables['portfolio_topbar'] = theme_get_setting('portfolio_topbar', 'hawell');
+    $variables['portfolio_page_title_style'] = theme_get_setting('portfolio_page_title_style', 'hawell');
+    $variables['portfolio_page_title_class'] = theme_get_setting('portfolio_page_title_class', 'hawell');
+    $portfolio_page_title_bgimage = theme_get_setting('portfolio_page_title_bgimage','hawell');
+    if($portfolio_page_title_bgimage) {
+        $file = File::load($portfolio_page_title_bgimage[0]);
+        $path = file_create_url($file->getFileUri());
+        $variables['portfolio_page_title_bgimage'] = $path;
+    } else $variables['portfolio_page_title_bgimage'] = '';
+
+    //Get blog settings
+    $variables['blog_menu_style'] = theme_get_setting('blog_menu_style', 'hawell');
+    $variables['blog_footer_style'] =  theme_get_setting('blog_footer_style', 'hawell');
+    $variables['blog_layout'] = theme_get_setting('blog_layout', 'hawell');
+    $variables['blog_slogan'] = theme_get_setting('blog_slogan', 'hawell');
+    $variables['blog_page_title_style'] = theme_get_setting('blog_page_title_style', 'hawell');
+    $variables['blog_page_title_class'] = theme_get_setting('blog_page_title_class', 'hawell');
+    $blog_page_title_bgimage = theme_get_setting('blog_page_title_bgimage','hawell');
+    if($blog_page_title_bgimage) {
+        $file = File::load($blog_page_title_bgimage[0]);
+        $path = file_create_url($file->getFileUri());
+        $variables['blog_page_title_bgimage'] = $path;
+    } else $variables['blog_page_title_bgimage'] = '';
+
+    //Get shop settings
+    $variables['shop_menu_style'] = theme_get_setting('shop_menu_style', 'hawell');
+    $variables['shop_footer_style'] =  theme_get_setting('shop_footer_style', 'hawell');
+    $variables['shop_layout'] = theme_get_setting('shop_layout', 'hawell');
+    $variables['shop_slogan'] = theme_get_setting('shop_slogan', 'hawell');
+    $variables['shop_page_title_style'] = theme_get_setting('shop_page_title_style', 'hawell');
+    $variables['shop_page_title_class'] = theme_get_setting('shop_page_title_class', 'hawell');
+    $shop_page_title_bgimage = theme_get_setting('shop_page_title_bgimage','hawell');
+    if($shop_page_title_bgimage) {
+        $file = File::load($shop_page_title_bgimage[0]);
+        $path = file_create_url($file->getFileUri());
+        $variables['shop_page_title_bgimage'] = $path;
+    } else $variables['shop_page_title_bgimage'] = '';
+
+    //Page settings
+    $variables['page_menu_style'] = theme_get_setting('page_menu_style', 'hawell');
+    $variables['page_title_style'] = theme_get_setting('page_title_style', 'hawell');
+    $variables['page_footer_style'] = theme_get_setting('page_footer_style', 'hawell');
+    $system_page_title_bgimage = theme_get_setting('system_page_title_bgimage','hawell');
+    $variables['page_title_class'] = theme_get_setting('page_title_class', 'hawell');
+    if($system_page_title_bgimage) {
+        $file = File::load($system_page_title_bgimage[0]);
+        $path = file_create_url($file->getFileUri());
+        $variables['system_page_title_bgimage'] = $path;
+    } else $variables['system_page_title_bgimage'] = '';
+
+    //Get footer style in Home node type
+    if ($node = \Drupal::request()->attributes->get('node')) {
+        if(isset($node->field_boxed->value)) {
+            $variables['boxed'] = $node->field_boxed->value;
+        } else {
+            $variables['boxed'] = 0;
+        }
+    }
+
+}
+function hawell_preprocess_views_view_field(&$variables) {
+    $variables['view_counter'] = 0;
+}
+function hawell_preprocess_breadcrumb(&$variables){
+    $request = \Drupal::request();
+    if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+        $current_title = \Drupal::service('title_resolver')->getTitle($request, $route);
+    } else $current_title = '';
+    if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {
+        if($node->getTitle() == $current_title) {
+            $variables['breadcrumb'][] = array(
+                'text' => $node->getTitle(),
+                'url' => ''
+            );
+        } else {
+            $variables['breadcrumb'][] = array(
+                'text' => $node->getTitle(),
+                'url' => $node->URL()
+            );
+        }
+    } elseif ($variables['breadcrumb']) {
+        $variables['breadcrumb'][] = array(
+            'text' => $current_title,
+            'url' => ''
+        );
+    }
+}
+
+//Set path demo image
+function demo_image_path($imgFolder) {
+    global $base_url;
+    $path = $base_url.'/sites/default/files/'.$imgFolder.'/';
+    return $path;
+}
+//Get statust code
+function navi_get_http_status () {
+    $request = \Drupal::request();
+    if ($exception = $request->attributes->get('exception')) {
+        $status = $request->attributes->get('exception')->getStatusCode();
+        return $status;
+    } else {
+        $status = 0;
+        return $status;
+    }
+}
+
+function hawell_preprocess_image(&$variables) {
+
+}
+
+?>

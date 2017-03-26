@@ -1,0 +1,50 @@
+{% if portfolio_menu_style is not empty %}
+	{% set menu_style = portfolio_menu_style %}
+{% endif %}
+{% if portfolio_topbar is not empty %}
+	{% set topbar = portfolio_topbar %}
+{% endif %}
+{% if portfolio_footer_style is not empty %}
+	{% set footer_style = portfolio_footer_style %}
+{% endif %}
+{% if portfolio_page_title_style is not empty %}
+	{% set page_title_style = portfolio_page_title_style %}
+{% endif %}
+{% if portfolio_page_title_class is not empty %}
+	{% set page_title_class = portfolio_page_title_class %}
+{% endif %}
+{% if portfolio_page_title_bgimage is not empty %}
+	{% set page_title_image = portfolio_page_title_bgimage %}
+{% endif %}
+{% if node is defined and node.field_menu_style is not empty %}
+	{% set menu_style = node.field_menu_style.value %}
+{% endif %}
+{% if node is defined and node.field_logo is not empty %}
+    {% set logo = file_url(node.field_logo.entity.fileuri) %}
+{% endif %}
+{% if node is defined and node.field_page_title_style is not empty %}
+	{% set page_title_style = node.field_page_title_style.value %}
+{% endif %}
+{% if node is defined and node.field_page_title_image is not empty %}
+    {% set page_title_image = file_url(node.field_page_title_image.entity.fileuri) %}
+{% endif %}
+{% if node is defined and node.field_page_title_class is not empty %}
+	{% set page_title_class = node.field_page_title_class.value %}
+{% endif %}
+{% include directory ~ '/templates/layout/header-page.html.twig' %}
+{{ messages }}
+{% if node is defined %}
+<div class="p-140-cont pb-0">
+	{{ page.content }}
+</div>
+{% else %}
+	{{ page.content }}
+{% endif %}
+{{ page.section }}
+{{ page.page_bt }}
+{% include directory ~ '/templates/layout/footer.html.twig' %}
+{% if  menu_style == 'min_menu' %}
+</div> <!-- sliding-content -->
+{% endif %}{% if  menu_style == 'min_menu' %}
+</div> <!-- sliding-content -->
+{% endif %}

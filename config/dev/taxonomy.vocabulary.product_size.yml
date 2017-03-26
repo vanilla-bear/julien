@@ -1,0 +1,9 @@
+uuid: 756ed0d2-2b11-4a0a-bb6f-d7d931ed426b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product size'
+vid: product_size
+description: ''
+hierarchy: 0
+weight: 0

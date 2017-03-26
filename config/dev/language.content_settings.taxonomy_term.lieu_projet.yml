@@ -1,0 +1,11 @@
+uuid: bcbdcf7b-29fd-408c-ad31-93226d9dbb31
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.lieu_projet
+id: taxonomy_term.lieu_projet
+target_entity_type_id: taxonomy_term
+target_bundle: lieu_projet
+default_langcode: site_default
+language_alterable: false

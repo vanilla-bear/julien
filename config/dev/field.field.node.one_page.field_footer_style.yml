@@ -1,0 +1,23 @@
+uuid: 328f8e90-12fe-44fd-8f64-26b186e65d76
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footer_style
+    - node.type.one_page
+  module:
+    - options
+id: node.one_page.field_footer_style
+field_name: field_footer_style
+entity_type: node
+bundle: one_page
+label: 'Footer style'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: footer1
+default_value_callback: ''
+settings: {  }
+field_type: list_string

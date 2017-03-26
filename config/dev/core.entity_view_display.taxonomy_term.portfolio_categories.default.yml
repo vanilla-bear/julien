@@ -1,0 +1,14 @@
+uuid: 19129c87-a42e-4002-ad08-2c7f8fc3bcc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.portfolio_categories
+id: taxonomy_term.portfolio_categories.default
+targetEntityType: taxonomy_term
+bundle: portfolio_categories
+mode: default
+content: {  }
+hidden:
+  description: true
+  langcode: true

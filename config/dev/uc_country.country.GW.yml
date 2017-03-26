@@ -1,0 +1,27 @@
+uuid: 9e0e7c6a-ee0c-48f5-89c1-f571feb6f65d
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: _cr9IKzWJw9_qnaYHsZEweqSyS7RjnR0rrSsszPfT8M
+name: Guinée-Bissau
+alpha_2: GW
+alpha_3: GNB
+numeric: 624
+zones:
+  GW-BS: Bissau
+  GW-BA: Bafatá
+  GW-BM: Biombo
+  GW-BL: Bolama
+  GW-CA: Cacheu
+  GW-GA: Gabú
+  GW-OI: Oio
+  GW-QU: Quinara
+  GW-TO: Tombali
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

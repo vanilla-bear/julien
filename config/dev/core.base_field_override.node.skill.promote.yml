@@ -1,0 +1,22 @@
+uuid: 09040f97-22ff-46bc-b6fd-904f607cdfa1
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.skill
+id: node.skill.promote
+field_name: promote
+entity_type: node
+bundle: skill
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

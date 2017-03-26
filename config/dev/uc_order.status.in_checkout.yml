@@ -1,0 +1,11 @@
+uuid: a2b93251-4ef6-45aa-b0ce-7a6f6917f3dc
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pt55hIW6gJsxThuHKnl_TPGY4UfBCE366el6gcXdykE
+id: in_checkout
+name: 'En commande'
+state: in_checkout
+weight: -10
+locked: true

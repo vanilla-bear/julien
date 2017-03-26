@@ -1,0 +1,32 @@
+uuid: 33d66626-80de-4768-b3ac-a9b66f88c39a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - node
+_core:
+  default_config_hash: SoxyDOLhiWAJ7kBBpZz7oyMPuz7u-0qPg-22nUKTiYI
+id: node.uc_product_image
+field_name: uc_product_image
+entity_type: node
+type: image
+settings:
+  display_field: false
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_default: false
+  uri_scheme: public
+module: image
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

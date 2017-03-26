@@ -1,0 +1,24 @@
+uuid: 89d38ddf-e1f3-4735-ba18-c16cc991efce
+langcode: en
+status: true
+dependencies:
+  module:
+    - php
+    - system
+id: page_404
+label: 'Page 404'
+logic: or
+conditions:
+  02a34b98-b962-450e-9262-e6416d81471f:
+    id: request_path
+    pages: /404
+    negate: false
+    context_mapping: {  }
+    uuid: 02a34b98-b962-450e-9262-e6416d81471f
+  8499c2f5-aabf-4b16-991a-1d23134236d1:
+    id: php
+    php: "<?php\r\n    if (navi_get_http_status() == 404) return TRUE;\r\n?>"
+    negate: 0
+    context_mapping: {  }
+    uuid: 8499c2f5-aabf-4b16-991a-1d23134236d1
+allow_other_conditions: false

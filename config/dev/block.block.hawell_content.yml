@@ -1,0 +1,22 @@
+uuid: 591a623c-8245-4270-b6b8-bdac8f1fe33b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - hawell
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: hawell_content
+theme: hawell
+region: content
+weight: -9
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,84 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 0
+  path: 'public://logo-1.png'
+favicon:
+  use_default: 0
+  path: 'public://favicon.ico'
+  mimetype: image/vnd.microsoft.icon
+tracking_code: ''
+custom_css: ''
+menu_style: white_transparent
+checkbox: 1
+tests_taken:
+  SAT: 0
+  ACT: 0
+footer_style: footer2white
+footer_background_image: {  }
+footer_class: ''
+footer_copyright_message: '<a class="footer-2-copy" href="" target="_blank">&copy; HAWELL 2015</a>'
+portfolio_style: grid
+portfolio_menu_style: white_notransparent
+portfolio_background_image_menu: {  }
+portfolio_page_header_class: ''
+portfolio_page_title_bgimage: {  }
+portfolio_footer_style: footer2white
+portfolio_footer_background_image: {  }
+portfolio_footer_class: ''
+blog_menu_style: white_notransparent
+blog_background_image_menu: {  }
+blog_layout: masonry2col
+blog_page_header_class: ''
+blog_page_title_bgimage:
+  - '103'
+blog_footer_style: footer2white
+blog_footer_background_image: {  }
+blog_footer_class: ''
+event_menu_style: transparent
+event_background_image_menu: {  }
+event_layout: grid2col
+event_page_header_class: ''
+event_page_title_bgimage: {  }
+event_footer_style: dark
+event_footer_background_image: {  }
+event_footer_class: ''
+shop_layout: 2colsidebar
+shop_menu_style: white_notransparent
+shop_background_image_menu: {  }
+shop_page_title_bgimage:
+  - '154'
+shop_page_header_class: ''
+shop_footer_style: footer2white
+shop_footer_background_image: {  }
+shop_footer_class: ''
+page_menu_style: black_notransparent
+page_background_image_menu: {  }
+page_header_class: ''
+system_page_title_bgimage: {  }
+gallery_style: standard
+page_footer_style: footer2white
+page_footer_background_image: {  }
+page_footer_class: ''
+hawell_disable_switch: 'on'
+theme_layout: wide
+boxed_background_image: {  }
+built_in_skins: null
+blog_page_title_style: large_image
+blog_slogan: 'Lorem ipsum dolor sit amet consectetur'
+page_title_style: small_grey
+topbar: 0
+portfolio_topbar: 0
+blog_topbar: 0
+blog_page_title_class: grey-dark-bg
+page_title_class: ''
+shop_topbar: 0
+shop_page_title_style: large_image
+shop_page_title_class: grey-dark-bg
+shop_slogan: 'Lorem ipsum dolor sit amet consectetur'
+page_topbar: 1
+portfolio_page_title_style: small_grey
+portfolio_page_title_class: ''

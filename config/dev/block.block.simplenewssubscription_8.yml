@@ -1,0 +1,50 @@
+uuid: 86ea30be-52be-47f6-a9f3-a454aa6a9ae8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_construction2
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - simplenews
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: nl-cont
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: simplenewssubscription_8
+theme: hawell
+region: section
+weight: 0
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Simplenews subscription'
+  provider: simplenews
+  label_display: '0'
+  newsletters:
+    _hawell_newsletter: _hawell_newsletter
+  message: ''
+  unique_id: ced88341-dfd3-4cb6-8472-d840d5e0d85d
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_construction2
+    context_mapping: {  }

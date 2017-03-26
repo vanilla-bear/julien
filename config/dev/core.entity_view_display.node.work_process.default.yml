@@ -1,0 +1,37 @@
+uuid: e5890f38-9c2b-42a5-a58f-bf266700f522
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.work_process.body
+    - field.field.node.work_process.field_icon_class
+    - field.field.node.work_process.field_subtitle
+    - node.type.work_process
+  module:
+    - text
+    - user
+id: node.work_process.default
+targetEntityType: node
+bundle: work_process
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  field_subtitle:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_icon_class: true
+  langcode: true

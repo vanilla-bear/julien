@@ -1,0 +1,24 @@
+uuid: 3a132eb3-4ebf-4940-900a-d10b235ce560
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.yamlform
+_core:
+  default_config_hash: 6_lzctCV8fOYZO8HyZ-pVXpeDUteMxEY4ijoiQDi-oc
+id: node.yamlform.promote
+field_name: promote
+entity_type: node
+bundle: yamlform
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

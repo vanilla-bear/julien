@@ -1,0 +1,43 @@
+uuid: 587d3060-fce1-4534-97d2-0997613b779a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.carto
+    - field.field.block_content.carto.field_adresse
+    - field.field.block_content.carto.field_logo
+    - image.style.thumbnail
+  module:
+    - image
+id: block_content.carto.default
+targetEntityType: block_content
+bundle: carto
+mode: default
+content:
+  field_adresse:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_logo:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  info:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

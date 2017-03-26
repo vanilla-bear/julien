@@ -1,0 +1,12 @@
+{% if menu_style is empty %}
+    {% set menu_style = 'black_transparent' %}
+{% endif %}
+{% include directory ~ '/templates/layout/header.html.twig' %}
+{{ page.slideshow }}
+{{ messages }}
+{{ page.content }}
+{{ page.section }}
+{% include directory ~ '/templates/layout/footer.html.twig' %}
+{% if  menu_style == 'min_menu' %}
+</div> <!-- sliding-content -->
+{% endif %}

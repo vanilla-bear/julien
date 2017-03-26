@@ -1,0 +1,14 @@
+uuid: c806aaaa-2dfe-4e8b-95ab-9d64fccdc337
+langcode: en
+status: true
+dependencies: {  }
+name: image_750x422
+label: 'Image 750x422'
+effects:
+  b18d1505-86ed-4b72-b568-3c6fe8d6d28d:
+    uuid: b18d1505-86ed-4b72-b568-3c6fe8d6d28d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 750
+      height: 422

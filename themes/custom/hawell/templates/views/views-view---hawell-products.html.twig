@@ -1,0 +1,35 @@
+{% if view.current_display == 'page_products' %}
+	{% set shop_layout_temp = 'layout'|get_path_param %}
+	{% if shop_layout_temp %}
+		{% set shop_layout = shop_layout_temp %}
+	{% endif %}
+	{% if rows %}
+	<div class="row">
+		{% if shop_layout == '2colsidebar' %}
+		{{ drupal_view('_hawell_products', 'embed_products_2col') }}
+		{% elseif shop_layout == '3colsidebar' %}
+		{{ drupal_view('_hawell_products', 'embed_products_3col') }}
+		{% else %}
+		{{ drupal_view('_hawell_products', 'embed_products_4col') }}
+		{% endif %}
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_products_best_sellers' %}
+	{% if rows %}
+	<div class="container">
+		{% if header %}
+		<div class="mb-50">
+			{{ header }}
+		</div>
+		{% endif %}
+		<div class="row">
+			{{ rows }}
+		</div>
+	</div>
+	{% endif %}
+{% else %}
+	{{ header }}
+	{{ rows }}
+	{{ footer }}
+	{{ pager }}
+{% endif %}

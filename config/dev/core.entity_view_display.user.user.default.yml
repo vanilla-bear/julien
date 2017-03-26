@@ -1,0 +1,36 @@
+uuid: 16e802da-f1e4-4f5a-baf2-ac9b5b6ffa70
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_about
+    - field.field.user.user.field_display_name
+    - field.field.user.user.user_picture
+    - image.style.image_70x70
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: L2mtwGWH_7wDRCMIR4r_Iu_jmvQ10DV1L8ht8iNZ5qY
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  member_for:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 0
+    settings:
+      image_style: image_70x70
+      image_link: content
+    third_party_settings: {  }
+    label: hidden
+hidden:
+  field_about: true
+  field_display_name: true
+  langcode: true
+  simplenews: true

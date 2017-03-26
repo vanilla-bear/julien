@@ -1,0 +1,48 @@
+uuid: 47c12514-a67d-45b1-afbd-6aea84c55b98
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: RoNGFl_o3xZbgdDXfgssBdeLjDE2AM1PwHPom7eo3hM
+name: Groenland
+alpha_2: GL
+alpha_3: GRL
+numeric: 304
+zones:
+  NK: Nuuk
+  NQ: Nuussuaq
+  KQ: Kangerlussuaq
+  ST: Sisimiut
+  MQ: Maniitsoq
+  TQ: Tasiilaq
+  KK: Kulusuk
+  AP: 'Alluitsup Paa'
+  QQ: Qaqortoq
+  NA: Narsaq
+  NR: Narsarsuaq
+  IQ: Ikerasassuaq
+  KT: Kangilinnguit
+  AK: Arsuk
+  PT: Paamiut
+  AT: Aasiaat
+  QT: Qasigiannguit
+  IL: Ilulissat
+  QE: Qeqertarsuaq
+  KA: Kangaatsiaq
+  UM: Uummannaq
+  UP: Upernavik
+  QA: Qaarsut
+  QN: Qaanaaq
+  SN: 'Station Nord'
+  IT: Ittoqqortoormiit
+  MV: Mestersvig
+  DH: Danmarkshavn
+  CP: 'Constable Pynt'
+  SS: 'Slædepatruljen Sirius'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!postal_code !city'
+  - '!country_name_if'

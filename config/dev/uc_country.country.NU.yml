@@ -1,0 +1,18 @@
+uuid: c8b6efef-81a5-4706-925b-9a1f146f9c2f
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: ezbzkh-XjOsfnAEfhYq77lNnoeH0lnk7LbEjCh7gYBk
+name: Niue
+alpha_2: NU
+alpha_3: NIU
+numeric: 570
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city  !postal_code'
+  - '!country_name_if'

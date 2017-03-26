@@ -1,0 +1,17 @@
+uuid: 966aad78-b1c0-4826-a138-28415c6ca59d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: contact_style_2
+label: 'Contact style 2'
+logic: and
+conditions:
+  999a6f23-fe35-4e28-ad17-a14c37e81e8b:
+    id: request_path
+    pages: /node/103
+    negate: false
+    context_mapping: {  }
+    uuid: 999a6f23-fe35-4e28-ad17-a14c37e81e8b
+allow_other_conditions: false

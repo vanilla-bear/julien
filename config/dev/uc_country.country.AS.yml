@@ -1,0 +1,18 @@
+uuid: ce6a4dcb-008d-48aa-b22d-bd057faaf4d4
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: GsGwGuhFTEuGlY-obUYFz2G9KcEktAGVE2nDiDx6a3M
+name: 'Samoa américaines'
+alpha_2: AS
+alpha_3: ASM
+numeric: 16
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !postal_code'
+  - '!country_name_if'

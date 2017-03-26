@@ -1,0 +1,40 @@
+uuid: e8b106a9-05b4-4de4-b581-1f49afdf5547
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type._hawell_block_right_image
+    - core.entity_view_mode.block_content.full
+    - field.field.block_content._hawell_block_right_image.body
+    - field.field.block_content._hawell_block_right_image.field_block_header
+    - field.field.block_content._hawell_block_right_image.field_image
+  module:
+    - image
+    - text
+id: block_content._hawell_block_right_image.full
+targetEntityType: block_content
+bundle: _hawell_block_right_image
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  field_block_header:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden:
+  langcode: true

@@ -1,0 +1,18 @@
+uuid: 28d5acd6-8322-4a1d-b5dc-f1ffe251c6a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Feature
+type: feature
+description: 'Use feature create your features'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

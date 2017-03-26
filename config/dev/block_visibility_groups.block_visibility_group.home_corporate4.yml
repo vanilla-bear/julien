@@ -1,0 +1,17 @@
+uuid: bed8c783-8140-473d-9794-30a34d321c69
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_corporate4
+label: 'Home corporate 4'
+logic: and
+conditions:
+  79431271-32ca-4f8e-b1ad-857d6e6ca647:
+    id: request_path
+    pages: /node/56
+    negate: false
+    context_mapping: {  }
+    uuid: 79431271-32ca-4f8e-b1ad-857d6e6ca647
+allow_other_conditions: false

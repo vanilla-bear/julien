@@ -1,0 +1,8 @@
+uuid: cb882765-9593-458c-8f70-67d7ca71f376
+langcode: en
+status: true
+dependencies: {  }
+id: parallax_extra_image
+label: 'parallax extra image'
+revision: 0
+description: ''

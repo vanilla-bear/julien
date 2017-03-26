@@ -1,0 +1,17 @@
+uuid: 703bcca5-c2d3-4ea0-add7-8f9a2ac7b6c3
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_photo
+label: 'Home photo'
+logic: and
+conditions:
+  cdd6c97e-1d4f-4f8f-8667-f7b8e99b1a1c:
+    id: request_path
+    pages: /node/97
+    negate: false
+    context_mapping: {  }
+    uuid: cdd6c97e-1d4f-4f8f-8667-f7b8e99b1a1c
+allow_other_conditions: false

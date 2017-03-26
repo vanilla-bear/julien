@@ -1,0 +1,51 @@
+uuid: 7cf6fe5c-fce8-45a5-895f-17ddddabbc8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_car_service
+  content:
+    - 'block_content:basic:843e5ca3-0631-4f9a-b0f4-090e8e956e44'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: p-110-cont
+    attr_id: ''
+    block_title: ''
+    block_divider: 'yes'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockhtmlfaq_2
+theme: hawell
+region: section
+weight: -5
+provider: null
+plugin: 'block_content:843e5ca3-0631-4f9a-b0f4-090e8e956e44'
+settings:
+  id: 'block_content:843e5ca3-0631-4f9a-b0f4-090e8e956e44'
+  label: '[Hawell] Block HTML FAQ'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_car_service
+    context_mapping: {  }

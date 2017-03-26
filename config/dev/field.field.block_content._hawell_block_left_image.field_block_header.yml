@@ -1,0 +1,21 @@
+uuid: 912ffea4-3a72-478f-be8f-f42b40c3a335
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type._hawell_block_left_image
+    - field.storage.block_content.field_block_header
+  module:
+    - text
+id: block_content._hawell_block_left_image.field_block_header
+field_name: field_block_header
+entity_type: block_content
+bundle: _hawell_block_left_image
+label: 'Block header'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

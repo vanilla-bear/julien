@@ -1,0 +1,51 @@
+uuid: 4c51ef66-3ce5-4b88-a617-5a08649bd876
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.coming_soon_2
+  content:
+    - 'block_content:basic:9d37685a-bd22-43c9-b327-7e2793baf0d1'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockcomingsoonmediaimage
+theme: hawell
+region: '-1'
+weight: 0
+provider: null
+plugin: 'block_content:9d37685a-bd22-43c9-b327-7e2793baf0d1'
+settings:
+  id: 'block_content:9d37685a-bd22-43c9-b327-7e2793baf0d1'
+  label: '[Hawell] Block coming soon media image'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: coming_soon_2
+    context_mapping: {  }

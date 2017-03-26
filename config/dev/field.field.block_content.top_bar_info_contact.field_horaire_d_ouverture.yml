@@ -1,0 +1,19 @@
+uuid: e968031b-d81b-42f8-8d46-89489f066db5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.top_bar_info_contact
+    - field.storage.block_content.field_horaire_d_ouverture
+id: block_content.top_bar_info_contact.field_horaire_d_ouverture
+field_name: field_horaire_d_ouverture
+entity_type: block_content
+bundle: top_bar_info_contact
+label: 'Horaire d''ouverture'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

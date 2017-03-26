@@ -1,0 +1,17 @@
+uuid: b477b39b-1d18-4fe0-9245-c6ba65a9c745
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_min_menu
+label: 'Home min menu'
+logic: and
+conditions:
+  2679734a-dc1c-476e-91ad-048f64463f7e:
+    id: request_path
+    pages: /node/100
+    negate: false
+    context_mapping: {  }
+    uuid: 2679734a-dc1c-476e-91ad-048f64463f7e
+allow_other_conditions: false

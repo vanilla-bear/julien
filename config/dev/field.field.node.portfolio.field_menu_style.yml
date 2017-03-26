@@ -1,0 +1,23 @@
+uuid: 8b1b975c-4d34-417a-9218-99154c3ed434
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menu_style
+    - node.type.portfolio
+  module:
+    - options
+id: node.portfolio.field_menu_style
+field_name: field_menu_style
+entity_type: node
+bundle: portfolio
+label: 'Menu style'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: white_notransparent
+default_value_callback: ''
+settings: {  }
+field_type: list_string

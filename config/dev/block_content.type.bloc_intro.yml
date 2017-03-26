@@ -1,0 +1,8 @@
+uuid: c1402513-6e7e-4fca-945a-7be937422086
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_intro
+label: 'bloc intro'
+revision: 0
+description: ''

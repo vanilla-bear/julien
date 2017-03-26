@@ -1,0 +1,23 @@
+uuid: 7cfa8c2a-e44b-4d5a-b919-acddbf034620
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_title_style
+    - node.type.portfolio
+  module:
+    - options
+id: node.portfolio.field_page_title_style
+field_name: field_page_title_style
+entity_type: node
+bundle: portfolio
+label: 'Page title style'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: small_grey
+default_value_callback: ''
+settings: {  }
+field_type: list_string

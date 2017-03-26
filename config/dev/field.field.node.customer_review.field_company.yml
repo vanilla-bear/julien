@@ -1,0 +1,19 @@
+uuid: 7285c29f-8fcb-423f-9659-51e67cd7f3c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company
+    - node.type.customer_review
+id: node.customer_review.field_company
+field_name: field_company
+entity_type: node
+bundle: customer_review
+label: Company
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

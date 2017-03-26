@@ -1,0 +1,64 @@
+uuid: 467948cf-cb37-460d-8ab0-9101cab41173
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.projet.field_categorie
+    - field.field.node.projet.field_contenu
+    - field.field.node.projet.field_image_principale
+    - field.field.node.projet.field_image_resume
+    - field.field.node.projet.field_lieu
+    - node.type.projet
+  module:
+    - image
+    - text
+    - user
+id: node.projet.teaser
+targetEntityType: node
+bundle: projet
+mode: teaser
+content:
+  field_categorie:
+    type: entity_reference_label
+    weight: 1
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_contenu:
+    type: text_trimmed
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  field_image_principale:
+    type: image
+    weight: 3
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_image_resume:
+    type: image
+    weight: 4
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+  field_lieu:
+    type: entity_reference_label
+    weight: 5
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

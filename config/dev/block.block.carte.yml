@@ -1,0 +1,49 @@
+uuid: 7e16f3fd-3e41-41cc-adf5-b57b6677598a
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:carto:da8937a0-0d38-439a-9557-c43bd5a1c8f9'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: carte
+theme: hawell
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:da8937a0-0d38-439a-9557-c43bd5a1c8f9'
+settings:
+  id: 'block_content:da8937a0-0d38-439a-9557-c43bd5a1c8f9'
+  label: carte
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

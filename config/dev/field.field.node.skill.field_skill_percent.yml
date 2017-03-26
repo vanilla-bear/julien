@@ -1,0 +1,23 @@
+uuid: 6fe3614f-a34d-4c0a-bb72-1eea56271f17
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_skill_percent
+    - node.type.skill
+id: node.skill.field_skill_percent
+field_name: field_skill_percent
+entity_type: node
+bundle: skill
+label: 'Skill percent'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: '%'
+field_type: integer

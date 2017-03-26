@@ -1,0 +1,33 @@
+uuid: bc000cb1-59f9-4cf3-991c-41b105ecc2af
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_onepage_menu_style
+field_name: field_onepage_menu_style
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: black_transparent
+      label: 'Black Transparent'
+    -
+      value: white_transparent
+      label: 'White Transparent'
+    -
+      value: black_notransparent
+      label: 'Black No Transparent'
+    -
+      value: white_notransparent
+      label: 'White No Transparent'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

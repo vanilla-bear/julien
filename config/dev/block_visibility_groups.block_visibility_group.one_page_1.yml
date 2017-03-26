@@ -1,0 +1,17 @@
+uuid: c308d02b-0881-46b3-841f-5c147cc5d034
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: one_page_1
+label: 'One page 1'
+logic: and
+conditions:
+  904cc561-ebeb-4969-aec3-f1d81c87f5ed:
+    id: request_path
+    pages: /node/138
+    negate: false
+    context_mapping: {  }
+    uuid: 904cc561-ebeb-4969-aec3-f1d81c87f5ed
+allow_other_conditions: false

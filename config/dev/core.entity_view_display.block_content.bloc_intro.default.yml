@@ -1,0 +1,30 @@
+uuid: 7c042f20-1f1d-4ccc-92d0-666784160ea5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_intro
+    - field.field.block_content.bloc_intro.field_resume
+    - field.field.block_content.bloc_intro.field_titre
+  module:
+    - text
+id: block_content.bloc_intro.default
+targetEntityType: block_content
+bundle: bloc_intro
+mode: default
+content:
+  field_resume:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_titre:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  langcode: true

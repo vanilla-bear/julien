@@ -1,0 +1,83 @@
+uuid: 459fc4a6-3511-406c-9fbc-7c27e8b5b240
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: uiFAi2s3A1zzlpDMHGP3FN_dVT_Ip5LyqEjXd9f1rgE
+name: États-Unis
+alpha_2: US
+alpha_3: USA
+numeric: 840
+zones:
+  AL: Alabama
+  AK: Alaska
+  AS: 'Samoa américaines'
+  AZ: Arizona
+  AR: Arkansas
+  AF: 'Armed Forces Africa'
+  AA: 'Armed Forces Americas'
+  AC: 'Armed Forces Canada'
+  AE: 'Armed Forces Europe'
+  AM: 'Armed Forces Middle East'
+  AP: 'Armed Forces Pacific'
+  CA: Californie
+  CO: Colorado
+  CT: Connecticut
+  DE: Delaware
+  DC: 'District de Columbia'
+  FM: 'Federated States Of Micronesia'
+  FL: Floride
+  GA: Géorgie
+  GU: Guam
+  HI: Hawaï
+  ID: Idaho
+  IL: Illinois
+  IN: Indiana
+  IA: Iowa
+  KS: Kansas
+  KY: Kentucky
+  LA: Louisiane
+  ME: Maine
+  MH: 'Îles Marshall'
+  MD: Maryland
+  MA: Massachusetts
+  MI: Michigan
+  MN: Minnesota
+  MS: Mississippi
+  MO: Missouri
+  MT: Montana
+  NE: Nebraska
+  NV: Nevada
+  NH: 'New Hampshire'
+  NJ: 'New Jersey'
+  NM: 'Nouveau Mexique'
+  NY: 'New York'
+  NC: 'Caroline du Nord'
+  ND: 'Dakota du Nord'
+  MP: 'Îles Mariannes du Nord'
+  OH: Ohio
+  OK: Oklahoma
+  OR: Oregon
+  PW: Palaos
+  PA: Pennsylvanie
+  PR: 'Porto Rico'
+  RI: 'Rhode Island'
+  SC: 'Caroline du Sud'
+  SD: 'Dakota du Sud'
+  TN: Tennessee
+  TX: Texas
+  UT: Utah
+  VT: Vermont
+  VI: 'Îles Vierges'
+  VA: Virginie
+  WA: Washington
+  WV: Virginie-Occidentale
+  WI: Wisconsin
+  WY: Wyoming
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_code !postal_code'
+  - '!country_name_if'

@@ -1,0 +1,27 @@
+uuid: 8dbea68c-767a-413b-8021-7f85088586a7
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: sWIe_cVt9OexjDORFAEQC-uV5Xs_Kq1BTHZX7ppeGIY
+name: Bolivie
+alpha_2: BO
+alpha_3: BOL
+numeric: 68
+zones:
+  BO-C: Cochabamba
+  BO-H: Chuquisaca
+  BO-B: 'El Beni'
+  BO-L: 'La Paz'
+  BO-O: Oruro
+  BO-N: Pando
+  BO-P: Potosí
+  BO-S: 'Santa Cruz'
+  BO-T: Tarija
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

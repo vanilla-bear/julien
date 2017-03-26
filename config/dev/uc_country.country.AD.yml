@@ -1,0 +1,25 @@
+uuid: b38fab7a-6b3d-4073-bc02-d6a3a8daf0d7
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: hGlOG0JtrgEqT2Go_Zs3yM53kJcW6xzFYTiPmd-E5dQ
+name: Andorre
+alpha_2: AD
+alpha_3: AND
+numeric: 20
+zones:
+  CA: Canillo
+  EN: Encamp
+  MA: 'La Massana'
+  OR: Ordino
+  JL: 'Sant Julià de Lòria'
+  AN: 'Andorra La Vella'
+  EE: 'Escaldes Engordany'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !postal_code'
+  - '!country_name_if'

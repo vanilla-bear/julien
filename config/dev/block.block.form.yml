@@ -1,0 +1,48 @@
+uuid: abc98c05-a5a6-4d04-a166-80b70f1a6cc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.landing_page_2
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - yamlform
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: pt-110-b-80-cont
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: form
+theme: hawell
+region: section
+weight: 1
+provider: null
+plugin: yamlform_block
+settings:
+  id: yamlform_block
+  label: Form
+  provider: yamlform
+  label_display: '0'
+  yamlform_id: contact_form_2
+  default_data: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: landing_page_2
+    context_mapping: {  }

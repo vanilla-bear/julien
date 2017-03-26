@@ -1,0 +1,49 @@
+uuid: e7d0d085-11f7-47af-a6b3-a7c596a7bf7d
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:top_bar_info_contact:33cf7d0a-5270-400b-915e-e767f632ec9a'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: bloctopinformationcontact
+theme: hawell
+region: topbar
+weight: 0
+provider: null
+plugin: 'block_content:33cf7d0a-5270-400b-915e-e767f632ec9a'
+settings:
+  id: 'block_content:33cf7d0a-5270-400b-915e-e767f632ec9a'
+  label: 'Bloc top information contact'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

@@ -1,0 +1,17 @@
+uuid: a86e8bd4-368a-4ecb-b147-1c1a92077106
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_construction
+label: 'Home construction'
+logic: and
+conditions:
+  5cc56ffd-319a-472e-a87c-20bbdac56ed0:
+    id: request_path
+    pages: /node/66
+    negate: false
+    context_mapping: {  }
+    uuid: 5cc56ffd-319a-472e-a87c-20bbdac56ed0
+allow_other_conditions: false

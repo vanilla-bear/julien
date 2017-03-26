@@ -1,0 +1,174 @@
+uuid: 3c9d1200-a385-42ca-aa23-0728069e0879
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.portfolio.body
+    - field.field.node.portfolio.field_client
+    - field.field.node.portfolio.field_images
+    - field.field.node.portfolio.field_link
+    - field.field.node.portfolio.field_logo
+    - field.field.node.portfolio.field_menu_style
+    - field.field.node.portfolio.field_page_title_class
+    - field.field.node.portfolio.field_page_title_image
+    - field.field.node.portfolio.field_page_title_style
+    - field.field.node.portfolio.field_portfolio_categories
+    - field.field.node.portfolio.field_portfolio_style
+    - field.field.node.portfolio.field_topic
+    - image.style.thumbnail
+    - node.type.portfolio
+  module:
+    - field_group
+    - image
+    - imce
+    - link
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_portfolio_settings:
+      children:
+        - field_menu_style
+        - field_logo
+        - field_page_title_style
+        - field_page_title_image
+        - field_page_title_class
+        - field_portfolio_style
+      parent_name: ''
+      weight: 12
+      label: 'Portfolio settings'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
+id: node.portfolio.default
+targetEntityType: node
+bundle: portfolio
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 9
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  field_client:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_images:
+    weight: 6
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+  field_link:
+    weight: 8
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  field_logo:
+    weight: 14
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+  field_menu_style:
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_page_title_class:
+    weight: 17
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_page_title_image:
+    weight: 16
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+  field_page_title_style:
+    weight: 15
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_portfolio_categories:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_portfolio_style:
+    weight: 18
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_topic:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,99 @@
+uuid: 6e05afaa-2f08-4ea3-ad45-c1d0755ff399
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.yamlform.body
+    - field.field.node.yamlform.field_address
+    - field.field.node.yamlform.field_image
+    - field.field.node.yamlform.yamlform
+    - image.style.thumbnail
+    - node.type.yamlform
+  module:
+    - image
+    - imce
+    - path
+    - text
+    - yamlform
+_core:
+  default_config_hash: G1ijbr3eRpKNU5cdbHYWD3YbhRK2n5z1J0p2YFlZsyI
+id: node.yamlform.default
+targetEntityType: node
+bundle: yamlform
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 1
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  field_address:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_image:
+    weight: 26
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  yamlform:
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: yamlform_entity_reference_autocomplete
+hidden: {  }

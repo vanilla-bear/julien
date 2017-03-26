@@ -1,0 +1,51 @@
+uuid: cf323578-300c-4ddb-be5b-682cd57787cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_magazine
+  content:
+    - 'block_content:basic:2df7318c-6838-492e-a694-cd1b819a211e'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockbannerads
+theme: hawell
+region: page_tp
+weight: 0
+provider: null
+plugin: 'block_content:2df7318c-6838-492e-a694-cd1b819a211e'
+settings:
+  id: 'block_content:2df7318c-6838-492e-a694-cd1b819a211e'
+  label: '[Hawell] Block banner ads'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_magazine
+    context_mapping: {  }

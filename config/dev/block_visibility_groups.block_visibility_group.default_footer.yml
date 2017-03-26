@@ -1,0 +1,44 @@
+uuid: 611d1464-9831-48ef-aab2-4282753308c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - php
+    - system
+id: default_footer
+label: 'Default footer'
+logic: or
+conditions:
+  b4ab896f-b0aa-4b8d-b9ed-74d9c07359dc:
+    id: request_path
+    pages: "<front>\r\n/node/50\r\n/node/60\r\n/node/73\r\n/node/88\r\n/node/90\r\n/node/83\r\n/contact\r\n/contact-0\r\n/node/122\r\n/node/124\r\n/product*\r\n/shop*\r\n/cart*\r\n/user*\r\n/search*\r\n/blog*\r\n/portfolio*"
+    negate: false
+    context_mapping: {  }
+    uuid: b4ab896f-b0aa-4b8d-b9ed-74d9c07359dc
+  a2cc521a-848c-48a4-bb2d-3da6b39663b8:
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      blog_post: blog_post
+      client: client
+      customer_review: customer_review
+      feature: feature
+      page: page
+      portfolio: portfolio
+      product: product
+      service: service
+      skill: skill
+      team: team
+      work_process: work_process
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: a2cc521a-848c-48a4-bb2d-3da6b39663b8
+  c2439dbd-7271-4a00-877a-1f65e9759b53:
+    id: php
+    php: "<?php\r\n    if (navi_get_http_status() == 404) return TRUE;\r\n?>"
+    negate: 0
+    context_mapping: {  }
+    uuid: c2439dbd-7271-4a00-877a-1f65e9759b53
+allow_other_conditions: false

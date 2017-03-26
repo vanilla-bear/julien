@@ -1,0 +1,23 @@
+uuid: ee06a5fa-585f-4ede-9331-8a46c70734e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_boxed
+    - node.type.homepage
+id: node.homepage.field_boxed
+field_name: field_boxed
+entity_type: node
+bundle: homepage
+label: Boxed
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Boxed
+  off_label: 'Off'
+field_type: boolean

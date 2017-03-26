@@ -1,0 +1,33 @@
+uuid: c3042568-0c79-472f-9734-bacf00dbfcfb
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: fjhLdCO-d_21MWE63FlpJ6U4jQ-wd-iFZOKKSfvcOD4
+name: Fidji
+alpha_2: FJ
+alpha_3: FJI
+numeric: 242
+zones:
+  BA: Ba
+  BU: Bua
+  Ck: Cakaudrove
+  KD: Kadavu
+  LU: Lau
+  LM: Lomaiviti
+  MC: Macuata
+  NN: Nadroga-Navosa
+  NT: Naitasiri
+  NM: Namosi
+  RA: Ra
+  RW: Rewa
+  RT: Rotuma
+  SR: Serua
+  TL: Tailevu
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

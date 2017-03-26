@@ -1,0 +1,109 @@
+{% if not page %}
+{% else %}
+<div class="row">
+	<!-- ITEM PHOTO -->
+	<div class="col-md-4 col-sm-12 mb-50" >
+		<div class="post-prev-img popup-gallery">
+			<a href="{{ file_url(node.uc_product_image.0.entity.fileuri) }}"><img src="{{ file_url(node.uc_product_image.0.entity.fileuri) }}" alt="{{ node.uc_product_image.0.alt }}"></a>
+		</div>
+		{% if node.field_on_sale.value == 1 %}
+		<div class="sale-label-cont">
+			<span class="sale-label label-danger bg-red">{{ 'SALE'|t }}</span>
+		</div>
+		{% endif %}
+		<div class="row">
+			<div class="popup-gallery">
+			{% for img in node.uc_product_image %}
+				{% if loop.first == FALSE %}			
+				<div class="col-xs-4 post-prev-img">
+					<a href="{{ file_url(img.entity.fileuri) }}" ><img src="{{ img.entity.fileuri|image_style_url('image_200x200') }}" alt="{{ img.alt }}"></a>
+				</div>
+				{% endif %}
+			{% endfor %}		
+			</div>
+		</div>
+	</div>
+	<!-- CONTENT -->
+	<div class="col-md-7 col-sm-12 col-md-offset-1 mb-50">	
+		<h3 class="mt-0 mb-30 uppercase">{{ node.title.value }}</h3>
+		<hr class="mt-0 mb-30">
+		<div class="row">		
+			<div class="col-xs-6  mt-0 mb-30">
+			{% if node.field_on_sale.value == 1 %}
+				<del>{{ content.field_old_price|render|strip_tags|trim }}</del>
+			{% endif %}
+				<strong class="item-price">{{ content.price|render|strip_tags|trim }}</strong>
+			</div>		
+			<div class="col-xs-6 text-right">
+				<small class="product-review"><span class="slash-divider">/</span> {{ node.field_product_comment.comment_count }} <span>{% if node.field_product_comment.comment_count > 0 %} {{ 'comments'|t }} {% else %} {{ 'comment'|t }} {% endif %}</span> </small>
+				{{ content.field_votes }}
+			</div>		
+		</div>
+		<hr class="mt-0 mb-30">
+		<div class="mb-30">
+			{{ node.body.summary }}
+		</div>
+		<hr class="mt-0 mb-30">
+		{% set full_url = url('<current>') %}
+		{% set share = '<div class="shop-sub-btn-cont" ><a href="#" class="post-prev-count dropdown-toggle" data-toggle="dropdown" aria-expanded="false" ><span aria-hidden="true" class="social_share"></span></a><ul class="social-menu dropdown-menu dropdown-menu-right" role="menu"><li><a href="https://www.facebook.com/sharer/sharer.php?u=' ~ full_url['#markup'] ~ '"><span aria-hidden="true" class="social_facebook"></span></a></li><li><a href="https://twitter.com/home?status=' ~ full_url['#markup'] ~ '" target="_blank"><span aria-hidden="true" class="social_twitter"></span></a></li><li><a href="https://plus.google.com/share?url=' ~ full_url['#markup'] ~ '" target="_blank"><span aria-hidden="true" class="fa fa-google-plus"></span></a></li></ul></div>' %}
+		{{ content.add_to_cart|render|str_replace('<span class="share"></span>', share)|raw }}
+		<hr class="mt-0 mb-30">
+		<div class="font-12 lh-20 mb-30">
+			<div>{{ 'SKU'|t }}: {{ content .model|render|strip_tags|trim }}</div>
+			<div>{{ 'Category'|t }}: {{ content.field_product_categories }}</div>
+			<div>Tags: {{ content.field_product_tags }}</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="mb-100">
+		<div class="tabs-3">
+			<ul class="nav nav-tabs xs-tabs-transform bootstrap-tabs">
+				<li class="active">
+					<a href="#one" data-toggle="tab">{{ 'DESCRIPTION'|t }}</a>
+				</li>
+				<li>
+					<a href="#two" data-toggle="tab">{{ 'PARAMETERS'|t }}</a>
+				</li>
+				<li>
+					<a href="#three" data-toggle="tab">{{ 'COMMENT'|t }}</a>
+				</li>
+			</ul>
+			<!-- END nav tabs -->
+			<!-- Tab panes -->
+            <div class="tab-content">
+				<div class="tab-pane fade in active" id="one">
+					{{ content|without('field_product_categories', 'uc_product_image', 'field_product_tags', 'add_to_cart', 'model', 'display_price', 'price', 'field_old_price', 'field_votes', 'field_product_comment', 'links', 'field_product_size', 'field_product_color') }}
+				</div>
+				<div class="tab-pane fade" id="two">
+					<table class="table table-striped table-bordered mt-30">
+						<tbody>
+							<tr>
+								<th scope="row">{{ 'Weight'|t }}</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">{{ 'Size' |t}}</th>
+								<td>{{ content.field_product_size }}</td>
+								<tr>
+								</tr>
+								<th scope="row">{{ 'Colors'|t }}</th>
+								<td>{{ content.field_product_color }}</td>
+							</tr>
+							<tr>
+								<th scope="row">{{ 'Fabric'|t }}</th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="tab-pane fade" id="three">
+					<div class="mb-30">
+						{{ content.field_product_comment }}
+					</div>
+				</div>
+            </div>
+		</div>
+	</div>
+</div>
+{% endif %}

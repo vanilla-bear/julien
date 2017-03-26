@@ -1,0 +1,23 @@
+uuid: ccbf8f07-dde5-4b4c-8944-ef8cac74dfeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menu_style
+    - node.type.homepage
+  module:
+    - options
+id: node.homepage.field_menu_style
+field_name: field_menu_style
+entity_type: node
+bundle: homepage
+label: 'Menu style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: black_transparent
+default_value_callback: ''
+settings: {  }
+field_type: list_string

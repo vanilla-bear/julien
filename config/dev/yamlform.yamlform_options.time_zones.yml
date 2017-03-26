@@ -1,0 +1,9 @@
+uuid: 78675f47-14e9-4354-af44-ab4e1df018da
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: VUu3_vmCXS-tPhOE2ZWvL8fdPL_iCVavOp_S-1HO0IU
+id: time_zones
+label: 'Fuseaux horaires'
+options: ''

@@ -1,0 +1,18 @@
+uuid: 6d8deff2-dc68-4622-ba2b-20b22aeb1274
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: 8prTnT5jjphlu6gWg6PSN3HL8QEr-mWsZt_xOK04FKo
+name: 'Îles Turques-et-Caïques'
+alpha_2: TC
+alpha_3: TCA
+numeric: 796
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city  !postal_code'
+  - '!country_name_if'

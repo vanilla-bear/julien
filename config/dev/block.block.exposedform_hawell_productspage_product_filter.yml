@@ -1,0 +1,48 @@
+uuid: 0d53faf0-b592-4be2-846f-0da44b2f1e79
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.shop_sidebar
+    - views.view._hawell_products
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: exposedform_hawell_productspage_product_filter
+theme: hawell
+region: sidebar
+weight: -6
+provider: null
+plugin: 'views_exposed_filter_block:_hawell_products-page_product_filter'
+settings:
+  id: 'views_exposed_filter_block:_hawell_products-page_product_filter'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: 'Filter by price'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: shop_sidebar
+    context_mapping: {  }

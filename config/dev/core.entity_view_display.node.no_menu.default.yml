@@ -1,0 +1,25 @@
+uuid: 6f12e89f-ece7-4c58-9b3b-19be86c3823d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.no_menu.body
+    - node.type.no_menu
+  module:
+    - text
+    - user
+id: node.no_menu.default
+targetEntityType: node
+bundle: no_menu
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  langcode: true

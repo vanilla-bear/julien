@@ -1,0 +1,43 @@
+uuid: c35a59d2-1461-4684-8d2a-6ab9a1e34b03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.customer_review.body
+    - field.field.node.customer_review.field_company
+    - field.field.node.customer_review.field_image
+    - node.type.customer_review
+  module:
+    - image
+    - text
+    - user
+id: node.customer_review.default
+targetEntityType: node
+bundle: customer_review
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_company:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_image:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  links:
+    weight: 100
+hidden:
+  langcode: true

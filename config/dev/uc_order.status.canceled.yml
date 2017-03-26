@@ -1,0 +1,11 @@
+uuid: b23b22cc-b99e-4089-a599-4d4fc05f6071
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: BCIMFm69Q9S5ijt7YlmwoIOFMkbOQ2lMyjnTdKYzoBc
+id: canceled
+name: Annulé
+state: canceled
+weight: -20
+locked: true

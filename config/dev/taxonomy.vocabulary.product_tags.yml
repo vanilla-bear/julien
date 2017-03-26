@@ -1,0 +1,9 @@
+uuid: be9f67e2-e6c9-4421-a9a2-fca1b49fb44d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product tags'
+vid: product_tags
+description: ''
+hierarchy: 0
+weight: 0

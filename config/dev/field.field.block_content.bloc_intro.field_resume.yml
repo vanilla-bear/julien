@@ -1,0 +1,21 @@
+uuid: 212c4446-d487-4f23-bd13-90843861695a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_intro
+    - field.storage.block_content.field_resume
+  module:
+    - text
+id: block_content.bloc_intro.field_resume
+field_name: field_resume
+entity_type: block_content
+bundle: bloc_intro
+label: Résumé
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

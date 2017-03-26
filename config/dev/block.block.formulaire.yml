@@ -1,0 +1,49 @@
+uuid: c38511f1-4a0e-4917-a37e-4eb2f514610c
+langcode: fr
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:3bf66172-d12f-415e-a474-7459b63c2ab9'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: formulaire
+theme: hawell
+region: '-1'
+weight: 0
+provider: null
+plugin: 'block_content:3bf66172-d12f-415e-a474-7459b63c2ab9'
+settings:
+  id: 'block_content:3bf66172-d12f-415e-a474-7459b63c2ab9'
+  label: formulaire
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

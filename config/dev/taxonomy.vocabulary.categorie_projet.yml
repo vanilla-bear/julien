@@ -1,0 +1,9 @@
+uuid: 7ed0b4b2-10ae-4520-96b5-2a3ba1f299c7
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Catégorie projet'
+vid: categorie_projet
+description: ''
+hierarchy: 0
+weight: 0

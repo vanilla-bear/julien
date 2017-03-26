@@ -1,0 +1,14 @@
+name: Stock
+type: module
+description: 'Manages stock levels of your products.'
+package: Ubercart - extra
+# core: 8.x
+dependencies:
+  - uc_product
+configure: uc_stock.settings
+
+# Information added by Drupal.org packaging script on 2017-02-02
+version: '8.x-4.0-alpha5+6-dev'
+core: '8.x'
+project: 'ubercart'
+datestamp: 1486015091

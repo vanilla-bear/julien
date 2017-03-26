@@ -1,0 +1,33 @@
+uuid: 2809c688-1cfe-4a43-9f49-8bb9494e70e9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.carto
+    - field.field.block_content.carto.field_adresse
+    - field.field.block_content.carto.field_logo
+  module:
+    - image_url_formatter
+id: block_content.carto.default
+targetEntityType: block_content
+bundle: carto
+mode: default
+content:
+  field_adresse:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_logo:
+    weight: 1
+    label: hidden
+    settings:
+      url_type: '1'
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image_url
+hidden:
+  langcode: true

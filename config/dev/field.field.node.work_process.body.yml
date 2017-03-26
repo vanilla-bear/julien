@@ -1,0 +1,22 @@
+uuid: 9d0e484e-ab5a-4bbe-865a-c1012d0ff178
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.work_process
+  module:
+    - text
+id: node.work_process.body
+field_name: body
+entity_type: node
+bundle: work_process
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

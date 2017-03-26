@@ -1,0 +1,98 @@
+uuid: 93f4fbba-8c14-4183-aec4-03f958d81206
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.product.body
+    - field.field.node.product.field_old_price
+    - field.field.node.product.field_on_sale
+    - field.field.node.product.field_page_title_class
+    - field.field.node.product.field_page_title_image
+    - field.field.node.product.field_page_title_style
+    - field.field.node.product.field_product_categories
+    - field.field.node.product.field_product_color
+    - field.field.node.product.field_product_comment
+    - field.field.node.product.field_product_size
+    - field.field.node.product.field_product_tags
+    - field.field.node.product.field_votes
+    - field.field.node.product.uc_product_image
+    - node.type.product
+  module:
+    - uc_product
+    - user
+    - votingapi_widgets
+_core:
+  default_config_hash: GDnAr7_0eDWJMnHjXOZHFOqMVMkFyf7Wly-cEh4XokI
+id: node.product.teaser
+targetEntityType: node
+bundle: product
+mode: teaser
+content:
+  add_to_cart:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  dimensions:
+    type: uc_dimensions
+    label: inline
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  display_price:
+    weight: -1
+    settings: {  }
+    third_party_settings: {  }
+  field_votes:
+    type: voting_api_formatter
+    weight: 0
+    label: above
+    settings:
+      style: bootstrap-stars
+      readonly: 0
+      show_results: 0
+      values: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+  model:
+    type: string
+    label: inline
+    weight: 1
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  price:
+    type: uc_price
+    label: inline
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  uc_product_image:
+    label: hidden
+    type: uc_product_image
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  weight:
+    type: uc_weight
+    label: inline
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  cost: true
+  field_old_price: true
+  field_on_sale: true
+  field_page_title_class: true
+  field_page_title_image: true
+  field_page_title_style: true
+  field_product_categories: true
+  field_product_color: true
+  field_product_comment: true
+  field_product_size: true
+  field_product_tags: true
+  langcode: true

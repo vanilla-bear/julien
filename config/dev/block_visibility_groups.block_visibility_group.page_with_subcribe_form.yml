@@ -1,0 +1,43 @@
+uuid: a3ee1f1e-b121-4ec4-804d-e653f0dc36da
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - php
+    - system
+id: page_with_subcribe_form
+label: 'Page with subcribe form'
+logic: or
+conditions:
+  2db2e399-f3c6-42dc-a615-95c187b76b79:
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      client: client
+      customer_review: customer_review
+      feature: feature
+      no_menu: no_menu
+      page: page
+      portfolio: portfolio
+      service: service
+      skill: skill
+      team: team
+      work_process: work_process
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 2db2e399-f3c6-42dc-a615-95c187b76b79
+  408a0331-062c-458d-ba69-404bed6c5404:
+    id: php
+    php: "<?php\r\n    if (navi_get_http_status() == 404) return TRUE;\r\n?>"
+    negate: 0
+    context_mapping: {  }
+    uuid: 408a0331-062c-458d-ba69-404bed6c5404
+  7f1ad213-4198-4c52-a8a7-a916b0e69bb1:
+    id: request_path
+    pages: "/cart*\r\n/user*\r\n/portfolio*"
+    negate: false
+    context_mapping: {  }
+    uuid: 7f1ad213-4198-4c52-a8a7-a916b0e69bb1
+allow_other_conditions: false

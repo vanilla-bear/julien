@@ -1,0 +1,14 @@
+uuid: 4b48de1c-8290-405a-8d72-dd7aa871cb00
+langcode: en
+status: true
+dependencies: {  }
+name: image_574x334
+label: 'Image 574x334'
+effects:
+  2b393ac5-74fa-4598-88de-a27c91a7a11e:
+    uuid: 2b393ac5-74fa-4598-88de-a27c91a7a11e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 574
+      height: 334

@@ -1,0 +1,51 @@
+uuid: 35abc459-6aff-44b6-8cf1-c7158b4db55e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_construction2
+  content:
+    - 'block_content:basic:f5d17a5f-7f77-40f9-b57f-613353483e8d'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: 'grey-light-bg clearfix'
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockhtmlfeatures3_2
+theme: hawell
+region: section
+weight: -10
+provider: null
+plugin: 'block_content:f5d17a5f-7f77-40f9-b57f-613353483e8d'
+settings:
+  id: 'block_content:f5d17a5f-7f77-40f9-b57f-613353483e8d'
+  label: '[Hawell] Block HTML features 3'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_construction2
+    context_mapping: {  }

@@ -1,0 +1,15 @@
+uuid: 5361ca77-d4e0-4fd7-9ebf-7e6ec2e9656a
+name: 'Renov'' rouard'
+mail: drupalet022@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: fr
+default_langcode: fr
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
+mail_notification: ''

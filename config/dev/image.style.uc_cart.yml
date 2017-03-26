@@ -1,0 +1,16 @@
+uuid: 7b2e3e7d-a815-4ce1-a672-8389993e2dcd
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: _txZn7NWRcIOcIe9-ji9-yzd6FjH3VGZ_8Ewvw26_1Y
+name: uc_cart
+label: 'Cart thumbnail'
+effects:
+  4f41921f-b610-4235-9b69-07383664c15c:
+    uuid: 4f41921f-b610-4235-9b69-07383664c15c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 70
+      height: 70

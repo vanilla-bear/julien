@@ -1,0 +1,49 @@
+uuid: 7508c568-503d-4d14-8ad6-abf93bf9e38b
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:footer_formulaire_de_contact:51946746-8c35-4caf-94fd-cc6fbe04c063'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: blocformulairefooter
+theme: hawell
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:51946746-8c35-4caf-94fd-cc6fbe04c063'
+settings:
+  id: 'block_content:51946746-8c35-4caf-94fd-cc6fbe04c063'
+  label: 'Nous contacter'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

@@ -1,0 +1,28 @@
+uuid: 53c8e856-503e-49c0-b2aa-8660893954a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_product_color
+    - node.type.product
+    - taxonomy.vocabulary.product_color
+id: node.product.field_product_color
+field_name: field_product_color
+entity_type: node
+bundle: product
+label: 'Product color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_color: product_color
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

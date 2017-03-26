@@ -1,0 +1,17 @@
+uuid: 91075ab3-3def-476a-a68b-ae4d07957c51
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: one_page_2
+label: 'One page 2'
+logic: and
+conditions:
+  9688b661-73e9-403e-b392-8676210f31b4:
+    id: request_path
+    pages: /node/139
+    negate: false
+    context_mapping: {  }
+    uuid: 9688b661-73e9-403e-b392-8676210f31b4
+allow_other_conditions: false

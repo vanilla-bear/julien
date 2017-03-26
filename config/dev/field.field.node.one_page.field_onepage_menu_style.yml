@@ -1,0 +1,23 @@
+uuid: 8ea0e57b-75f5-4e1a-87be-1cd0ae016d9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_onepage_menu_style
+    - node.type.one_page
+  module:
+    - options
+id: node.one_page.field_onepage_menu_style
+field_name: field_onepage_menu_style
+entity_type: node
+bundle: one_page
+label: 'Menu style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: white_notransparent
+default_value_callback: ''
+settings: {  }
+field_type: list_string

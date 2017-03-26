@@ -1,0 +1,6 @@
+uuid: ea64a3b2-5a5a-423b-b8ed-83635d7b357a
+langcode: fr
+status: true
+dependencies: {  }
+id: image_titre_sous_titre_texte
+label: 'Image / titre / sous-titre / texte'

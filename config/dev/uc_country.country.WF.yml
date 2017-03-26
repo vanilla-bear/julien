@@ -1,0 +1,18 @@
+uuid: ff4bfa1b-4c4b-4aeb-9782-a184f1e63e3c
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: cxZv8MgIEDEEENZlkSixdguihvfQJqmey9tCayXJAig
+name: 'Wallis et Futuna'
+alpha_2: WF
+alpha_3: WLF
+numeric: 876
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city  !postal_code'
+  - '!country_name_if'

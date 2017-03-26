@@ -1,0 +1,28 @@
+uuid: 0ce5ed70-dfc8-468d-b514-f0d7fa477846
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - uc_product
+  module:
+    - menu_ui
+    - uc_product
+third_party_settings:
+  uc_product:
+    product: true
+    shippable: true
+    image_field: uc_product_image
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: xVXX0hxzEPtCYrHR7R0Oq4rWTRt6CNgi21u-z2e0u6w
+name: Produit
+type: product
+description: 'Utiliser les <em>produits</em> pour représenter les articles en vente sur le site web, incluant toute l''information unique qui peut être attribuée à un numéro de modèle spécifique.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

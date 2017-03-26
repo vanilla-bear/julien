@@ -1,0 +1,8 @@
+uuid: 0ffe0fde-c218-4d25-9ed2-772c14f01e64
+langcode: en
+status: true
+dependencies: {  }
+id: min-menu
+label: 'Min menu'
+description: ''
+locked: false

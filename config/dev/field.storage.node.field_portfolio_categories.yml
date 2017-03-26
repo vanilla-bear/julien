@@ -1,0 +1,20 @@
+uuid: 68f6bca4-9da4-4537-99b9-dd929bce8698
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_portfolio_categories
+field_name: field_portfolio_categories
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

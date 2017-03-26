@@ -1,0 +1,51 @@
+uuid: 1f1408fd-f8e7-4ed7-91b7-8054dede9f6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_construction2
+  content:
+    - 'block_content:basic:2938d01d-6792-4f98-83db-5d75a17be5c8'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: 'grey-light-bg pt-80-b-50-cont'
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockcalltoaction6b
+theme: hawell
+region: section
+weight: -12
+provider: null
+plugin: 'block_content:2938d01d-6792-4f98-83db-5d75a17be5c8'
+settings:
+  id: 'block_content:2938d01d-6792-4f98-83db-5d75a17be5c8'
+  label: '[Hawell] Block call to action 6b'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_construction2
+    context_mapping: {  }

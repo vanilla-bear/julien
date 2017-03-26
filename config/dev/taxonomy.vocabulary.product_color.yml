@@ -1,0 +1,9 @@
+uuid: 163b1a96-2c75-482d-8586-1b9df77c3cac
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product color'
+vid: product_color
+description: ''
+hierarchy: 0
+weight: 0

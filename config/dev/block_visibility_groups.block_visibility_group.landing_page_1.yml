@@ -1,0 +1,17 @@
+uuid: e0409f91-97a9-40a5-a5f7-99861d3a88b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: landing_page_1
+label: 'Landing page 1'
+logic: and
+conditions:
+  2ef9946c-b3c1-444b-aa85-ad1ba3a62b78:
+    id: request_path
+    pages: /node/98
+    negate: false
+    context_mapping: {  }
+    uuid: 2ef9946c-b3c1-444b-aa85-ad1ba3a62b78
+allow_other_conditions: false

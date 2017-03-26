@@ -1,0 +1,18 @@
+uuid: 082358c6-a252-4440-b1d2-cd80ef3d597d
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: 9QiDsZjRY_GeS_AAOUhWB_okWTkd3k-_EMoDE5SKYB4
+name: Vatican
+alpha_2: VA
+alpha_3: VAT
+numeric: 336
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city  !postal_code'
+  - '!country_name_if'

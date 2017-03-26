@@ -1,0 +1,48 @@
+uuid: e3f029a1-e8b1-49de-a046-188300e19626
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_magazine
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - nvt_flickr_feeds
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: 'col-md-3 col-sm-3'
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: flickrblock_2
+theme: hawell
+region: '-1'
+weight: -15
+provider: null
+plugin: flickr_block
+settings:
+  id: flickr_block
+  label: 'FLICKR FEEDS'
+  provider: nvt_flickr_feeds
+  label_display: visible
+  flickr_username: 91212552@N07
+  flickr_limit: '6'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_magazine
+    context_mapping: {  }

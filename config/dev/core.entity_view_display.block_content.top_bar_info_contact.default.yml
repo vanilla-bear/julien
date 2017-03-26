@@ -1,0 +1,37 @@
+uuid: c125f795-bb6b-4260-9bf4-6ba707c5d145
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.top_bar_info_contact
+    - field.field.block_content.top_bar_info_contact.field_adresse_email
+    - field.field.block_content.top_bar_info_contact.field_horaire_d_ouverture
+    - field.field.block_content.top_bar_info_contact.field_telephone
+id: block_content.top_bar_info_contact.default
+targetEntityType: block_content
+bundle: top_bar_info_contact
+mode: default
+content:
+  field_adresse_email:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_horaire_d_ouverture:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_telephone:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  langcode: true

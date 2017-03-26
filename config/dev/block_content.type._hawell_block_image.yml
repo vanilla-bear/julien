@@ -1,0 +1,8 @@
+uuid: cd6d9f7c-5e75-475a-a686-c0475095d4be
+langcode: en
+status: true
+dependencies: {  }
+id: _hawell_block_image
+label: '[Hawell] Block image'
+revision: 0
+description: 'create a block containing only image'

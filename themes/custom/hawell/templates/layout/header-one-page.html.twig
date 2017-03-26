@@ -1,0 +1,89 @@
+<!-- HEADER -->
+{% if menu_style is empty %}
+    {% set menu_style = 'black_transparent' %}
+{% endif %}
+{% if topbar is empty %}
+    {% set topbar = 0 %}
+{% endif %}
+{% if menu_style == 'black_transparent' %}
+	{% set class_header = 'black-header mobile-no-transparent' %}
+	{% set id_header = 'nav' %}
+{% elseif menu_style == 'black_notransparent' %}
+	{% set class_header = 'black-header no-transparent mobile-no-transparent' %}
+	{% set id_header = 'nav' %}
+{% elseif menu_style == 'white_notransparent' %}
+	{% set class_header = 'no-transparent mobile-no-transparent affix-top' %}
+	{% set id_header = 'nav' %}
+{% elseif menu_style == 'white_notransparent' %}
+	{% set class_header = 'no-transparent mobile-no-transparent affix-top' %}
+	{% set id_header = 'nav' %}
+{% else %}
+	{% set class_header = '' %}
+	{% set id_header = 'nav' %}
+{% endif %}
+<header id="{{ id_header }}" class="header header-1 {{ class_header }}">
+	{% if topbar == 1 and page.topbar %}
+	<!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container-m-30 clearfix">
+			{{ page.topbar }}
+        </div>
+    </div>
+	{% endif %}
+	<div class="header-wrapper {% if menu_style == 'black_notransparent' %}grey-dark-bg{% endif %}">
+		<div class="container-m-30 clearfix">
+			<div class="logo-row">				
+				<!-- LOGO -->
+				<div class="logo-container-2">
+				{% if page.header_branding %}
+                    {{ page.header_branding }}
+                {% elseif logo %}
+					<div class="logo-2">
+						<a href="{{ front_page }}" class="clearfix">
+							<img src="{{ logo }}" class="logo-img" alt="{{ site_name }}">
+						</a>
+					</div>
+				{% endif %}
+				</div>
+				<!-- BUTTON -->
+				<div class="menu-btn-respons-container">
+					<button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target="#main-menu .navbar-collapse">
+					<span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- MAIN MENU CONTAINER -->
+		<div class="main-menu-container">			
+			<div class="container-m-30 clearfix">				
+				<!-- MAIN MENU -->
+				<div id="main-menu">
+					<div class="navbar navbar-default" role="navigation">
+						<!-- MAIN MENU LIST -->
+		                <nav class="collapse collapsing navbar-collapse right-1024">
+		                    <ul id="nav-onepage" class="nav navbar-nav">
+								<!-- MENU ITEM -->
+								<li class="current">
+									<a href="#index-link"><div class="main-menu-title">{{ 'HOME'|t }}</div></a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% if page.header_search %}
+		<!-- SEARCH READ DOCUMENTATION -->
+		<ul class="cd-header-buttons">
+			<li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
+		</ul> <!-- cd-header-buttons -->
+		<div id="cd-search" class="cd-search">
+			{{ page.header_search|render|str_replace('form-search', 'form-search top-search-form')|raw }}
+		</div>
+		{% endif %}
+	</div>
+</header>
+<!-- END header-wrapper -->
+{% if menu_style == 'black_notransparent' or menu_style == 'white_notransparent' %}
+<div class="indent-header"></div>
+{% endif %}

@@ -1,0 +1,26 @@
+uuid: 135a2daf-436f-46f6-95b1-5bee6d46653d
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: d3bfs-qW8UqnsOpRKo-5lMWUwhqlX6ifEqxBwLbnKzw
+name: Slovaquie
+alpha_2: SK
+alpha_3: SVK
+numeric: 703
+zones:
+  BC: 'Banskobystricky kraj'
+  BL: 'Bratislavsky kraj'
+  KI: 'Kosicky kraj'
+  NI: 'Nitriansky kraj'
+  PV: 'Presovsky kraj'
+  TC: 'Trenciansky kraj'
+  TA: 'Trnavsky kraj'
+  ZI: 'Zilinsky kraj'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city !zone_code !postal_code'
+  - '!country_name_if'

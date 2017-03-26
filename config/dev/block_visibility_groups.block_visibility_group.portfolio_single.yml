@@ -1,0 +1,19 @@
+uuid: f32f7499-2af6-4092-97b5-12283c14981a
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+id: portfolio_single
+label: 'Portfolio single'
+logic: and
+conditions:
+  4f2a1f41-b3d5-45c5-a4a4-8dcef4796236:
+    id: 'entity_bundle:node'
+    bundles:
+      portfolio: portfolio
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 4f2a1f41-b3d5-45c5-a4a4-8dcef4796236
+allow_other_conditions: false

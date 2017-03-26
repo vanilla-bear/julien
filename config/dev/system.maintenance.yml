@@ -1,0 +1,4 @@
+message: "<h1>SORRY!</h1>\r\n<h2>SERVER MAINTENANCE</h2>\r\n<p>The page is currently unavailable due to the server maintenance. The site is under maintenance probably because we are working to improve this website. Please check back later when the maintenance is over. If you need support, you may simply send us an email at <a class=\"a-invert\" href=\"mailto:email@felius.com\">email@felius.com</a></p>"
+langcode: fr
+_core:
+  default_config_hash: Z5MXifrF77GEAgx0GQ6iWT8wStjFuY8BD9OruofWTJ8

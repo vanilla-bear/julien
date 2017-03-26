@@ -1,0 +1,29 @@
+uuid: fb9dc0c8-9692-4078-b81e-ddf9e66e4234
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.feature.body
+    - field.field.node.feature.field_icon_class
+    - node.type.feature
+  module:
+    - text
+    - user
+id: node.feature.default
+targetEntityType: node
+bundle: feature
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_icon_class: true
+  langcode: true

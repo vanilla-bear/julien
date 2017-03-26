@@ -1,0 +1,17 @@
+uuid: 080903a6-3911-4945-ae32-484e6ac798be
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: shop_sidebar
+label: 'Shop sidebar'
+logic: or
+conditions:
+  973432d7-4d92-4386-a87b-00da5d65bd16:
+    id: request_path
+    pages: "/shop*\r\n/product*"
+    negate: false
+    context_mapping: {  }
+    uuid: 973432d7-4d92-4386-a87b-00da5d65bd16
+allow_other_conditions: false

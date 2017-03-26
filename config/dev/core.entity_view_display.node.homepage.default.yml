@@ -1,0 +1,39 @@
+uuid: 441f488b-1649-4aef-98a0-8b237c806828
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.homepage.body
+    - field.field.node.homepage.field_boxed
+    - field.field.node.homepage.field_footer_style
+    - field.field.node.homepage.field_logo
+    - field.field.node.homepage.field_menu_style
+    - field.field.node.homepage.field_sidebar
+    - field.field.node.homepage.field_top_bar
+    - node.type.homepage
+  module:
+    - text
+    - user
+id: node.homepage.default
+targetEntityType: node
+bundle: homepage
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_boxed: true
+  field_footer_style: true
+  field_logo: true
+  field_menu_style: true
+  field_sidebar: true
+  field_top_bar: true
+  langcode: true

@@ -1,0 +1,17 @@
+uuid: 8a7a0b7f-cdce-4efd-b80c-f33ac9b2dbae
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_cart
+label: 'Home cars'
+logic: and
+conditions:
+  4c373a40-d83f-4233-9e12-2420761dc43c:
+    id: request_path
+    pages: /node/74
+    negate: false
+    context_mapping: {  }
+    uuid: 4c373a40-d83f-4233-9e12-2420761dc43c
+allow_other_conditions: false

@@ -1,0 +1,25 @@
+uuid: 3b5f12e9-2a6b-487d-9d4e-29e89652e581
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: Bd9dhwrBFSc1heopAaXwCGWyqU3Nl-ruesrEXzcaeQ0
+name: 'Îles Caïmans'
+alpha_2: KY
+alpha_3: CYM
+numeric: 136
+zones:
+  BT: 'Bodden Town'
+  CB: 'Cayman Brac'
+  EE: 'East End'
+  GT: 'George Town'
+  SO: 'Little Cayman'
+  NS: 'North Side'
+  WB: 'West Bay'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

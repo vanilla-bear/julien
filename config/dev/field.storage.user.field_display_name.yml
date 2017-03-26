@@ -1,0 +1,21 @@
+uuid: cdc04b1f-96d8-454d-801c-e2a50fda07c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_display_name
+field_name: field_display_name
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

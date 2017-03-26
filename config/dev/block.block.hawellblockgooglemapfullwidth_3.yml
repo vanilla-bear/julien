@@ -1,0 +1,51 @@
+uuid: 19e44f5d-6693-4fc2-848c-77266d08c897
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.contact
+  content:
+    - 'block_content:basic:914b423f-d421-4f84-8ed3-d39cecf41184'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockgooglemapfullwidth_3
+theme: hawell
+region: section
+weight: -7
+provider: null
+plugin: 'block_content:914b423f-d421-4f84-8ed3-d39cecf41184'
+settings:
+  id: 'block_content:914b423f-d421-4f84-8ed3-d39cecf41184'
+  label: '[Hawell] Block google map full width'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: contact
+    context_mapping: {  }

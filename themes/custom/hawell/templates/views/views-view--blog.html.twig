@@ -1,0 +1,37 @@
+{% set blog_layout_temp = 'layout'|get_path_param %}
+{% if blog_layout_temp %}
+	{% set blog_layout = blog_layout_temp %}
+{% endif %}
+{% if blog_layout is empty %}
+	{% set blog_layout = 'fullwidth' %}
+{% endif %}
+{% if view.current_display == 'blog_all' %}
+	{% if rows %}
+		{% if blog_layout == 'masonry2col' %}
+			{{ drupal_view('blog', 'embed_blog_masonry_2col') }}
+		{% elseif blog_layout == 'masonry3col' %}
+			{{ drupal_view('blog', 'embed_blog_masonry_3col') }}
+		{% elseif blog_layout == 'masonry4col' %}
+			{{ drupal_view('blog', 'embed_blog_masonry_4col') }}
+		{% elseif blog_layout == 'fullwidth' %}
+			{{ drupal_view('blog', 'embed_blog_fullwidth') }}
+		{% elseif blog_layout == 'smallimage' %}
+			{{ drupal_view('blog', 'embed_blog_small_image') }}
+		{% else %}
+			{{ drupal_view('blog', 'embed_blog_sidebar') }}
+		{% endif %}		
+	{% endif %}
+	{% if pager %}
+		<!-- PAGINATION -->
+     	<div class="mt-0 navi-pager">
+			{{ pager }}
+		</div>
+	{% endif %}
+{% elseif view.current_display == 'embed_blog_small_image' %}
+	{{ rows|render|str_replace_first('<div class="col-md-6 wow fadeIn pb-70 first"', '<div class="row"><div class="col-md-6 wow fadeIn pb-70"')|str_replace('<div class="col-md-6 wow fadeIn pb-70 first"', '</div><div class="row"><div class="col-md-6 wow fadeIn pb-70"')|concatenation('</div>')|raw }}
+{% elseif view.current_display == 'embed_blog_for_taxonomy_term' %}
+	{{ rows }}
+	{{ pager }}
+{% else %}
+	{{ rows }}
+{% endif %}

@@ -1,0 +1,115 @@
+uuid: 4622c8c1-163e-422b-a9c9-4a162b47b42f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.one_page.body
+    - field.field.node.one_page.field_footer_style
+    - field.field.node.one_page.field_logo
+    - field.field.node.one_page.field_onepage_menu_style
+    - field.field.node.one_page.field_top_bar
+    - image.style.thumbnail
+    - node.type.one_page
+  module:
+    - field_group
+    - image
+    - imce
+    - path
+    - text
+third_party_settings:
+  field_group:
+    group_header_settings:
+      children:
+        - field_onepage_menu_style
+        - field_logo
+        - field_top_bar
+      parent_name: ''
+      weight: 7
+      label: 'Header settings'
+      format_type: details
+      format_settings:
+        open: false
+        required_fields: true
+        classes: ''
+        id: ''
+id: node.one_page.default
+targetEntityType: node
+bundle: one_page
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 6
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  field_footer_style:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_logo:
+    weight: 9
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+  field_onepage_menu_style:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_top_bar:
+    weight: 10
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,704 @@
+{% if view.current_display == 'block_portfolio_masonry_style' %}
+	{% if rows %}
+	<div class="relative">
+		{% set nodes = rows.0.0['#rows'] %}
+		{% set n = 0 %}
+		<!-- ITEMS GRID -->
+        <ul class="port-grid clearfix masonry" id="items-grid">
+		{% for item in nodes %}
+			{% set n = n + 1 %}
+			{% set node = item['#row'].nid|str_replace(' ', '')|node_load %}
+			<li class="port-item mix">
+				<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+					<div class="port-img-overlay">
+					{% if n == 1 or n == 6 or n == 7 or n == 8 or n == 13 or n ==  14 %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x415') }}" alt="{{ node.field_images.0.alt }}" >
+					{% elseif n == 3 or n == 10 %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x1245') }}" alt="{{ node.field_images.0.alt }}" >
+					{% else %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x830') }}" alt="{{ node.field_images.0.alt }}" >
+					{% endif %}
+					</div>
+				</a>
+				<div class="port-overlay-cont">
+					<div class="port-title-cont">
+						<h3><a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.title.value }}</a></h3>
+						<span>{{ node.field_portfolio_categories.value }}</span>
+					</div>
+					<div class="port-btn-cont">
+						<a href="{{ file_url(node.field_images.0.entity.fileuri) }}" class="lightbox mr-20" >
+							<div aria-hidden="true" class="icon_search"></div>
+						</a>
+						<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+							<div aria-hidden="true" class="icon_link"></div>							
+						</a>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+        </ul>
+	</div>
+	{% endif %}
+	{{ footer }}
+{% elseif view.current_display == 'block_portfolio_masonry_style4' %}
+	{% if rows %}
+	<div class="relative">
+		{% set nodes = rows.0.0['#rows'] %}
+		{% set n = 0 %}
+		<!-- ITEMS GRID -->
+        <ul class="port-grid clearfix masonry" id="items-grid">
+		{% for item in nodes %}
+			{% set n = n + 1 %}
+			{% set node = item['#row'].nid|str_replace(' ', '')|node_load %}
+			<li class="port-item mix">
+				<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+					<div class="port-img-overlay">
+					{% if n == 2 or n == 4 or n == 5 %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x830') }}" alt="{{ node.field_images.0.alt }}" >
+					{% elseif n == 3 %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x1245') }}" alt="{{ node.field_images.0.alt }}" >
+					{% else %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x415') }}" alt="{{ node.field_images.0.alt }}" >
+					{% endif %}
+					</div>
+				</a>
+				<div class="port-overlay-cont">
+					<div class="port-title-cont">
+						<h3 class="uppercase"><a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.title.value }}</a></h3>
+						<span>
+						{% for term in node.field_portfolio_categories %}
+							{% set tid = term.target_id %}
+							{% set  term = term.target_id|term_load %}
+							{% if loop.last %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a>
+							{% else %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a> / 
+							{% endif %}
+						{% endfor %}
+						</span>
+					</div>
+					<div class="port-btn-cont">
+						<a href="{{ file_url(node.field_images.0.entity.fileuri) }}" class="lightbox mr-20" ><div aria-hidden="true" class="icon_search"></div></a>
+						<a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><div aria-hidden="true" class="icon_link"></div></a>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+        </ul>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'embed_portfolio_masonry_2col' %}
+	{% if rows %}
+		{% set nodes = rows.0.0['#rows'] %}
+		{% set n = 0 %}
+		<!-- ITEMS GRID -->
+        <ul class="port-grid port-grid-2 masonry clearfix" id="items-grid">
+		{% for item in nodes %}
+			{% set n = n + 1 %}
+			{% set node = item['#row'].nid|str_replace(' ', '')|node_load %}
+			{% set arr_tid = '' %}
+			{% for term in node.field_portfolio_categories %}
+				{% set arr_tid = arr_tid ~ ' cat' ~ term.target_id %}
+			{% endfor %}
+			<li class="port-item mix {{ arr_tid }}">
+				<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+					<div class="port-img-overlay">
+					{% if n == 4 or n == 9 %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x830') }}" alt="{{ node.field_images.0.alt }}" >
+					{% else %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x415') }}" alt="{{ node.field_images.0.alt }}" >
+					{% endif %}
+					</div>
+				</a>
+				<div class="port-overlay-cont">
+					<div class="port-title-cont">
+						<h3 class="uppercase"><a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.title.value }}</a></h3>
+						<span>
+						{% for term in node.field_portfolio_categories %}
+							{% set tid = term.target_id %}
+							{% set  term = term.target_id|term_load %}
+							{% if loop.last %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a>
+							{% else %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a> / 
+							{% endif %}
+						{% endfor %}
+						</span>
+					</div>
+					<div class="port-btn-cont">
+						<a href="{{ file_url(node.field_images.0.entity.fileuri) }}" class="lightbox mr-20" ><div aria-hidden="true" class="icon_search"></div></a>
+						<a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><div aria-hidden="true" class="icon_link"></div></a>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+        </ul>
+	{% endif %}
+{% elseif view.current_display == 'embed_portfolio_masonry_3col' %}
+	{% if rows %}
+		{% set nodes = rows.0.0['#rows'] %}
+		{% set n = 0 %}
+		<!-- ITEMS GRID -->
+        <ul class="port-grid port-grid-3 masonry clearfix" id="items-grid">
+		{% for item in nodes %}
+			{% set n = n + 1 %}
+			{% set node = item['#row'].nid|str_replace(' ', '')|node_load %}
+			{% set arr_tid = '' %}
+			{% for term in node.field_portfolio_categories %}
+				{% set arr_tid = arr_tid ~ ' cat' ~ term.target_id %}
+			{% endfor %}
+			<li class="port-item mix {{ arr_tid }}">
+				<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+					<div class="port-img-overlay">
+					{% if n == 1 or n == 4 or n == 8 or n == 11 %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x830') }}" alt="{{ node.field_images.0.alt }}" >
+					{% else %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x415') }}" alt="{{ node.field_images.0.alt }}" >
+					{% endif %}
+					</div>
+				</a>
+				<div class="port-overlay-cont">
+					<div class="port-title-cont">
+						<h3 class="uppercase"><a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.title.value }}</a></h3>
+						<span>
+						{% for term in node.field_portfolio_categories %}
+							{% set tid = term.target_id %}
+							{% set  term = term.target_id|term_load %}
+							{% if loop.last %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a>
+							{% else %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a> / 
+							{% endif %}
+						{% endfor %}
+						</span>
+					</div>
+					<div class="port-btn-cont">
+						<a href="{{ file_url(node.field_images.0.entity.fileuri) }}" class="lightbox mr-20" ><div aria-hidden="true" class="icon_search"></div></a>
+						<a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><div aria-hidden="true" class="icon_link"></div></a>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+        </ul>
+	{% endif %}
+{% elseif view.current_display == 'embed_portfolio_masonry_4col' %}
+	{% if rows %}
+		{% set nodes = rows.0.0['#rows'] %}
+		{% set n = 0 %}
+		<!-- ITEMS GRID -->
+        <ul class="port-grid masonry clearfix" id="items-grid">
+		{% for item in nodes %}
+			{% set n = n + 1 %}
+			{% set node = item['#row'].nid|str_replace(' ', '')|node_load %}
+			{% set arr_tid = '' %}
+			{% for term in node.field_portfolio_categories %}
+				{% set arr_tid = arr_tid ~ ' cat' ~ term.target_id %}
+			{% endfor %}
+			<li class="port-item mix {{ arr_tid }}">
+				<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+					<div class="port-img-overlay">
+					{% if n == 2 or n == 5 or n == 7 or n == 11 or n == 14 or n == 16 %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x830') }}" alt="{{ node.field_images.0.alt }}" >
+					{% else %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x415') }}" alt="{{ node.field_images.0.alt }}" >
+					{% endif %}
+					</div>
+				</a>
+				<div class="port-overlay-cont">
+					<div class="port-title-cont">
+						<h3 class="uppercase"><a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.title.value }}</a></h3>
+						<span>
+						{% for term in node.field_portfolio_categories %}
+							{% set tid = term.target_id %}
+							{% set  term = term.target_id|term_load %}
+							{% if loop.last %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a>
+							{% else %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a> / 
+							{% endif %}
+						{% endfor %}
+						</span>
+					</div>
+					<div class="port-btn-cont">
+						<a href="{{ file_url(node.field_images.0.entity.fileuri) }}" class="lightbox mr-20" ><div aria-hidden="true" class="icon_search"></div></a>
+						<a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><div aria-hidden="true" class="icon_link"></div></a>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+        </ul>
+	{% endif %}
+{% elseif view.current_display == 'embed_portfolio_masonry_5col' %}
+	{% if rows %}
+		{% set nodes = rows.0.0['#rows'] %}
+		{% set n = 0 %}
+		<!-- ITEMS GRID -->
+        <ul class="port-grid port-grid-5 masonry clearfix" id="items-grid">
+		{% for item in nodes %}
+			{% set n = n + 1 %}
+			{% set node = item['#row'].nid|str_replace(' ', '')|node_load %}
+			{% set arr_tid = '' %}
+			{% for term in node.field_portfolio_categories %}
+				{% set arr_tid = arr_tid ~ ' cat' ~ term.target_id %}
+			{% endfor %}
+			<li class="port-item mix {{ arr_tid }}">
+				<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+					<div class="port-img-overlay">
+					{% if n == 1 or n == 4 or n == 7 or n == 13 or n == 16 or n == 19 %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x830') }}" alt="{{ node.field_images.0.alt }}" >
+					{% else %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x415') }}" alt="{{ node.field_images.0.alt }}" >
+					{% endif %}
+					</div>
+				</a>
+				<div class="port-overlay-cont">
+					<div class="port-title-cont">
+						<h3 class="uppercase"><a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.title.value }}</a></h3>
+						<span>
+						{% for term in node.field_portfolio_categories %}
+							{% set tid = term.target_id %}
+							{% set  term = term.target_id|term_load %}
+							{% if loop.last %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a>
+							{% else %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a> / 
+							{% endif %}
+						{% endfor %}
+						</span>
+					</div>
+					<div class="port-btn-cont">
+						<a href="{{ file_url(node.field_images.0.entity.fileuri) }}" class="lightbox mr-20" ><div aria-hidden="true" class="icon_search"></div></a>
+						<a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><div aria-hidden="true" class="icon_link"></div></a>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+        </ul>
+	{% endif %}
+{% elseif view.current_display == 'block_portfolio_masonry_style2' %}
+	{% if rows %}
+	<div class="relative">
+		{% if header %}
+		<div class="container">
+            <div class="mb-50">
+				{{ header }}
+            </div>
+        </div>
+		{% endif %}
+		{% set nodes = rows.0.0['#rows'] %}
+		{% set n = 0 %}
+		<!-- ITEMS GRID -->
+        <ul class="port-grid clearfix masonry" id="items-grid">
+		{% for item in nodes %}
+			{% set n = n + 1 %}
+			{% set node = item['#row'].nid|str_replace(' ', '')|node_load %}
+			<li class="port-item mix">
+				<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+					<div class="port-img-overlay">
+					{% if n == 1 or n == 6 or n == 7 or n == 8 or n == 13 or n ==  14 %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x415') }}" alt="{{ node.field_images.0.alt }}" >
+					{% elseif n == 3 or n == 10 %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x1245') }}" alt="{{ node.field_images.0.alt }}" >
+					{% else %}
+						<img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_650x830') }}" alt="{{ node.field_images.0.alt }}" >
+					{% endif %}
+					</div>
+				</a>
+				<div class="port-overlay-cont">
+					<div class="port-title-cont">
+						<h3><a href="{{ path('entity.node.canonical', {'node': node.id}) }}">{{ node.title.value }}</a></h3>
+						<span>{{ node.field_portfolio_categories.value }}</span>
+					</div>
+					<div class="port-btn-cont">
+						<a href="{{ file_url(node.field_images.0.entity.fileuri) }}" class="lightbox mr-20" ><div aria-hidden="true" class="icon_search"></div></a>
+						<a href="{{ path('entity.node.canonical', {'node': node.id}) }}"><div aria-hidden="true" class="icon_link"></div></a>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+        </ul>
+	</div>
+	{% endif %}
+	{{ footer }}
+{% elseif view.current_display == 'block_portfolio_grid_style2' %}
+	{% if rows %}
+	<div class="relative">
+		{% if header %}
+		<div class="mt-50 mb-50 text-center">
+			{{ header }}
+		</div>
+		{% endif %}
+		{{ rows }}
+	</div>
+	{% endif %}
+	{{ footer }}
+{% elseif view.current_display == 'block_portfolio_masonry_style3' %}
+	{% if rows %}
+	<div class="relative">         
+        <!-- ITEMS GRID -->
+        <ul class="port-grid clearfix" id="items-grid">
+		{% if header %}
+			<li class="port-item port-item-width-2 mix">
+				{{ header }}
+			</li>
+		{% endif %}
+			{{ rows }}
+			{{ attachment_after }}
+        </ul>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'page_portfolio' %}
+	{% set portfolio_style_temp = 'style'|get_path_param %}
+	{% if portfolio_style_temp %}
+		{% set portfolio_style = portfolio_style_temp %}
+	{% endif %}
+	{% if portfolio_style is empty %}
+		{% set portfolio_style = 'grid' %}
+	{% endif %}
+	{% set terms = get_list_term('portfolio_categories') %}
+	{% if portfolio_style == 'grid' %}
+		<div class="p-140-cont">
+		{% for term in terms %}
+			<div class="container">
+            	<div class="row mb-80">
+            		<!-- SIDEBAR -->
+	              	<div class="col-sm-4 col-md-3">
+		                <h2 class="section-title-3 mb-30 uppercase">{{ term.name }}</h2>
+		                <div class="mb-50">
+		                  	<p>{{ term.description__value }}</p>
+		                </div>
+		            </div>
+		            <div class="col-sm-8 col-md-offset-1 ">
+                		<div class="row">
+                			{% set tid = term.tid %}
+							{{ drupal_view('_hawell_portfolio', 'embed_portfolio_in_term', tid) }}
+              			</div>
+              		</div>
+				</div>
+			</div>
+			{% if loop.last == false %}
+			<!-- DIVIDER -->
+          	<hr class="mt-0 mb-80">
+          	{% endif %}
+		{% endfor %}
+		</div>
+	{% elseif portfolio_style == 'boxednospace2col' %}
+	<div class="grey-light-bg clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="container white-bg plr-30 pt-50 pb-40 ">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter ">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_boxed_nospace_2col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'boxednospace3col' %}
+	<div class="grey-light-bg clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="container white-bg plr-30 pt-50 pb-40 ">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter ">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_boxed_nospace_3col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'boxednospace4col' %}
+	<div class="grey-light-bg clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="container white-bg plr-30 pt-50 pb-40 ">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter ">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_boxed_nospace_4col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'boxednospace5col' %}
+	<div class="grey-light-bg clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="container white-bg plr-30 pt-50 pb-40 ">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter ">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_boxed_nospace_5col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'boxedspace2col' %}
+	<div class="grey-light-bg clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="container white-bg plr-30 pt-50 pb-40 ">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter ">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_boxed_space_2col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'boxedspace3col' %}
+	<div class="grey-light-bg clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="container white-bg plr-30 pt-50 pb-40 ">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter ">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_boxed_space_3col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'boxedspace4col' %}
+	<div class="grey-light-bg clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="container white-bg plr-30 pt-50 pb-40 ">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter ">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_boxed_space_4col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'widenospace2col' %}
+	<div class="grey-light-bg plr-30 plr-0-767 clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="white-bg pt-50 ">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter text-center text-left-767">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_wide_nospace_2col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'widenospace3col' %}
+	<div class="grey-light-bg plr-30 plr-0-767 clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="white-bg pt-50 ">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter text-center text-left-767">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_wide_nospace_3col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'widenospace4col' %}
+	<div class="grey-light-bg plr-30 plr-0-767 clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="white-bg pt-50 ">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter text-center text-left-767">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_wide_nospace_4col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'widenospace5col' %}
+	<div class="grey-light-bg plr-30 plr-0-767 clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="white-bg pt-50 ">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter text-center text-left-767">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_wide_nospace_5col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'widespace2col' %}
+	<div class="grey-light-bg plr-30 plr-0-767 clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="white-bg plr-30 pt-50 pb-20">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter text-center text-left-767">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_wide_space_2col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'widespace3col' %}
+	<div class="grey-light-bg plr-30 plr-0-767 clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="white-bg plr-30 pt-50 pb-20">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter text-center text-left-767">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_wide_space_3col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'widespace4col' %}
+	<div class="grey-light-bg plr-30 plr-0-767 clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="white-bg plr-30 pt-50 pb-20">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter text-center text-left-767">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_wide_space_4col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'widespace5col' %}
+	<div class="grey-light-bg plr-30 plr-0-767 clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="white-bg plr-30 pt-50 pb-20">        
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter text-center text-left-767">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_wide_space_5col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'masonry2col' %}
+	<div class="grey-light-bg plr-30 plr-0-767 clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="white-bg plr-30 pt-50 pb-30">      
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter text-center text-left-767">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_masonry_2col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'masonry3col' %}
+	<div class="grey-light-bg plr-30 plr-0-767 clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="white-bg plr-30 pt-50 pb-30">      
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter text-center text-left-767">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_masonry_3col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'masonry4col' %}
+	<div class="grey-light-bg plr-30 plr-0-767 clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="white-bg plr-30 pt-50 pb-30">      
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter text-center text-left-767">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_masonry_4col') }}
+          	</div>
+        </div>
+    </div>
+    {% elseif portfolio_style == 'masonry5col' %}
+	<div class="grey-light-bg plr-30 plr-0-767 clearfix">    
+        <!-- COTENT CONTAINER -->
+        <div class="white-bg plr-30 pt-50 pb-30">      
+          	<div class="relative">
+				<!-- PORTFOLIO FILTER -->                    
+	            <div class="port-filter text-center text-left-767">
+	              	<a href="#" class="filter active" data-filter="*">{{ 'All Projects'|t }}</a>
+	              	{% for term in terms %}
+	              	<a href="#" class="filter" data-filter=".cat{{ term.tid }}">{{ term.name }}</a>
+	              	{% endfor %}
+	            </div>   
+				{{ drupal_view('_hawell_portfolio', 'embed_portfolio_masonry_5col') }}
+          	</div>
+        </div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_related_portfolio' %}
+	{% if rows %}
+	<div class="container">
+	{% if header %}
+		<h4 class="blog-page-title mt-0 mb-40">{{ header }}</h4>
+	{% endif %}
+		{{ rows }}
+	</div>
+	{% endif %}
+{% else %}
+	{{ header }}
+	{{ rows }}
+	{{ footer }}
+	{{ pager }}
+{% endif %}

@@ -1,0 +1,46 @@
+uuid: 2c1c6f08-e9cc-4e6e-977c-3ca68f8712a6
+langcode: fr
+status: false
+dependencies:
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - yamlform
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: formulaire_2
+theme: hawell
+region: '-1'
+weight: 0
+provider: null
+plugin: yamlform_block
+settings:
+  id: yamlform_block
+  label: Formulaire
+  provider: yamlform
+  label_display: visible
+  yamlform_id: contact_form_1
+  default_data: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

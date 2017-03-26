@@ -1,0 +1,20 @@
+uuid: d6c03139-f56e-4b75-8ad8-c89ac7c11351
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: y-M2qWgbI3DNeakyPREcev-dJfvmR3p3d83dAYHi8dg
+name: 'Sao Tomé-et-Principe'
+alpha_2: ST
+alpha_3: STP
+numeric: 678
+zones:
+  ST-P: Príncipe
+  ST-S: 'São Tomé'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

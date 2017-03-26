@@ -1,0 +1,14 @@
+uuid: 026376a9-6483-4f78-aba2-3304f5a5f0e2
+langcode: en
+status: true
+dependencies: {  }
+name: image_256x268
+label: 'Image 256x268'
+effects:
+  cbfe6ca6-36bc-400f-88a9-0175be28cf81:
+    uuid: cbfe6ca6-36bc-400f-88a9-0175be28cf81
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 256
+      height: 268

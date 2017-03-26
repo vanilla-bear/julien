@@ -1,0 +1,19 @@
+uuid: d17f6aac-a007-4c6e-8490-c0fb846c1757
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.top_bar_info_contact
+    - field.storage.block_content.field_adresse_email
+id: block_content.top_bar_info_contact.field_adresse_email
+field_name: field_adresse_email
+entity_type: block_content
+bundle: top_bar_info_contact
+label: 'Adresse email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

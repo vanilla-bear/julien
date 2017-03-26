@@ -1,0 +1,23 @@
+uuid: 0d6f90e2-fa71-4cae-bebe-c0953e2ba102
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_title_style
+    - node.type.page
+  module:
+    - options
+id: node.page.field_page_title_style
+field_name: field_page_title_style
+entity_type: node
+bundle: page
+label: 'Page title style'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: small_grey
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,14 @@
+uuid: e9edd9df-cd37-40d7-94e7-c2ead64e904f
+langcode: en
+status: true
+dependencies: {  }
+name: image_960x480
+label: 'Image 960x480'
+effects:
+  bcd266e6-3394-4a21-be3e-7be05090379c:
+    uuid: bcd266e6-3394-4a21-be3e-7be05090379c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 960
+      height: 480

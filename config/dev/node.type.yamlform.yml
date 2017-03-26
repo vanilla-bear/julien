@@ -1,0 +1,23 @@
+uuid: 6f4a05b9-8f08-4ce7-97b2-eb0fb46d5ff3
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - yamlform
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: Izdk0R-F0QGZmHo5H3soErrggImIV6a_TwEUu641Y6k
+name: Formulaire
+type: yamlform
+description: 'A basic page with a form attached.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

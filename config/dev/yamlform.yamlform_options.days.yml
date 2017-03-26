@@ -1,0 +1,9 @@
+uuid: 60ad0595-4bf6-417e-8404-16a1315f189d
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dMkS8VI_XKn04dSgE6iGda2LDbYyin5Sr18Xd4MyN6A
+id: days
+label: Jours
+options: "Sunday: Sunday\nMonday: Monday\nTuesday: Tuesday\nWednesday: Wednesday\nThursday: Thursday\nFriday: Friday\nSaturday: Saturday\n"

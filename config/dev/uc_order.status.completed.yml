@@ -1,0 +1,11 @@
+uuid: 2a98a49a-adaf-453a-b655-f159edb7aa3a
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: IygPSKjBfg1oOmV1_aU1jDC7UWd-qTSWf6xGgGriloM
+id: completed
+name: Terminé
+state: completed
+weight: 20
+locked: true

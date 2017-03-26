@@ -1,0 +1,75 @@
+{% if blog_menu_style is not empty %}
+	{% set menu_style = blog_menu_style %}
+{% endif %}
+{% if blog_topbar is not empty %}
+	{% set topbar = blog_topbar %}
+{% endif %}
+{% if blog_footer_style is not empty %}
+	{% set footer_style = blog_footer_style %}
+{% endif %}
+{% if blog_page_title_style is not empty %}
+	{% set page_title_style = blog_page_title_style %}
+{% endif %}
+{% if blog_page_title_class is not empty %}
+	{% set page_title_class = blog_page_title_class %}
+{% endif %}
+{% if blog_page_title_bgimage is not empty %}
+	{% set page_title_image = blog_page_title_bgimage %}
+{% endif %}
+{% set blog_layout_temp = 'layout'|get_path_param %}
+{% if blog_layout_temp %}
+	{% set blog_layout = blog_layout_temp %}
+{% endif %}
+{% if blog_layout is empty %}
+	{% set blog_layout = 'fullwidth' %}
+{% endif %}
+{% if blog_slogan is not empty %}
+	{% set slogan = blog_slogan %}
+{% endif %}
+{% include directory ~ '/templates/layout/header-page.html.twig' %}
+<!-- COTENT CONTAINER -->
+<div class="container p-140-cont">
+{% if blog_layout == 'masonry2col' or blog_layout == 'masonry3col' or blog_layout == 'masonry4col' %}
+	<div class="row masonry">
+		{{ messages }}
+		{{ page.content }}
+	</div>
+{% elseif blog_layout == 'fullwidth' %}
+	<div class="row">
+		{{ messages }}          
+		<!-- CONTENT -->
+		<div class="col-sm-12 blog-main-posts">
+			{{ page.content }}
+		</div>
+	</div>
+{% elseif blog_layout == 'leftsidebar' %}
+    <div class="row">
+	{% if page.sidebar %}
+		<!-- SIDEBAR -->
+        <div class="col-sm-4 col-md-3 ">
+			{{ page.sidebar }}
+        </div>
+	{% endif %}
+		<!-- CONTENT -->
+       	<div class="col-sm-8 col-md-offset-1 blog-main-posts">
+			{{ page.content }}
+       	</div>
+	</div>
+{% else %}
+<div class="row">          
+	<!-- CONTENT -->
+	<div class="col-sm-8 blog-main-posts">
+		{{ page.content }}
+	</div>
+	{% if page.sidebar %}
+	<!-- SIDEBAR -->
+    <div class="col-sm-4 col-md-3 col-md-offset-1">
+		{{ page.sidebar }}
+    </div>
+	{% endif %}
+</div>
+{% endif %}
+</div>
+{{ page.section }}
+{{ page.page_bt }}
+{% include directory ~ '/templates/layout/footer.html.twig' %}

@@ -1,0 +1,24 @@
+uuid: 5d6efae9-0fa0-46b8-94e9-20642da57895
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type._hawell_block_image
+    - field.field.block_content._hawell_block_image.field_image
+  module:
+    - image
+id: block_content._hawell_block_image.default
+targetEntityType: block_content
+bundle: _hawell_block_image
+mode: default
+content:
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden:
+  langcode: true

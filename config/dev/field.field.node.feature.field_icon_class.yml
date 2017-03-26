@@ -1,0 +1,19 @@
+uuid: 48fdeb3d-9e08-4981-9b43-2ad652e906eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_icon_class
+    - node.type.feature
+id: node.feature.field_icon_class
+field_name: field_icon_class
+entity_type: node
+bundle: feature
+label: 'Icon class'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,34 @@
+uuid: b8839290-1b02-44f8-b47b-d95c8218b360
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: w5_s0b6_Uwdn6Su2hFIi1zSv1pVQlXV0Nv6IWS9bNRY
+name: Allemagne
+alpha_2: DE
+alpha_3: DEU
+numeric: 276
+zones:
+  BAW: Baden-Württemberg
+  BAY: Bayern
+  BER: Berlin
+  BRG: Brandenburg
+  BRE: Bremen
+  HAM: Hamburg
+  HES: Hessen
+  MEC: Mecklembourg-Poméranie-Occidentale
+  NDS: Niedersachsen
+  NRW: Nordrhein-Westfalen
+  RHE: Rheinland-Pfalz
+  SAR: Saarland
+  SAS: Sachsen
+  SAC: Sachsen-Anhalt
+  SCN: Schleswig-Holstein
+  THE: Thüringen
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!postal_code !city'
+  - '!country_name_if'

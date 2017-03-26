@@ -1,0 +1,22 @@
+uuid: b5ca446e-bf08-4449-9e60-c447cc20a537
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: EiqxFRp8p_9zyIFNbgNAwzrTk3GHvwRWJ9aUBSubKuE
+name: Bahreïn
+alpha_2: BH
+alpha_3: BHR
+numeric: 48
+zones:
+  BH-13: 'Al Manamah'
+  BH-14: 'Al Janubiyah'
+  BH-15: 'Al Muharraq'
+  BH-16: 'Al Wusta'
+  BH-17: 'Ash Shamaliyah'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1 !street2'
+  - '!zone_name !postal_code'
+  - '!country_name_if'

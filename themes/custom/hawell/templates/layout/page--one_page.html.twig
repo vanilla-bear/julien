@@ -1,0 +1,17 @@
+{% if node.field_onepage_menu_style is not empty %}
+    {% set menu_style = node.field_onepage_menu_style.value %}
+{% endif %}
+{% if node.field_top_bar is not empty %}
+    {% set topbar = node.field_top_bar.value %}
+{% endif %}
+{% if node is defined and node.field_logo is not empty %}
+    {% set logo = file_url(node.field_logo.entity.fileuri) %}
+{% endif %}
+{% if node.field_footer_style is not empty %}
+    {% set footer_style = node.field_footer_style.value %}
+{% endif %}
+{% include directory ~ '/templates/layout/header-one-page.html.twig' %}
+{{ page.slideshow }}
+{{ page.content }}
+{{ page.section }}
+{% include directory ~ '/templates/layout/footer.html.twig' %}

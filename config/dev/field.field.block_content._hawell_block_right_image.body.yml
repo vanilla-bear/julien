@@ -1,0 +1,22 @@
+uuid: 948f7393-ffc9-4107-9394-b4fc74acc0d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type._hawell_block_right_image
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content._hawell_block_right_image.body
+field_name: body
+entity_type: block_content
+bundle: _hawell_block_right_image
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

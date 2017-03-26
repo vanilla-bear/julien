@@ -1,0 +1,23 @@
+uuid: 6e4a350c-565f-4ee4-82e1-3b8fecad5ef3
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - uc_product
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  uc_product:
+    product: false
+    shippable: true
+    image_field: ''
+name: 'No Menu'
+type: no_menu
+description: 'Create a special page no menu'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

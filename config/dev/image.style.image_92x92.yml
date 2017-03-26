@@ -1,0 +1,14 @@
+uuid: d21acb92-0023-41af-9bd7-f95a53ce461b
+langcode: en
+status: true
+dependencies: {  }
+name: image_92x92
+label: 'Image 92x92'
+effects:
+  eb1f80e4-dbca-46fa-934a-6f72dfffd5ec:
+    uuid: eb1f80e4-dbca-46fa-934a-6f72dfffd5ec
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 92
+      height: 92

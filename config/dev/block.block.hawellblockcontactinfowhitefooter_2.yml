@@ -1,0 +1,51 @@
+uuid: f3efc8a8-2473-4354-885c-39c3fb1cdc37
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_min_menu
+  content:
+    - 'block_content:basic:dc6f4aa3-0246-4bc9-b10b-e3a753529157'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: 'col-md-3 col-sm-3'
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockcontactinfowhitefooter_2
+theme: hawell
+region: '-1'
+weight: -15
+provider: null
+plugin: 'block_content:dc6f4aa3-0246-4bc9-b10b-e3a753529157'
+settings:
+  id: 'block_content:dc6f4aa3-0246-4bc9-b10b-e3a753529157'
+  label: '[Hawell] Block contact info white footer '
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_min_menu
+    context_mapping: {  }

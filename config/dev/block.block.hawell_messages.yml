@@ -1,0 +1,22 @@
+uuid: 2b350a42-2fe9-43df-a593-961efeeedb9a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - hawell
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: hawell_messages
+theme: hawell
+region: messages
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

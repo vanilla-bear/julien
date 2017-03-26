@@ -1,0 +1,23 @@
+uuid: 5dad76b6-c658-4bc6-807e-9f7f718da6ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.product_categories.field_thumbnail
+    - taxonomy.vocabulary.product_categories
+  module:
+    - text
+id: taxonomy_term.product_categories.default
+targetEntityType: taxonomy_term
+bundle: product_categories
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_thumbnail: true
+  langcode: true

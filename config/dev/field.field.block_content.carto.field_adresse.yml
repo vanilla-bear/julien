@@ -1,0 +1,19 @@
+uuid: e756dd34-d9b5-42f0-821b-274fab97e86c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.carto
+    - field.storage.block_content.field_adresse
+id: block_content.carto.field_adresse
+field_name: field_adresse
+entity_type: block_content
+bundle: carto
+label: Adresse
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

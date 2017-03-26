@@ -1,0 +1,21 @@
+uuid: 69013d3f-9641-4562-a899-a86770ed4f03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_topic
+    - node.type.portfolio
+  module:
+    - options
+id: node.portfolio.field_topic
+field_name: field_topic
+entity_type: node
+bundle: portfolio
+label: Topic
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,8 @@
+uuid: bd885f0a-6440-4151-ad6c-165f431f0552
+langcode: en
+status: true
+dependencies: {  }
+id: fullscreen-menu
+label: 'Fullscreen menu'
+description: ''
+locked: false

@@ -1,0 +1,11 @@
+uuid: 14201126-ac63-4bb2-8466-5db5137020ec
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: IrI9wt0GRPpzhXxe0Gi-DTIWcdg51HpcPmHUTLhCBVI
+id: pending
+name: Pending
+state: post_checkout
+weight: 0
+locked: true

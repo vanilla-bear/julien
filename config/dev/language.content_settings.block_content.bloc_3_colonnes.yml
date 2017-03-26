@@ -1,0 +1,11 @@
+uuid: 8431e09d-2d1c-4634-a58b-8f7e53198667
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_3_colonnes
+id: block_content.bloc_3_colonnes
+target_entity_type_id: block_content
+target_bundle: bloc_3_colonnes
+default_langcode: site_default
+language_alterable: false

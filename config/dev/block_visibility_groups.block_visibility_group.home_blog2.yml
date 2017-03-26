@@ -1,0 +1,17 @@
+uuid: 43417bee-da15-4ad8-b6e0-ede12bec412f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_blog2
+label: 'Home blog 2'
+logic: and
+conditions:
+  3e1e1405-c655-4373-9e13-147d4465ffd1:
+    id: request_path
+    pages: /node/90
+    negate: false
+    context_mapping: {  }
+    uuid: 3e1e1405-c655-4373-9e13-147d4465ffd1
+allow_other_conditions: false

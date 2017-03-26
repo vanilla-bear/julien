@@ -1,0 +1,19 @@
+uuid: 854d4eaa-fab5-4a95-9214-ebd579b5eb52
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titre_3_col
+    - paragraphs.paragraphs_type.image_titre_sous_titre_texte
+id: paragraph.image_titre_sous_titre_texte.field_titre_3_col
+field_name: field_titre_3_col
+entity_type: paragraph
+bundle: image_titre_sous_titre_texte
+label: Titre
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

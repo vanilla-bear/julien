@@ -1,0 +1,25 @@
+uuid: 8b71dc92-8334-426c-b437-d16690a57109
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_old_price
+    - node.type.product
+  module:
+    - uc_product
+id: node.product.field_old_price
+field_name: field_old_price
+entity_type: node
+bundle: product
+label: 'Old price'
+description: 'Product price before discount'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: ''
+  max: ''
+  prefix: ''
+  suffix: ''
+field_type: uc_price

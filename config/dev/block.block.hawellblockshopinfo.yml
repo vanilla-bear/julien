@@ -1,0 +1,51 @@
+uuid: 5cae7319-08ca-4087-b529-7ee6f4996718
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.shop
+  content:
+    - 'block_content:basic:a2a2ce5e-17e1-4e7a-8f30-3154c44f033a'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: 'shop-info grey-dark-bg font-white pt-110-b-80-cont'
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockshopinfo
+theme: hawell
+region: section
+weight: -8
+provider: null
+plugin: 'block_content:a2a2ce5e-17e1-4e7a-8f30-3154c44f033a'
+settings:
+  id: 'block_content:a2a2ce5e-17e1-4e7a-8f30-3154c44f033a'
+  label: '[Hawell] Block shop info'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: shop
+    context_mapping: {  }

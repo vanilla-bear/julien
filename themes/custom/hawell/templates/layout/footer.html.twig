@@ -1,0 +1,78 @@
+<!-- FOOTER 2 -->
+{% if footer_style is empty %}
+    {% set footer_style = 'footer1' %}
+{% endif %}
+{% if footer_style == 'footer2white' %}
+    <footer id="footer2" class="page-section pt-80 pb-50">
+        <div class="container">
+        {% if page.footer %}
+            <div class="row">            
+                {{ page.footer }}
+            </div>
+        {% endif %}
+        {% if page.footer_bottom or footer_copyright_message is not empty %}   
+            <div class="footer-2-copy-cont clearfix">
+            {% if page.footer_bottom %}
+                <!-- Social Links -->
+                <div class="footer-2-soc-a right">
+                    {{ page.footer_bottom }}
+                </div>
+            {% endif %}
+            {% if footer_copyright_message is not empty %}
+                <!-- Copyright -->
+                <div class="left">
+                    {{ footer_copyright_message|raw }}
+                </div>
+            {% endif %}   
+            </div>
+        {% endif %}        
+        </div>
+    </footer>
+{% elseif footer_style == 'footer2black' %}
+    <!-- FOOTER 2 BLACK -->
+    <footer id="footer3" class="page-section pt-80 pb-50 footer2-black">
+     <div class="container">
+        {% if page.footer %}
+            <div class="row">            
+                {{ page.footer }}
+            </div>
+        {% endif %}
+        {% if page.footer_bottom or footer_copyright_message is not empty %}   
+            <div class="footer-2-copy-cont clearfix">
+            {% if page.footer_bottom %}
+                <!-- Social Links -->
+                <div class="footer-2-soc-a right">
+                    {{ page.footer_bottom }}
+                </div>
+            {% endif %}
+            {% if footer_copyright_message is not empty %}
+                <!-- Copyright -->
+                <div class="left">
+                    {{ footer_copyright_message|raw }}
+                </div>
+            {% endif %}   
+            </div>
+        {% endif %}        
+        </div>
+    </footer>
+{% else %}
+    <!-- FOOTER 1 -->
+    <footer id="footer1" class="page-section text-center pt-100-b-80-cont">
+    {% if page.footer_bottom or footer_copyright_message is not empty %}
+        <div class="container">
+        {% if page.footer_bottom %}            
+            <!-- Social Links -->
+            <div class="footer-soc-a">
+                {{ page.footer_bottom }}
+            </div>
+        {% endif %}
+            <!-- Copyright -->
+        {% if footer_copyright_message is not empty %}
+            <div class="footer-copy">
+                {{ footer_copyright_message|raw }}
+            </div>
+        {% endif %}            
+        </div>
+    {% endif %}
+    </footer>
+{% endif %}

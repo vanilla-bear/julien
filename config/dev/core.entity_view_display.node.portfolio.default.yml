@@ -1,0 +1,80 @@
+uuid: ced1ab79-2763-4f31-a74a-14c20b2db929
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.portfolio.body
+    - field.field.node.portfolio.field_client
+    - field.field.node.portfolio.field_images
+    - field.field.node.portfolio.field_link
+    - field.field.node.portfolio.field_logo
+    - field.field.node.portfolio.field_menu_style
+    - field.field.node.portfolio.field_page_title_class
+    - field.field.node.portfolio.field_page_title_image
+    - field.field.node.portfolio.field_page_title_style
+    - field.field.node.portfolio.field_portfolio_categories
+    - field.field.node.portfolio.field_portfolio_style
+    - field.field.node.portfolio.field_topic
+    - node.type.portfolio
+  module:
+    - image
+    - link
+    - text
+    - user
+id: node.portfolio.default
+targetEntityType: node
+bundle: portfolio
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_client:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_images:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_link:
+    weight: 105
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_portfolio_categories:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_logo: true
+  field_menu_style: true
+  field_page_title_class: true
+  field_page_title_image: true
+  field_page_title_style: true
+  field_portfolio_style: true
+  field_topic: true
+  langcode: true

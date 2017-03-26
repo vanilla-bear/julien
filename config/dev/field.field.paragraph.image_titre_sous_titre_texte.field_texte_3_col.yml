@@ -1,0 +1,21 @@
+uuid: 791ccfb4-34d9-4cb5-9841-2d3c6f812665
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_texte_3_col
+    - paragraphs.paragraphs_type.image_titre_sous_titre_texte
+  module:
+    - text
+id: paragraph.image_titre_sous_titre_texte.field_texte_3_col
+field_name: field_texte_3_col
+entity_type: paragraph
+bundle: image_titre_sous_titre_texte
+label: Texte
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

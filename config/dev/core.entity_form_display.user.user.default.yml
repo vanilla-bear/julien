@@ -1,0 +1,71 @@
+uuid: 7255cd26-d7b1-48e7-9852-e4a9105d1ad7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_about
+    - field.field.user.user.field_display_name
+    - field.field.user.user.user_picture
+    - image.style.image_70x70
+  module:
+    - image
+    - imce
+    - path
+    - user
+_core:
+  default_config_hash: LLAieeozVsoZDb-2PbFxRJpQqnKmpR7-4OoRJnduz-U
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+  field_about:
+    weight: 3
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+  field_display_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  language:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+  simplenews:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image_image
+    settings:
+      preview_image_style: image_70x70
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    weight: 1
+hidden:
+  langcode: true

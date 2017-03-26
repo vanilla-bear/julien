@@ -1,0 +1,60 @@
+uuid: 058ed615-7d86-412e-9a01-a7ef2375250f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_formulaire_de_contact
+    - field.field.block_content.footer_formulaire_de_contact.field_adresse
+    - field.field.block_content.footer_formulaire_de_contact.field_logo
+    - field.field.block_content.footer_formulaire_de_contact.field_resume
+    - field.field.block_content.footer_formulaire_de_contact.field_titre
+    - image.style.thumbnail
+  module:
+    - image
+    - text
+id: block_content.footer_formulaire_de_contact.default
+targetEntityType: block_content
+bundle: footer_formulaire_de_contact
+mode: default
+content:
+  field_adresse:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_logo:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_resume:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_titre:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  info:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

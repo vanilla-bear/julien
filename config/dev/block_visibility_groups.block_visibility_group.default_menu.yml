@@ -1,0 +1,47 @@
+uuid: 9578aff4-672d-473f-a737-ada99ab2afaa
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - php
+    - system
+id: default_menu
+label: 'Default menu'
+logic: or
+conditions:
+  465e2397-5fe1-42ef-87dc-a512deaed574:
+    id: request_path
+    pages: "<front>\r\n/portfolio\r\n/blog\r\n/taxonomy/*\r\n/archive*\r\n/shop*\r\n/product*\r\n/cart*\r\n/user*\r\n/search*"
+    negate: false
+    context_mapping: {  }
+    uuid: 465e2397-5fe1-42ef-87dc-a512deaed574
+  5f7be1ea-1bd0-415f-b6e2-fe2f9fbca7e0:
+    id: 'entity_bundle:node'
+    bundles:
+      article: article
+      blog_post: blog_post
+      client: client
+      customer_review: customer_review
+      feature: feature
+      homepage: homepage
+      page: page
+      portfolio: portfolio
+      product: product
+      service: service
+      simplenews_issue: simplenews_issue
+      skill: skill
+      team: team
+      work_process: work_process
+      yamlform: yamlform
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 5f7be1ea-1bd0-415f-b6e2-fe2f9fbca7e0
+  1a584b4c-bc66-4a52-9aa0-7835253626af:
+    id: php
+    php: "<?php\r\n    if (navi_get_http_status() == 404) return TRUE;\r\n?>"
+    negate: 0
+    context_mapping: {  }
+    uuid: 1a584b4c-bc66-4a52-9aa0-7835253626af
+allow_other_conditions: false

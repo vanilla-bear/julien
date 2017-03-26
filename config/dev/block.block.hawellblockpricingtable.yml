@@ -1,0 +1,51 @@
+uuid: a682a2ae-ad02-42a0-8e05-9702bc39ced9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.landing_page_1
+  content:
+    - 'block_content:basic:7543f6a6-7052-4abc-86d7-088e27a08c62'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: grey-light-bg
+    attr_id: price-link
+    block_title: Pricing
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockpricingtable
+theme: hawell
+region: section
+weight: -4
+provider: null
+plugin: 'block_content:7543f6a6-7052-4abc-86d7-088e27a08c62'
+settings:
+  id: 'block_content:7543f6a6-7052-4abc-86d7-088e27a08c62'
+  label: '[Hawell] Block pricing table'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: landing_page_1
+    context_mapping: {  }

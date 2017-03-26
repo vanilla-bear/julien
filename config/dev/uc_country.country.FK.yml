@@ -1,0 +1,18 @@
+uuid: f8c6e05e-8869-4770-a8b1-f97483a0f0ac
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: spPR-CW4I4IcUurkvJ_dEEZzX0QJL9-1wGlH8Mv9lvI
+name: 'Îles Malouines'
+alpha_2: FK
+alpha_3: FLK
+numeric: 238
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

@@ -1,0 +1,24 @@
+uuid: 07648984-058e-4824-84f1-1ad1bf01f64f
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: RcheHibdMv_Vo7Ff18oG9E6BnuI2rYQ2UboKAsIV4cc
+name: Saint-Vincent-et-les-Grenadines
+alpha_2: VC
+alpha_3: VCT
+numeric: 670
+zones:
+  VC-01: Charlotte
+  VC-06: Grenadines
+  VC-02: 'Saint Andrew'
+  VC-03: 'Saint David'
+  VC-04: 'Saint George'
+  VC-05: 'Saint Patrick'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

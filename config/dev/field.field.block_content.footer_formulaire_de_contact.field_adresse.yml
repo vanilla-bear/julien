@@ -1,0 +1,19 @@
+uuid: 1693230e-c4ab-4058-9987-59d5261b829e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_formulaire_de_contact
+    - field.storage.block_content.field_adresse
+id: block_content.footer_formulaire_de_contact.field_adresse
+field_name: field_adresse
+entity_type: block_content
+bundle: footer_formulaire_de_contact
+label: Adresse
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

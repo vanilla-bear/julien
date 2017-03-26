@@ -1,0 +1,18 @@
+uuid: 486ad5ae-c3eb-4a36-b156-7011fb82bc23
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: flfP9WzaIroCvMnbgHooTnlEQpdF862o1xI8twvU78E
+name: 'Saint-Martin (partie française)'
+alpha_2: MF
+alpha_3: MAF
+numeric: 663
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city  !postal_code'
+  - '!country_name_if'

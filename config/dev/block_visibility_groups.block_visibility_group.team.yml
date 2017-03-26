@@ -1,0 +1,17 @@
+uuid: 2d13a772-760c-4ed0-9aca-f1b1018bc7b8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: team
+label: Team
+logic: and
+conditions:
+  675e9247-3929-45df-bc23-0720b1ef77b9:
+    id: request_path
+    pages: /node/135
+    negate: false
+    context_mapping: {  }
+    uuid: 675e9247-3929-45df-bc23-0720b1ef77b9
+allow_other_conditions: false

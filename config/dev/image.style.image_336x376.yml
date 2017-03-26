@@ -1,0 +1,14 @@
+uuid: 88645455-4742-43fc-a975-7d4831887ae3
+langcode: en
+status: true
+dependencies: {  }
+name: image_336x376
+label: 'Image 336x376'
+effects:
+  4faa4839-01e2-414f-87cd-7707a0b53793:
+    uuid: 4faa4839-01e2-414f-87cd-7707a0b53793
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 336
+      height: 376

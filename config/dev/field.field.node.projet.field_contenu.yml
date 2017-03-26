@@ -1,0 +1,22 @@
+uuid: c43894af-8012-4aa8-aef5-37b8f39ddd85
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contenu
+    - node.type.projet
+  module:
+    - text
+id: node.projet.field_contenu
+field_name: field_contenu
+entity_type: node
+bundle: projet
+label: Contenu
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

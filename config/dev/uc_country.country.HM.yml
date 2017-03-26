@@ -1,0 +1,18 @@
+uuid: 0a0b8acb-b6a4-452d-86ea-06e3353cfd40
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: icloqlZbQvJvm53Q-KB2QFGTlk07bVA-hGwK80hwPKI
+name: 'Îles Heard et MacDonald'
+alpha_2: HM
+alpha_3: HMD
+numeric: 334
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city  !postal_code'
+  - '!country_name_if'

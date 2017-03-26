@@ -1,0 +1,25 @@
+uuid: 622361b9-60f4-4d99-92f2-8944b39a0b71
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: jsIme9Vym1lTHO9wcJnm8o5UjGzEIbzwOQKGiuZKDV0
+name: 'Guinée équatoriale'
+alpha_2: GQ
+alpha_3: GNQ
+numeric: 226
+zones:
+  GQ-AN: Annobon
+  GQ-BN: 'Bioko Norte'
+  GQ-BS: 'Bioko Sur'
+  GQ-CS: 'Centro Sur'
+  GQ-KN: Kie-Ntem
+  GQ-LI: Litoral
+  GQ-WN: Wele-Nzas
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

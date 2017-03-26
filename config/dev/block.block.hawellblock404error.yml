@@ -1,0 +1,51 @@
+uuid: a6003cea-b4e2-42bf-88ba-92ae4c514794
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.page_404
+  content:
+    - 'block_content:basic:d81968f9-3f6d-453b-8504-ecb9e997cb5c'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblock404error
+theme: hawell
+region: section
+weight: -7
+provider: null
+plugin: 'block_content:d81968f9-3f6d-453b-8504-ecb9e997cb5c'
+settings:
+  id: 'block_content:d81968f9-3f6d-453b-8504-ecb9e997cb5c'
+  label: '[Hawell] Block 404 error'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: page_404
+    context_mapping: {  }

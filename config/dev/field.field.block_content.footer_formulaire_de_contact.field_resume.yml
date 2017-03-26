@@ -1,0 +1,21 @@
+uuid: 0360b7f7-479f-4755-965a-2b52a80536e9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.footer_formulaire_de_contact
+    - field.storage.block_content.field_resume
+  module:
+    - text
+id: block_content.footer_formulaire_de_contact.field_resume
+field_name: field_resume
+entity_type: block_content
+bundle: footer_formulaire_de_contact
+label: Résumé
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,47 @@
+uuid: 1074eb91-ad05-4387-b2f4-0c4cc8b3fc31
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view._hawell_products
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - views
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: exposedform_hawell_productspage_sort
+theme: hawell
+region: '-1'
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:_hawell_products-page_sort'
+settings:
+  id: 'views_exposed_filter_block:_hawell_products-page_sort'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

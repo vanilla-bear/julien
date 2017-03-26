@@ -1,0 +1,14 @@
+uuid: 2e1ca4d9-0abb-41c9-a372-ff37034d8944
+langcode: en
+status: true
+dependencies: {  }
+name: image_650x415
+label: 'Image 650x415'
+effects:
+  649a4974-7768-41b1-abac-2c76597b5a6e:
+    uuid: 649a4974-7768-41b1-abac-2c76597b5a6e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 650
+      height: 415

@@ -1,0 +1,8 @@
+uuid: 9da08dbe-deed-44d2-9342-608af56376c0
+langcode: fr
+status: true
+dependencies: {  }
+id: footer_formulaire_de_contact
+label: 'footer formulaire de contact'
+revision: 0
+description: ''

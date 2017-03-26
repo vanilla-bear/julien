@@ -1,0 +1,17 @@
+uuid: 727551e3-030e-4d27-af02-d999c9819a36
+langcode: en
+status: true
+dependencies: {  }
+name: '[Hawell] Newsletter'
+id: _hawell_newsletter
+description: ''
+format: plain
+priority: 0
+receipt: true
+from_name: 'Hawell D8 Theme'
+subject: '[[simplenews-newsletter:name]] [node:title]'
+from_address: navisystemvn@gmail.com
+hyperlinks: true
+new_account: none
+opt_inout: double
+weight: 0

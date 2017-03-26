@@ -1,0 +1,51 @@
+uuid: 3e32d99d-7d99-4e40-86e1-769cc9d3e05c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_construction
+  content:
+    - 'block_content:basic:c44ad8c4-79c4-47a8-bc35-561df9684182'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: 'about-us-2-cont pt-100-cont'
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockhtmlbannerourteam2
+theme: hawell
+region: section
+weight: -5
+provider: null
+plugin: 'block_content:c44ad8c4-79c4-47a8-bc35-561df9684182'
+settings:
+  id: 'block_content:c44ad8c4-79c4-47a8-bc35-561df9684182'
+  label: '[Hawell] Block HTML banner our team 2'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_construction
+    context_mapping: {  }

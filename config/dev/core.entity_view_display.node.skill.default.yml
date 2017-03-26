@@ -1,0 +1,29 @@
+uuid: 4ff8207a-edf7-462f-b4bc-57d03d60acfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.skill.body
+    - field.field.node.skill.field_skill_percent
+    - node.type.skill
+  module:
+    - text
+    - user
+id: node.skill.default
+targetEntityType: node
+bundle: skill
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_skill_percent: true
+  langcode: true

@@ -1,0 +1,51 @@
+uuid: 8fae5c34-ecca-4e03-9e43-24655a0ec0bb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_page
+  content:
+    - 'block_content:bloc_intro:98d4ea5c-bf78-4b42-aff4-3dfb6bc7c52a'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: blocaccueil
+theme: hawell
+region: content
+weight: -10
+provider: null
+plugin: 'block_content:98d4ea5c-bf78-4b42-aff4-3dfb6bc7c52a'
+settings:
+  id: 'block_content:98d4ea5c-bf78-4b42-aff4-3dfb6bc7c52a'
+  label: 'bloc accueil'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_page
+    context_mapping: {  }

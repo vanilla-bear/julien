@@ -1,0 +1,17 @@
+uuid: 85cfce51-c17e-4fb3-95f5-6dd4dc3c7a84
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_corporate6
+label: 'Home corporate 6'
+logic: and
+conditions:
+  ea2c1033-e8ea-422d-b5e3-e7da118f0b06:
+    id: request_path
+    pages: /node/61
+    negate: false
+    context_mapping: {  }
+    uuid: ea2c1033-e8ea-422d-b5e3-e7da118f0b06
+allow_other_conditions: false

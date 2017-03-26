@@ -1,0 +1,11 @@
+uuid: ff0d0de5-b6ae-44f1-87b6-38de2c37acb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.parallax_extra_image
+id: block_content.parallax_extra_image
+target_entity_type_id: block_content
+target_bundle: parallax_extra_image
+default_langcode: site_default
+language_alterable: false

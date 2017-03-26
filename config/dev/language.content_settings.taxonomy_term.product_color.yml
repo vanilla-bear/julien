@@ -1,0 +1,11 @@
+uuid: ff78df7e-9816-41a1-abf6-547081a5d312
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.product_color
+id: taxonomy_term.product_color
+target_entity_type_id: taxonomy_term
+target_bundle: product_color
+default_langcode: site_default
+language_alterable: false

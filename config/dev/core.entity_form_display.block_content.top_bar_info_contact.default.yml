@@ -1,0 +1,48 @@
+uuid: 4737a50b-d24a-4890-9396-cfeadf15660b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.top_bar_info_contact
+    - field.field.block_content.top_bar_info_contact.field_adresse_email
+    - field.field.block_content.top_bar_info_contact.field_horaire_d_ouverture
+    - field.field.block_content.top_bar_info_contact.field_telephone
+id: block_content.top_bar_info_contact.default
+targetEntityType: block_content
+bundle: top_bar_info_contact
+mode: default
+content:
+  field_adresse_email:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_horaire_d_ouverture:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_telephone:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  info:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,11 @@
+<?php
+/**
+ * @file
+ * Module for adding classes to blocks.
+ */
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\block\Entity\Block;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */

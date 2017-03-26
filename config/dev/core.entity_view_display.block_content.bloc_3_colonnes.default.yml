@@ -1,0 +1,24 @@
+uuid: b879d31d-f183-49f1-a10b-74dcde0d55e2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_3_colonnes
+    - field.field.block_content.bloc_3_colonnes.field_bloc_service
+  module:
+    - entity_reference_revisions
+id: block_content.bloc_3_colonnes.default
+targetEntityType: block_content
+bundle: bloc_3_colonnes
+mode: default
+content:
+  field_bloc_service:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true

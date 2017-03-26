@@ -1,0 +1,34 @@
+{% if page_menu_style is not empty %}
+	{% set menu_style = page_menu_style %}
+{% endif %}
+{% if page_topbar is not empty %}
+	{% set topbar = page_topbar %}
+{% endif %}
+{% if page_footer_style is not empty %}
+	{% set footer_style = page_footer_style %}
+{% endif %}
+{% if page_title_style is empty %}
+	{% set page_title_style = 'small_grey' %}
+{% endif %}
+{% include directory ~ '/templates/layout/header-page.html.twig' %}
+<!-- COTENT CONTAINER -->
+<div class="container p-140-cont">
+	<div class="row">		
+		<!-- CONTENT -->
+		<div class="col-sm-8 blog-main-posts page-archive">
+			{{ messages }}
+			{{ page.content }}
+		</div>
+		{% if page.sidebar %}
+		<!-- SIDEBAR -->
+        <div class="col-sm-4 col-md-3 col-md-offset-1">
+			{{ page.sidebar }}
+        </div>
+	{% endif %}
+	</div>
+</div>
+{{ page.page_bt }}
+{% include directory ~ '/templates/layout/footer.html.twig' %}
+{% if  menu_style == 'min_menu' %}
+</div> <!-- sliding-content -->
+{% endif %}

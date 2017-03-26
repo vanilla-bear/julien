@@ -1,0 +1,14 @@
+uuid: de541de5-3926-4dd4-a902-a80e2b3c1412
+langcode: en
+status: true
+dependencies: {  }
+name: image_370x472
+label: 'Image 370x472'
+effects:
+  3667db6c-0708-423e-8ef8-1d85dd2b506a:
+    uuid: 3667db6c-0708-423e-8ef8-1d85dd2b506a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 370
+      height: 472

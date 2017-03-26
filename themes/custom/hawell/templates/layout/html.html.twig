@@ -1,0 +1,119 @@
+{#
+/**
+ * @file
+ * Theme override for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ */
+#}
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+  ]
+%}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+	<head-placeholder token="{{ placeholder_token|raw }}">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>{{ head_title|safe_join(' | ') }}</title>
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+		<css-placeholder token="{{ placeholder_token|raw }}">
+		<js-placeholder token="{{ placeholder_token|raw }}">
+		{% if custom_css is not empty %}
+			<!-- Custom CSS -->
+			<style type="text/css" media="all">
+			{{ custom_css|raw }}
+			</style>
+		{% endif %}
+		{% if tracking_code is not empty %}
+			<!-- Tracking code -->
+			{{ tracking_code|raw }}
+		{% endif %}
+		<!-- IE Warning CSS -->
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="{{ base_path ~ directory }}/css/ie-warning.css" ><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="{{ base_path ~ directory }}/css/ie8-fix.css" ><![endif]-->
+		
+		<!-- Magnific popup  in style.css	Owl Carousel Assets in style.css -->
+		
+		<!-- CSS end -->
+		<!-- JS begin some js files in bottom of file-->
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- Modernizr -->
+		<!-- <script src="{{ base_path ~ directory }}/js/modernizr.js"></script> -->
+	</head>
+	<body{{ attributes.addClass(body_classes) }}>
+		<a href="#main-content" class="visually-hidden focusable">
+          	{{ 'Skip to main content'|t }}
+        </a>
+        <!-- LOADER -->	
+		{#<div id="loader-overflow">#}
+      		{#<div id="loader3">{{ 'Please enable JS'|t }}</div>#}
+    	{#</div>#}
+    	<div id="wrap" class="boxed ">
+			<div class="{% if boxed == 1 %}container-p-75 {% endif %}grey-bg"> <!-- Grey BG  -->					
+				<!--[if lte IE 8]>
+				<div id="ie-container">
+					<div id="ie-cont-close">
+						<a href='#' onclick='javascript&#058;this.parentNode.parentNode.style.display="none"; return false;'><img src='images/ie-warn/ie-warning-close.jpg' style='border: none;' alt='Close'></a>
+					</div>
+					<div id="ie-cont-content" >
+						<div id="ie-cont-warning">
+							<img src='images/ie-warn/ie-warning.jpg' alt='Warning!'>
+						</div>
+						<div id="ie-cont-text" >
+							<div id="ie-text-bold">
+								You are using an outdated browser
+							</div>
+							<div id="ie-text">
+								For a better experience using this site, please upgrade to a modern web browser.
+							</div>
+						</div>
+						<div id="ie-cont-brows" >
+							<a href='http://www.firefox.com' target='_blank'><img src='images/ie-warn/ie-warning-firefox.jpg' alt='Download Firefox'></a>
+							<a href='http://www.opera.com/download/' target='_blank'><img src='images/ie-warn/ie-warning-opera.jpg' alt='Download Opera'></a>
+							<a href='http://www.apple.com/safari/download/' target='_blank'><img src='images/ie-warn/ie-warning-safari.jpg' alt='Download Safari'></a>
+							<a href='http://www.google.com/chrome' target='_blank'><img src='images/ie-warn/ie-warning-chrome.jpg' alt='Download Google Chrome'></a>
+						</div>
+					</div>
+				</div>
+				<![endif]-->	
+				{{ page_top }}
+		        {{ page }}
+		        {{ page_bottom }}
+		        <!-- BACK TO TOP -->
+				<p id="back-top">
+          			<a href="#top" title="Back to Top"><span class="icon icon-arrows-up"></span></a>
+        		</p>
+        	</div><!-- End BG -->	
+		</div><!-- End wrap -->
+		<!-- JS begin -->
+		<js-bottom-placeholder token="{{ placeholder_token|raw }}">
+	</body>
+</html>

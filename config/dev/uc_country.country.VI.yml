@@ -1,0 +1,18 @@
+uuid: e9383822-04d6-4743-9604-6f7dc5496e31
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: yGHd2PIWHtEhNhp145sYLZ0Tx0g_PxJAtm3m33ARaJs
+name: 'Virgin Islands, U.S.'
+alpha_2: VI
+alpha_3: VIR
+numeric: 850
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city !zone_code !postal_code'
+  - '!country_name_if'

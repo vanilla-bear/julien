@@ -1,0 +1,64 @@
+{% if node.field_menu_style is not empty %}
+    {% set menu_style = node.field_menu_style.value %}
+{% endif %}
+{% if node.field_top_bar is not empty %}
+    {% set topbar = node.field_top_bar.value %}
+{% endif %}
+{% if node is defined and node.field_logo is not empty %}
+    {% set logo = file_url(node.field_logo.entity.fileuri) %}
+{% endif %}
+{% if node.field_footer_style is not empty %}
+    {% set footer_style = node.field_footer_style.value %}
+{% endif %}
+{% include directory ~ '/templates/layout/header.html.twig' %}
+{{ page.slideshow }}
+{{ page.page_tp }}
+{% if menu_style != 'side_menu' %}
+	{{ messages }}
+	{% if node.field_sidebar is not empty  and  node.field_sidebar.value == 'right' %}
+	<div class="container p-140-cont">
+		<div class="row">		
+			<!-- CONTENT -->
+			<div class="col-sm-8 blog-main-posts">
+				{{ page.content }}
+			</div>
+			<!-- SIDEBAR -->
+		{% if page.sidebar %}
+	        <div class="col-sm-4 col-md-3 col-md-offset-1">
+				{{ page.sidebar }}
+	        </div>
+	    {% endif %}
+		</div>
+	</div>
+	{% elseif node.field_sidebar is not empty  and  node.field_sidebar.value == 'left' %}
+	<div class="container p-140-cont">
+		<div class="row">
+			<!-- SIDEBAR -->
+		{% if page.sidebar %}
+			<div class="col-sm-4 col-md-3 ">
+				{{ page.sidebar }}
+			</div>
+		{% endif %}
+			<!-- CONTENT -->
+	        <div class="col-sm-8 col-md-offset-1">
+				{{ page.content }}
+	        </div>
+		</div>
+	</div>
+	{% else %}
+		{{ page.content }}
+	{% endif %}
+	{{ page.section }}
+	{{ page.page_bt }}
+	{% include directory ~ '/templates/layout/footer.html.twig' %}
+{% if  menu_style == 'min_menu' %}
+</div> <!-- sliding-content -->
+{% endif %}
+{% else %}
+<div class="side-content">
+	{{ messages }}
+	{{ page.content }}
+	{{ page.section }}
+	{% include directory ~ '/templates/layout/footer.html.twig' %}
+</div>
+{% endif %}

@@ -1,0 +1,17 @@
+uuid: e7c4a142-4a9c-4ddb-9256-07bf561e1426
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: about_us
+label: 'About us'
+logic: and
+conditions:
+  af124663-6522-492f-bc13-03a4ed5c46c2:
+    id: request_path
+    pages: /node/133
+    negate: false
+    context_mapping: {  }
+    uuid: af124663-6522-492f-bc13-03a4ed5c46c2
+allow_other_conditions: false

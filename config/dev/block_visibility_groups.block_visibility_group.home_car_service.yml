@@ -1,0 +1,17 @@
+uuid: b25cf27d-d3b8-4d76-812b-b06aa919582e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_car_service
+label: 'Home car service'
+logic: and
+conditions:
+  fac30078-6288-4a93-b8ce-95b166392caf:
+    id: request_path
+    pages: /node/83
+    negate: false
+    context_mapping: {  }
+    uuid: fac30078-6288-4a93-b8ce-95b166392caf
+allow_other_conditions: false

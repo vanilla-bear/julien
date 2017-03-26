@@ -1,0 +1,8 @@
+uuid: abe0c6bd-a064-4ce9-a840-dc17e6025c22
+langcode: en
+status: true
+dependencies: {  }
+id: _hawell_block_left_image
+label: '[Hawell] Block left image'
+revision: 0
+description: 'Create a block with left image and right content'

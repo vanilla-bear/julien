@@ -1,0 +1,27 @@
+uuid: 584702d9-01da-4841-9db9-bc5ab7ad4363
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.yamlform
+    - node.type.yamlform
+  module:
+    - yamlform
+_core:
+  default_config_hash: Ah32zPb-fAH7Xl1tYWO2NLF8me2sOT17_ojHLQ6bdTg
+id: node.yamlform.yamlform
+field_name: yamlform
+entity_type: node
+bundle: yamlform
+label: Formulaire
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  default_data: ''
+  status: true
+  handler: 'default:yamlform'
+  handler_settings: {  }
+field_type: yamlform

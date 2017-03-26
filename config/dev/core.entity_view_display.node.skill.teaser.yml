@@ -1,0 +1,29 @@
+uuid: a95e702f-971d-4732-bb63-a856b5b22b18
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.skill.body
+    - field.field.node.skill.field_skill_percent
+    - node.type.skill
+  module:
+    - text
+    - user
+id: node.skill.teaser
+targetEntityType: node
+bundle: skill
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_skill_percent: true
+  langcode: true

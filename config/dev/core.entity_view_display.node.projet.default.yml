@@ -1,0 +1,65 @@
+uuid: 03541270-4a3c-4fc9-8f27-5e12e89d6777
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.projet.field_categorie
+    - field.field.node.projet.field_contenu
+    - field.field.node.projet.field_image_principale
+    - field.field.node.projet.field_image_resume
+    - field.field.node.projet.field_lieu
+    - node.type.projet
+  module:
+    - image
+    - image_url_formatter
+    - text
+    - user
+id: node.projet.default
+targetEntityType: node
+bundle: projet
+mode: default
+content:
+  field_categorie:
+    weight: 104
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_contenu:
+    weight: 103
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    type: text_summary_or_trimmed
+  field_image_principale:
+    weight: 101
+    label: hidden
+    settings:
+      url_type: '1'
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image_url
+  field_image_resume:
+    weight: 102
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_lieu:
+    weight: 105
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

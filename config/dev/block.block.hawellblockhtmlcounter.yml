@@ -1,0 +1,51 @@
+uuid: 967caf31-1044-4880-9a49-44f3494920e2
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_page
+  content:
+    - 'block_content:basic:bb5e8fa7-b9ac-45ac-b49f-1592773fc889'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: p-80-cont
+    attr_id: ''
+    block_title: ''
+    block_divider: 'yes'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockhtmlcounter
+theme: hawell
+region: '-1'
+weight: -5
+provider: null
+plugin: 'block_content:bb5e8fa7-b9ac-45ac-b49f-1592773fc889'
+settings:
+  id: 'block_content:bb5e8fa7-b9ac-45ac-b49f-1592773fc889'
+  label: '[Hawell] Block HTML counter '
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_page
+    context_mapping: {  }

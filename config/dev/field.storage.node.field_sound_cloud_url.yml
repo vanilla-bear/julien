@@ -1,0 +1,19 @@
+uuid: 319454aa-48de-402a-a21a-88f5432fc288
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - soundcloudfield
+id: node.field_sound_cloud_url
+field_name: field_sound_cloud_url
+entity_type: node
+type: soundcloud
+settings: {  }
+module: soundcloudfield
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

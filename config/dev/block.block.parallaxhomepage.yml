@@ -1,0 +1,51 @@
+uuid: cf74c7b2-16a0-4b66-a731-64579b7ee4a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_page
+  content:
+    - 'block_content:parallax_extra_image:bc5b8d06-3d36-4558-bf7d-cbaed3fb19eb'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: parallaxhomepage
+theme: hawell
+region: slideshow
+weight: 0
+provider: null
+plugin: 'block_content:bc5b8d06-3d36-4558-bf7d-cbaed3fb19eb'
+settings:
+  id: 'block_content:bc5b8d06-3d36-4558-bf7d-cbaed3fb19eb'
+  label: 'parallax homepage'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_page
+    context_mapping: {  }

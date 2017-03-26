@@ -1,0 +1,9 @@
+uuid: bbc18b2c-e793-4299-b22d-88dedc473039
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Lieu projet'
+vid: lieu_projet
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,50 @@
+uuid: 5b226e70-4b5c-4308-bb78-d4df13f8a4fc
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: x4QNhNXX_NPckSJq1K3VaJivyfj6sSjoL684L7d4bs8
+name: Mexique
+alpha_2: MX
+alpha_3: MEX
+numeric: 484
+zones:
+  AGS: Aguascalientes
+  BC: 'Baja California'
+  BCS: 'Baja California Sur'
+  CAM: Campeche
+  CHIS: Chiapas
+  CHI: Chihuahua
+  COAH: Coahuila
+  COL: Colima
+  DF: 'District fédéral'
+  DGO: Durango
+  GTO: Guanajuato
+  GRO: Guerrero
+  HGO: Hidalgo
+  JAL: Jalisco
+  ME: México
+  MICH: Michoacán
+  MOR: Morelos
+  NAY: Nayarit
+  NL: 'Nuevo León'
+  OAX: Oaxaca
+  PUE: Puebla
+  QUE: Querétaro
+  QR: 'Quintana Roo'
+  SLP: 'San Luis Potosi'
+  SIN: Sinaloa
+  SON: Sonora
+  TAB: Tabasco
+  TAM: Tamaulipas
+  TLA: Tlaxcala
+  VER: Veracruz
+  YUC: Yucatán
+  ZAC: Zacatecas
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!postal_code !city'
+  - '!country_name_if'

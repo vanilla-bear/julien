@@ -1,0 +1,50 @@
+uuid: 76588881-958c-4742-b78f-4df53703a02f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_portfolio
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - simplenews
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: nl-cont
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: simplenewssubscription_7
+theme: hawell
+region: section
+weight: 0
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Simplenews subscription'
+  provider: simplenews
+  label_display: '0'
+  newsletters:
+    _hawell_newsletter: _hawell_newsletter
+  message: 'Stay informed - subscribe to our newsletter.'
+  unique_id: 81b1cf33-0640-4090-a6bb-5dd3734e0a65
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_portfolio
+    context_mapping: {  }

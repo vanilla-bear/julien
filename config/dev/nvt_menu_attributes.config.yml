@@ -1,0 +1,13 @@
+attributes:
+  item_class:
+    label: 'Item class'
+    description: 'Add a class for menu item'
+  link_class:
+    label: 'Link class'
+    description: 'Add a class for menu link'
+  style:
+    label: Style
+    description: 'Add style attribute for menu item'
+_core:
+  default_config_hash: RjVoLSr82EtNur8WmMj9s3gLlXeFBGbBA3litLvZP-w
+langcode: fr

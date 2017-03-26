@@ -1,0 +1,23 @@
+uuid: f6d52341-55e1-4aec-abf6-6122774353be
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_portfolio_style
+    - node.type.portfolio
+  module:
+    - options
+id: node.portfolio.field_portfolio_style
+field_name: field_portfolio_style
+entity_type: node
+bundle: portfolio
+label: 'Portfolio style'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: slider
+default_value_callback: ''
+settings: {  }
+field_type: list_string

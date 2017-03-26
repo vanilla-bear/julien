@@ -1,0 +1,41 @@
+uuid: 473b42f2-8c44-4aae-bad6-a834c1cb2655
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.parallax_extra_image
+    - field.field.block_content.parallax_extra_image.field_image_de_fond
+    - field.field.block_content.parallax_extra_image.field_slogan
+    - field.field.block_content.parallax_extra_image.field_titre
+  module:
+    - image_url_formatter
+id: block_content.parallax_extra_image.default
+targetEntityType: block_content
+bundle: parallax_extra_image
+mode: default
+content:
+  field_image_de_fond:
+    weight: 2
+    label: hidden
+    settings:
+      url_type: '1'
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image_url
+  field_slogan:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_titre:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  langcode: true

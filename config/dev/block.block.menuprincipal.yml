@@ -1,0 +1,48 @@
+uuid: 8bd707ba-ad3d-46a9-be6f-b35f49e99773
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-principal
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - system
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: menuprincipal
+theme: hawell
+region: main_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:menu-principal'
+settings:
+  id: 'system_menu_block:menu-principal'
+  label: 'Menu principal'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: ''
+    context_mapping: {  }

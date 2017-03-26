@@ -1,0 +1,162 @@
+/* Single checkbox style */
+.styled-navitheme .form-type-checkbox {
+    width: 80px;
+    height: 26px;
+    background: #ddd;
+    margin: 10px auto;
+    margin-top: 5px;
+    float: left;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    position: relative;
+
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+    -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+}
+.one-checkbox {
+    overflow: hidden;
+}
+
+.one-checkbox .form-type-checkbox:after {
+    content: 'OFF';
+    font: 12px/26px Arial, sans-serif;
+    color: #000;
+    position: absolute;
+    right: 10px;
+    z-index: 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px rgba(255,255,255,.15);
+}
+
+.one-checkbox .form-type-checkbox:before {
+    content: 'ON';
+    font: 12px/26px Arial, sans-serif;
+    color: #09ad7e;
+    position: absolute;
+    left: 10px;
+    z-index: 0;
+    font-weight: bold;
+}
+
+.one-checkbox .form-type-checkbox label {
+    display: block;
+    width: 34px;
+    height: 20px;
+
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    transition: all .4s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 1;
+
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+    background: #fcfff4;
+
+    background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -o-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: -ms-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+}
+
+.one-checkbox .form-type-checkbox input[type=checkbox]:checked + label {
+    left: 43px;
+}
+.one-checkbox .form-type-checkbox input[type=checkbox] {
+    visibility: hidden;
+}
+
+/* Checkboxes */
+/* Base for label styling */
+.checkboxes:not(:checked),
+.checkboxes:checked {
+    position: absolute;
+}
+.checkboxes:not(:checked) + label,
+.checkboxes:checked + label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+.form-checkboxes .form-type-checkbox {
+    margin-bottom: 10px;
+}
+/* checkbox aspect 
+.styled-navitheme [type=checkbox]:not(:checked) + label:before,
+.styled-navitheme [type=checkbox]:checked + label:before {
+    content: '';
+    position: absolute;
+    left:0; top: 2px;
+    width: 17px; height: 17px;
+    border: 1px solid #aaa;
+    background: #f8f8f8;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+}
+/* checked mark aspect
+.styled-navitheme [type=checkbox]:not(:checked) + label:after,
+.styled-navitheme [type=checkbox]:checked + label:after {
+    content: '✔';
+    position: absolute;
+    top: 3px; left: 4px;
+    font-size: 18px;
+    line-height: 0.8;
+    color: #09ad7e;
+    transition: all .2s;
+}
+/* checked mark aspect changes
+.styled-navitheme [type=checkbox]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+.styled-navitheme [type=checkbox]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+/* disabled checkbox
+.styled-navitheme [type=checkbox]:disabled:not(:checked) + label:before,
+.styled-navitheme [type=checkbox]:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+}
+.styled-navitheme [type=checkbox]:disabled:checked + label:after {
+    color: #999;
+}
+.styled-navitheme [type=checkbox]:disabled + label {
+    color: #aaa;
+}
+/* accessibility
+.styled-navitheme [type=checkbox]:checked:focus + label:before,
+.styled-navitheme [type=checkbox]:not(:checked):focus + label:before {
+    border: 1px dotted blue;
+}
+ */
+
+/* Select style */
+
+.styled-navitheme select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+.styled-navitheme label {
+    margin-bottom: 6px;
+}

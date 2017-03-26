@@ -1,0 +1,25 @@
+<!-- Comment Item -->
+<li{{ attributes.addClass('media comment-item') }}>
+    {#
+    Hide the "new" indicator by default, let a piece of JavaScript ask the
+    server which comments are new for the user. Rendering the final "new"
+    indicator here would break the render cache.
+    #}
+    <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>    
+    {{ user_picture|render|str_replace_first('<div', '<div class="pull-left"')|str_replace('<img', '<img class="media-object comment-avatar" ')|raw }}   
+    <div{{ content_attributes.addClass('media-body') }}>        
+        <div class="comment-item-title">
+            <div class="comment-author">
+                {{ author }}
+            </div>
+            <div class="comment-date">
+                <div>
+                    {{ comment.getCreatedTime|date('M d, Y, H:iA') }}<span class="slash-divider">-</span>
+                </div>
+                {{ content.links }}
+            </div>
+        </div>        
+        <p class="pb-30">{{ content|without('links')|render|strip_tags('<p>')|raw }}</p>
+    </div>
+</li>
+<!-- End Comment Item -->

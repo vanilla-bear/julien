@@ -1,0 +1,23 @@
+uuid: fc652d6f-e366-4677-af0c-b12ccf46cf26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footer_style
+    - node.type.homepage
+  module:
+    - options
+id: node.homepage.field_footer_style
+field_name: field_footer_style
+entity_type: node
+bundle: homepage
+label: 'Footer style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: footer2white
+default_value_callback: ''
+settings: {  }
+field_type: list_string

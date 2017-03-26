@@ -1,0 +1,22 @@
+uuid: 0beea1e9-1303-46a4-b50a-74d46745be2a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - hawell
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: hawell_local_tasks
+theme: hawell
+region: content
+weight: -10
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

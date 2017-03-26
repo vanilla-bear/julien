@@ -1,0 +1,17 @@
+uuid: ab40d005-5353-4cbf-93f6-10fb0c553923
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: home_fullscreen_menu
+label: 'Home fullscreen menu'
+logic: and
+conditions:
+  085f63b3-bc7d-4d3e-b03e-0f16c647be70:
+    id: request_path
+    pages: /node/101
+    negate: false
+    context_mapping: {  }
+    uuid: 085f63b3-bc7d-4d3e-b03e-0f16c647be70
+allow_other_conditions: false

@@ -1,0 +1,314 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+{% if view.current_display == 'block_features_style1' %}
+	{% if rows %}
+	<div class="container fes1-cont">
+		<div class="row">
+			{% if footer %}
+			<div class="col-md-4 fes1-img-cont wow fadeInUp mb-20">
+				{{ footer }}
+			</div>
+			{% endif %}
+			<div class="col-md-8">
+			{% if header %}
+				<div class="row">
+                  	<div class="col-md-12">
+                    	<div class="fes1-main-title-cont wow fadeInDown">
+                      		<div class="title-fs-60">
+								{{ header }}
+                      		</div>
+                      	</div>
+                    </div>
+              	</div>
+			{% endif %}
+				{{ rows }}
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_services_style1' %}
+	{% if rows %}
+	<div class="container">
+        <div class="row">
+       	{% if header %}
+       		<div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="fes4-box wow fadeIn">
+					{{ header }}
+				</div>
+			</div>
+		{% endif %}
+			{{ rows }}
+        </div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_clients_and_testimonials' %}
+	{% if rows %}
+	<div class="container">
+	{% if header %}
+		<div class="row">            
+            <div class="col-md-12">
+                <div class="mb-50">
+					{{ header }}
+                </div>
+            </div>
+        </div>
+	{% endif %}
+		<div class="row">
+           	<!-- CLIENTS 1 -->
+            <div class="col-md-7">
+				<div class="row client-row border-bot">
+					{{ rows }}
+				</div>
+			{% if attachment_after  %}
+				<div class="row client-row">
+					{{ attachment_after }}
+				</div>
+			{% endif %}	
+            </div>
+		{% if footer %}
+			<!-- TESTIMONIALS 1 -->
+			<div class="col-md-5">
+				{{ footer }}
+			</div>
+		{% endif %}
+        </div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_work_process' %}
+	{% if rows %}
+	<div class="work-proc-1-bg" >
+		<div class="container fes4-cont">
+			<div class="row">
+			{% if header %}
+				<div class="col-md-4 ">
+					{{ header }}
+				</div>
+			{% endif %}
+				<div class="col-md-7 col-lg-offset-1">
+                	<div class="row">
+						{{ rows }}
+                	</div>
+                </div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_client_grid_style' %}
+	{% if rows %}
+	<div class="container">
+		{{ rows|render|str_replace_first('<div class="col-xs-6 col-sm-2 client1-item first">','<div class="row client-row border-bot"><div class="col-xs-6 col-sm-2 client1-item">')|str_replace('<div class="col-xs-6 col-sm-2 client1-item first">','</div><div class="row client-row"><div class="col-xs-6 col-sm-2 client1-item">')|concatenation('</div>')|raw }}
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_work_process_style2' %}
+	{% if rows %}
+		<div class="container fes4-cont">
+			<div class="row">
+			{% if header %}
+				<div class="col-md-4 ">
+					{{ header }}
+				</div>
+			{% endif %}
+				<div class="col-md-7 col-lg-offset-1">
+                	<div class="row">
+						{{ rows }}
+                	</div>
+                </div>
+			</div>
+		</div>
+	{% endif %}
+{% elseif view.current_display == 'block_features_and_testimonials' %}
+	{% if rows %}
+	<div class="container">
+		<div class="row">
+		{% if header  %}
+			<div class="col-md-5 pb-40">
+				{{ header }}
+			</div>
+		{% endif %}	
+			<div class="col-md-7">
+				<div class="row">
+					{{ rows }}
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_our_team_style1' %}
+	{% if rows %}
+	<div class="container">
+		{% if header  %}
+		<div class="row">            
+           	<div class="col-md-12">
+                <div class="mb-50">
+					{{ header }}
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		<div class="row">
+			{{ rows }}
+		</div>
+	</div>
+	{% endif %}
+	{{ footer }}
+{% elseif view.current_display == 'block_our_team_style2' or view.current_display == 'block_features_style2' or view.current_display == 'block_our_team_style1b' %}
+	{% if rows %}
+	<div class="container">
+		{% if header  %}
+		<div class="row">            
+           	<div class="col-md-12">
+                <div class="mb-50">
+					{{ header }}
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		<div class="row">
+			{{ rows }}
+		</div>
+	</div>
+	{% endif %}
+	{{ footer }}
+{% elseif view.current_display == 'block_features_style3' %}
+	{% if rows %}
+	<div class="container">
+        <div class="row">
+			{{ rows }}
+        </div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_testimonials_fullwidth_carousel' %}
+	{% if rows %}
+	<div class="owl-white-bg fullwidth-slider p-50-cont">
+		{{ rows }}
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_features_and_skills' %}
+	{% if rows %}
+	<div class="container">
+		<div class="row">
+		{% if header %}
+			<div class="col-md-4 pt-30 pb-40">
+				{{ header }}
+			</div>
+		{% endif %}
+			<div class="col-md-8 col-lg-7 col-lg-offset-1 ">                    
+                <div class="row">
+					{% set n = rows|render|substr_count('50ms') %}
+                	{% for i in 1..n %}
+                		{% set s = i * 100 ~ 'ms' %}
+						{% set rows = rows|render|str_replace_first('50ms', s) %}
+                	{% endfor %}
+					{{ rows|raw }}
+                </div>
+            </div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_client_style_carousel' %}
+	{% if rows %}
+	<div class="container" >
+		<div class="row" >			
+			<div class="col-md-12" >
+				<div id="owl-clients" class="owl-carousel our-clients-cont" >
+					{{ rows }}
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_articles_featured' or view.current_display == 'block_features_style4' %}
+	{% if rows %}
+	<div class="container" >
+		<div class="row" >
+			{{ rows }}
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_articles_featured_style2' %}
+	{% if rows %}
+	<div class="fes10-container grey-light-bg clearfix">
+		{{ rows }}
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_services_style2' %}
+	{% if rows %}
+	<div class="container">
+        <div class="row">
+		{% set nodes = rows.0.0['#rows'] %}
+		{% set n = 0 %}
+		{% for item in nodes %}
+			{% set n = n + 1 %}
+			{% set node = item['#row'].nid|str_replace(' ', '')|node_load %}
+			{% if n == 1 %}
+			<div class="col-md-8 col-sm-8 plr-5">
+				<div class="row">					
+					<div class="col-md-6 col-sm-6 shop-dep-item mb-10">
+						<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+							<img src="{{ node.field_image.0.entity.fileuri|image_style_url('image_380x365') }}" alt="{{ node.field_image.0.alt }}">
+							<div class="shop-dep-text-cont">
+								<h4 class="uppercase">{{ node.title.value }}</h4>
+							</div>
+						</a>
+					</div>
+			{% elseif n == 2 %}
+					<div class="col-md-6 col-sm-6 shop-dep-item mb-10">
+						<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+							<img src="{{ node.field_image.0.entity.fileuri|image_style_url('image_380x365') }}" alt="{{ node.field_image.0.alt }}">
+							<div class="shop-dep-text-cont">
+								<h4 class="uppercase">{{ node.title.value }}</h4>
+							</div>
+						</a>
+					</div>
+			{% elseif n == 3 %}
+				</div>
+                <div class="row">               
+                	<div class="col-md-12 shop-dep-item mb-10">
+	                    <a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+	                      	<img src="{{ node.field_image.0.entity.fileuri|image_style_url('image_770x264') }}" alt="{{ node.field_image.0.alt }}">
+	                      	<div class="shop-dep-text-cont yellow-bg">
+	                        	<h4><span class="sale-bold uppercase">{{ node.title.value }}</span></h4>
+	                      	</div> 
+	                    </a>
+                  	</div>                 
+                </div>
+            </div>
+            {% elseif n == 4 %}
+            <div class="col-md-4 col-sm-4 shop-dep-item">
+				<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+					<img src="{{ node.field_image.0.entity.fileuri|image_style_url('image_380x640') }}" alt="{{ node.field_image.0.alt }}">
+					<div class="shop-dep-text-cont">
+						<h4><span class="sale-bold uppercase">{{ node.title.value }}</span></h4>
+					</div>
+				</a>
+            </div>
+            {% else %}
+			<div class="col-md-6 col-sm-6 shop-dep-item mb-10">
+				<a href="{{ path('entity.node.canonical', {'node': node.id}) }}">
+					<img src="{{ node.field_image.0.entity.fileuri|image_style_url('image_380x365') }}" alt="{{ node.field_image.0.alt }}">
+					<div class="shop-dep-text-cont">
+						<h4 class="uppercase">{{ node.title.value }}</h4>
+					</div>
+				</a>
+			</div>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+	{% endif %}
+{% endif %}

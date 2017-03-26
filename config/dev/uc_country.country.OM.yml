@@ -1,0 +1,26 @@
+uuid: f7d037c4-c15c-4c60-a754-249d31566715
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: qFY0FAyvobTCwsPRay9YmjCUb3iVTWXkXWtS6fkLHJI
+name: Oman
+alpha_2: OM
+alpha_3: OMN
+numeric: 512
+zones:
+  BA: 'Al Batinah'
+  DA: 'Ad Dakhiliyah'
+  JA: 'Al Janubiyah'
+  MA: Masqat
+  MU: Musandam
+  SH: 'Ash Sharqiyah'
+  WU: 'Al Wusta'
+  ZA: 'Az Zahirah'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city'
+  - '!zone_name, !country_name_if'

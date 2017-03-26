@@ -1,0 +1,18 @@
+uuid: 28246a1b-986b-4660-a4fc-aa8f0a2b10ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Team
+type: team
+description: 'Use this content type create your team'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

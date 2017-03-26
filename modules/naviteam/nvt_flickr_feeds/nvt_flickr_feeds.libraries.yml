@@ -1,0 +1,7 @@
+ntv-flickr-libary:
+  version: VERSION
+  js:
+    js/jflickrfeed.min.js: {}
+  dependencies:
+    - core/jquery
+

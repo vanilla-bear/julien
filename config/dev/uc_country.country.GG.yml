@@ -1,0 +1,18 @@
+uuid: 2c32a4b8-7900-4a87-9cd9-47c9e055d06c
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: F_dBVViCYJ5IPjaWYKcOF9YBDtxVgs6OxTp0PR11r7U
+name: Guernesey
+alpha_2: GG
+alpha_3: GGY
+numeric: 831
+zones: {  }
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city  !postal_code'
+  - '!country_name_if'

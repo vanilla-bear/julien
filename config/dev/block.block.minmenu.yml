@@ -1,0 +1,49 @@
+uuid: e5822ed7-c23e-4f2f-baa2-9bfac46e7a85
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_min_menu
+    - system.menu.min-menu
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - system
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: minmenu
+theme: hawell
+region: min_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:min-menu'
+settings:
+  id: 'system_menu_block:min-menu'
+  label: 'Min menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_min_menu
+    context_mapping: {  }

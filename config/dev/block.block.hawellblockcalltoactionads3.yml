@@ -1,0 +1,51 @@
+uuid: 8a3c94c5-b090-4f93-a179-302f884eb580
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.landing_page_1
+  content:
+    - 'block_content:basic:3a205611-d563-4e53-a8f4-c833a01c06a2'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockcalltoactionads3
+theme: hawell
+region: section
+weight: -11
+provider: null
+plugin: 'block_content:3a205611-d563-4e53-a8f4-c833a01c06a2'
+settings:
+  id: 'block_content:3a205611-d563-4e53-a8f4-c833a01c06a2'
+  label: '[Hawell] Block call to action ads 3'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: landing_page_1
+    context_mapping: {  }

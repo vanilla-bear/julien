@@ -1,0 +1,38 @@
+uuid: 76950514-96d4-46e1-b04e-543b1a530f8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type._hawell_block_image
+    - field.field.block_content._hawell_block_image.field_image
+    - image.style.thumbnail
+  module:
+    - image
+    - imce
+id: block_content._hawell_block_image.default
+targetEntityType: block_content
+bundle: _hawell_block_image
+mode: default
+content:
+  field_image:
+    weight: 1
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+  info:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

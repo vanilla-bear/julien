@@ -1,0 +1,33 @@
+uuid: 5e1857ad-9d87-484d-8ef9-6d1595be4013
+langcode: en
+status: true
+dependencies: {  }
+id: full_html
+label: 'Full HTML'
+description: ''
+settings:
+  toolbar:
+    - bold
+    - italic
+    - underline
+    - strike
+    - quote
+    - code
+    - h1
+    - h2
+    - h3
+    - h4
+    - h5
+    - h6
+    - ul
+    - ol
+    - link
+    - image
+    - xpreview
+    - custom_table
+    - undo
+    - redo
+  cname: ''
+  indent: false
+  acTags: true
+  fileBrowser: imce

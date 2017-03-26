@@ -1,0 +1,11 @@
+uuid: 4306a461-b4eb-468c-b732-58e0033a5af1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type._hawell_block_image
+id: block_content._hawell_block_image
+target_entity_type_id: block_content
+target_bundle: _hawell_block_image
+default_langcode: site_default
+language_alterable: false

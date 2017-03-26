@@ -1,0 +1,23 @@
+uuid: 7b86938f-7eda-4fe2-a536-07b39619998d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_post_layout
+    - node.type.blog_post
+  module:
+    - options
+id: node.blog_post.field_post_layout
+field_name: field_post_layout
+entity_type: node
+bundle: blog_post
+label: 'Post layout'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: fullwidth
+default_value_callback: ''
+settings: {  }
+field_type: list_string

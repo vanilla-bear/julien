@@ -1,0 +1,225 @@
+{% if not page %}
+{% else %}
+	{% set n = node.field_images|length %}
+	{% if node.field_portfolio_style is not empty and n > 1 %}
+		{% set portfolio_single_style = node.field_portfolio_style.value %}
+	{% else %}
+		{% set portfolio_single_style = 'galery' %}
+	{% endif %}
+	{% if portfolio_single_style == 'slider' %}
+	<!-- PORTFOLIO INFO -->
+	<div class="container">
+		<div class="row">			
+			<div class="col-md-4">
+				<!-- PROJECT DETAIL -->
+				<div class="port-detail-cont mb-30">
+					<h4 class="blog-page-title mt-0 mb-20">{{ 'PROJECT DETAILS'|t }}</h4>
+					<div class="port-detail uppercase">
+						<p>
+							<strong>{{ 'CLIENT'|t }}:</strong>
+							{{ node.field_client.value }}
+						</p>
+						<p>
+							<strong>{{ 'DATE'|t }}:</strong>
+							{{ node.getCreatedTime|date('d F, Y') }}
+						</p>
+						<p>
+							<strong>{{ 'CATEGORY'|t }}:</strong>
+						{% for term in node.field_portfolio_categories %}
+							{% set tid = term.target_id %}
+							{% set  term = term.target_id|term_load %}
+							{% if loop.last %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a>
+							{% else %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a>,  
+							{% endif %}
+						{% endfor %}
+						</p>
+						<p>
+							<strong>{{ 'ONLINE'|t }}:</strong>
+							{{ content.field_link|render|strip_tags('<a>')|raw }}
+						</p>
+					</div>
+				</div>
+			</div>			
+			<div class="col-md-8 mb-80">
+				<p>{{ content|without('field_link', 'field_images', 'field_portfolio_categories', 'field_client') }}</p>
+			</div>
+		</div>		
+	</div>
+	<!-- CAROUSEL -->
+	<div class="container mb-80">		
+		<div class="fullwidth-slider owl-carousel owl-arrows-bg owl-dark-bg owl-pag-2" >			
+			<!-- ITEM -->
+			{% for img in node.field_images %}
+			<div class="item m-0">
+				<div>
+					<img src="{{ img.entity.fileuri|image_style_url('image_1140x642') }}" alt="{{ img.alt }}">
+				</div>
+			</div>			
+			{% endfor %}
+		</div>		
+	</div>
+	{% elseif portfolio_single_style == 'list' %}
+	<!-- PORTFOLIO INFO -->
+	<div class="container">
+	    <div class="row">
+	        <!-- SIDEBAR -->
+	        <div class="col-sm-4 col-md-3">
+	            <!-- PROJECT DETAIL -->
+	            <div class="port-detail-cont mb-30">
+	                <h4 class="blog-page-title mt-0 mb-20">{{ 'PROJECT DETAILS'|t }}</h4>
+	                <div class="port-detail">
+	                    <p>
+							<strong>{{ 'CLIENT'|t }}:</strong>
+							{{ node.field_client.value }}
+						</p>
+						<p>
+							<strong>{{ 'DATE'|t }}:</strong>
+							{{ node.getCreatedTime|date('d F, Y') }}
+						</p>
+						<p>
+							<strong>{{ 'CATEGORY'|t }}:</strong>
+						{% for term in node.field_portfolio_categories %}
+							{% set tid = term.target_id %}
+							{% set  term = term.target_id|term_load %}
+							{% if loop.last %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a>
+							{% else %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a>,  
+							{% endif %}
+						{% endfor %}
+						</p>
+						<p>
+							<strong>{{ 'ONLINE'|t }}:</strong>
+							{{ content.field_link|render|strip_tags('<a>')|raw }}
+						</p>
+	                </div>
+	            </div>
+	            <div class="mb-50">
+	               {{ content|without('field_link', 'field_images', 'field_portfolio_categories', 'field_client') }}
+	            </div>
+	        </div>
+	        <!-- CONTENT -->
+	        <div class="col-sm-8 col-md-offset-1 mb-80">
+	            <!-- IMG -->
+	            {% for img in node.field_images %}
+	            <div class="lightbox-item mb-30">
+	                <a href="{{ file_url(img.entity.fileuri) }}" class="lightbox">
+	                    <div class="port-img-overlay">
+	                        <img class="port-main-img" src="{{ img.entity.fileuri|image_style_url('image_1140x642') }}" alt="{{ img.alt }}">
+	                    </div>
+	                    <div class="port-overlay-cont">
+	                        <div class="port-btn-cont">
+	                            <div aria-hidden="true" class="icon_search"></div>
+	                        </div>
+	                    </div>
+	                </a>
+	            </div>
+	            {% endfor %}
+	        </div>
+	    </div>
+	</div>
+	{% else %}
+	<!-- PORTFOLIO INFO -->
+	<div class="container">
+	    <div class="row">
+	        <!-- SIDEBAR -->
+	        <div class="col-sm-4 col-md-3">
+	            <!-- PROJECT DETAIL -->
+	            <div class="port-detail-cont mb-30">
+	                <h4 class="blog-page-title mt-0 mb-20">{{ 'PROJECT DETAILS' }}</h4>
+	                <div class="port-detail">
+	                     <p>
+							<strong>{{ 'CLIENT'|t }}:</strong>
+							{{ node.field_client.value }}
+						</p>
+						<p>
+							<strong>{{ 'DATE'|t }}:</strong>
+							{{ node.getCreatedTime|date('d F, Y') }}
+						</p>
+						<p>
+							<strong>{{ 'CATEGORY'|t }}:</strong>
+						{% for term in node.field_portfolio_categories %}
+							{% set tid = term.target_id %}
+							{% set  term = term.target_id|term_load %}
+							{% if loop.last %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a>
+							{% else %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': tid}) }}">{{ term.getName }}</a>,  
+							{% endif %}
+						{% endfor %}
+						</p>
+						<p>
+							<strong>{{ 'ONLINE'|t }}:</strong>
+							{{ content.field_link|render|strip_tags('<a>')|raw }}
+						</p>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- CONTENT -->
+	        <div class="col-sm-8 col-md-offset-1 ">
+	            <div class="lightbox-item popup-gallery mb-30">
+	                <a href="{{ file_url(node.field_images.0.entity.fileuri) }}">
+	                    <div class="port-img-overlay">
+	                        <img class="port-main-img" src="{{ node.field_images.0.entity.fileuri|image_style_url('image_1140x642') }}" alt="{{ node.field_images.0.alt }}">
+	                    </div>
+	                    <div class="port-overlay-cont">
+	                        <div class="port-btn-cont">
+	                            <div aria-hidden="true" class="icon_search"></div>
+	                        </div>
+	                    </div>
+	                </a>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="container">
+		<div class="row mt-30 mb-60 ">
+			<div class="popup-gallery">
+				<!-- IMG -->
+				{% for img in node.field_images %}
+				<div class="col-sm-3 col-xs-6 mb-20">
+					<div class="lightbox-item">
+						<a href="{{ file_url(img.entity.fileuri) }}">
+							<div class="port-img-overlay">
+								<img class="port-main-img" src="{{ img.entity.fileuri|image_style_url('image_1140x642') }}" alt="{{ img.alt }}">
+							</div>
+							<div class="port-overlay-cont">
+								<div class="port-btn-cont">
+									<div aria-hidden="true" class="icon_search"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<!-- DIVIDER -->
+	<hr class="mt-0 mb-0">
+	<div class="container">
+		<div class="row p-80-cont">
+			<div class="col-md-12">
+				<h4 class="blog-page-title mt-0 mb-20">{{ 'PROJECT DESCRIPTION'|t }}</h4>
+			</div>
+			{{ content|without('field_link', 'field_images', 'field_portfolio_categories', 'field_client') }}		
+		</div>
+	</div>
+	{% endif %}
+	<!-- DIVIDER -->
+	<hr class="mt-0 mb-0">
+	<!-- WORK NAVIGATION -->
+	<div class="work-navigation plr-10 clearfix">
+		{% set next_link = next_prev_post(node.nid.value, 'next',  node.getType) %}
+		{% set prev_link = next_prev_post(node.nid.value, 'prev',  node.getType) %}
+		{% if prev_link is not empty %}
+		<a href="{{ prev_link }}" class="work-prev"><span><span class="icon icon-arrows-left"></span>&nbsp;{{ 'Prev'|t }}</span></a>
+		{% endif %}
+		<a href="{{ home_url }}/portfolio" class="work-all" title="View all" ><span class="icon icon-arrows-squares"></span></a>
+		{% if next_link is not empty %}
+		<a href="{{ next_link }}" class="work-next"><span>{{ 'Next'|t }}&nbsp;<span class="icon icon-arrows-right"></span></span></a>
+		{% endif %}
+	</div>
+{% endif %}

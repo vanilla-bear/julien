@@ -1,0 +1,26 @@
+uuid: 6d9e0fb4-477b-4a0e-85ca-9fa55e877f03
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+id: blog
+label: Blog
+logic: or
+conditions:
+  fc240453-dc91-41ce-a21c-8dab035acb0c:
+    id: request_path
+    pages: /blog
+    negate: false
+    context_mapping: {  }
+    uuid: fc240453-dc91-41ce-a21c-8dab035acb0c
+  11bbce7d-261a-43bb-b779-728edcbb8ded:
+    id: 'entity_bundle:node'
+    bundles:
+      blog_post: blog_post
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 11bbce7d-261a-43bb-b779-728edcbb8ded
+allow_other_conditions: false

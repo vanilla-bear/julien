@@ -1,0 +1,38 @@
+uuid: 400e0cba-19ee-455a-a0a7-29cf611b3114
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.carto
+    - field.storage.block_content.field_logo
+  module:
+    - image
+id: block_content.carto.field_logo
+field_name: field_logo
+entity_type: block_content
+bundle: carto
+label: Logo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: societe
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

@@ -1,0 +1,14 @@
+uuid: 703ef29a-7726-418f-b581-41013542ac96
+langcode: en
+status: true
+dependencies: {  }
+name: image_1140x642
+label: 'Image 1140x642'
+effects:
+  d066adad-9b7e-4b3e-8ff1-6e9c893593af:
+    uuid: d066adad-9b7e-4b3e-8ff1-6e9c893593af
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1140
+      height: 642

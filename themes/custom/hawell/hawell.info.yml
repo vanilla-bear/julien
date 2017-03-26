@@ -1,0 +1,37 @@
+name: HAWELL
+description: Hawell theme for drupal 8 ready for use Industries, School, hospital, corporative, travel, fashion, jewellery and any business.
+type: theme
+package: Core
+version: VERSION
+
+#Libraries
+libraries:
+    - hawell/global-styling
+    - hawell/global-scripts
+
+regions:
+    topbar: 'Top Bar'
+    header_branding: 'Header branding'
+    shopping_cart: 'Shopping cart'
+    responsive_menu: 'Responsive menu'
+    header_search: 'Header search'
+    main_menu: 'Main menu'
+    min_menu: 'Min menu'
+    side_menu: 'Side menu'
+    fullscreen_menu: 'Fullscreen menu'
+    slideshow: Slideshow
+    messages: Messages
+    breadcrumb: Breadcrumb
+    page_heading: 'Page heading'
+    page_tp: 'Page top'
+    content: Content
+    sidebar: Sidebar
+    section: Section
+    page_bt: 'Page bottom'
+    footer: Footer
+    footer_bottom: 'Footer bottom'
+
+version: '8.x'
+core: '8.x'
+project: 'hawell'
+datestamp: 1464825150

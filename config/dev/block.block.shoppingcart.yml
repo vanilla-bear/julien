@@ -1,0 +1,53 @@
+uuid: f52770f5-daf6-4161-a6b5-b05c6cd96b84
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_shop
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - uc_cart
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: ''
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: shoppingcart
+theme: hawell
+region: '-1'
+weight: 0
+provider: null
+plugin: uc_cart
+settings:
+  id: uc_cart
+  label: 'Shopping cart'
+  provider: uc_cart
+  label_display: visible
+  hide_empty: 0
+  show_image: 1
+  collapsible: 1
+  collapsed: 1
+  cache:
+    max_age:
+      '#value': 0
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_shop
+    context_mapping: {  }

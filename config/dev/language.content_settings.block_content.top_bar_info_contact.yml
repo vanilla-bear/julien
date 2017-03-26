@@ -1,0 +1,11 @@
+uuid: 3e82debb-53f6-4884-a076-6cdc468b234b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.top_bar_info_contact
+id: block_content.top_bar_info_contact
+target_entity_type_id: block_content
+target_bundle: top_bar_info_contact
+default_langcode: site_default
+language_alterable: false

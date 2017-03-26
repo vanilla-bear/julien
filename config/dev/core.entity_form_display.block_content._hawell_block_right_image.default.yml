@@ -1,0 +1,56 @@
+uuid: 61e728d3-0d52-4a0f-ae7b-066d0410e8f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type._hawell_block_right_image
+    - field.field.block_content._hawell_block_right_image.body
+    - field.field.block_content._hawell_block_right_image.field_block_header
+    - field.field.block_content._hawell_block_right_image.field_image
+    - image.style.thumbnail
+  module:
+    - image
+    - imce
+    - text
+id: block_content._hawell_block_right_image.default
+targetEntityType: block_content
+bundle: _hawell_block_right_image
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_block_header:
+    weight: 1
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_image:
+    weight: 3
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+  info:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

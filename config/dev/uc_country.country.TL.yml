@@ -1,0 +1,31 @@
+uuid: 3f9b787c-bc10-4a1f-8c7c-51d6b4193647
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: 6-s8_qAaRDTnAorRXIHB5HoL_gEtiRA-F162oc72VAI
+name: 'Timor oriental'
+alpha_2: TL
+alpha_3: TLS
+numeric: 626
+zones:
+  TL-AL: Aileu
+  TL-AN: Ainaro
+  TL-BA: Baucau
+  TL-BO: Bobonaro
+  TL-CO: 'Cova Lima'
+  TL-DI: Dili
+  TL-ER: Ermera
+  TL-LA: Lautem
+  TL-LI: Liquiça
+  TL-MT: Manatuto
+  TL-MF: Manufahi
+  TL-OE: Oecussi
+  TL-VI: Viqueque
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

@@ -1,0 +1,8 @@
+uuid: 968299dd-b9a9-4aa2-b48f-dfa99858ff90
+langcode: en
+status: true
+dependencies: {  }
+id: side-menu
+label: 'Side menu'
+description: ''
+locked: false

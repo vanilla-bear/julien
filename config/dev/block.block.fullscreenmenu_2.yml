@@ -1,0 +1,49 @@
+uuid: 7b23d683-b2d0-4776-955f-63ee90db9e0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.coming_soon_2
+    - system.menu.fullscreen-menu
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - system
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: fs-nav-black
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: fullscreenmenu_2
+theme: hawell
+region: fullscreen_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:fullscreen-menu'
+settings:
+  id: 'system_menu_block:fullscreen-menu'
+  label: 'Fullscreen menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: coming_soon_2
+    context_mapping: {  }

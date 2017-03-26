@@ -1,0 +1,11 @@
+uuid: 839218c6-a683-45dc-b409-d22e9dbeb6b2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.customer_review
+id: node.customer_review
+target_entity_type_id: node
+target_bundle: customer_review
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,31 @@
+uuid: f95cf6a3-9fae-4af6-956c-337ac43e31c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.work_process.body
+    - field.field.node.work_process.field_icon_class
+    - field.field.node.work_process.field_subtitle
+    - node.type.work_process
+  module:
+    - text
+    - user
+id: node.work_process.teaser
+targetEntityType: node
+bundle: work_process
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_icon_class: true
+  field_subtitle: true
+  langcode: true

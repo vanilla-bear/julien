@@ -1,0 +1,8 @@
+uuid: 670d172b-9cc6-4b11-801e-5028f888d468
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_3_colonnes
+label: 'Bloc 3 colonnes'
+revision: 0
+description: ''

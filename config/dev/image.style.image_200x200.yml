@@ -1,0 +1,14 @@
+uuid: 8fb312b2-a911-4095-b365-6b091d400d95
+langcode: en
+status: true
+dependencies: {  }
+name: image_200x200
+label: 'Image 200x200'
+effects:
+  aa81f5ec-31d3-4cbf-a21e-01103de8921d:
+    uuid: aa81f5ec-31d3-4cbf-a21e-01103de8921d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200

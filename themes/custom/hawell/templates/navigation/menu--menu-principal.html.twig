@@ -1,0 +1,114 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+    {% import _self as menus %}
+    {% if items %}
+        {% if menu_level == 0 %}
+            <ul{{ attributes.addClass('nav navbar-nav') }}>
+        {% else %}
+            <ul>
+        {% endif %}
+        {% for item in items %}
+            {% set item_class = item.attributes.class %}
+            {% set megasub = item_class|strpos('mega-submenu') %}
+            {% set mega_menu_title = item_class|strpos('menu-title') %}
+            {% set icon_class = item.attributes.style %}
+            {% if icon_class != '' %}
+                {% set link_icon = '<div class="' ~ icon_class ~ '"></div> ' %}
+            {% else %}
+                {% set link_icon = '' %}
+            {% endif %}
+            {%
+            set classes = [
+              item.is_expanded ? 'menu-item--expanded parent',
+              item.is_collapsed ? 'menu-item--collapsed',
+              item.in_active_trail ? 'current',
+              item.is-active ? 'current',
+            ]
+            %}
+            {% if item.below %}
+                {% if menu_level == 0 and item.attributes.hasClass('megamenu') %}
+                <li{{ item.attributes.addClass(classes) }}>
+                    <a href="{{ item.url }}"><div class="main-menu-title">{{ link_icon|raw }}{{ item.title }}</div></a>
+                    <ul class="sub">
+                        <li>
+                            <div class="menu-sub-container">
+                                {{ menus.menu_links(item.below, attributes, menu_level + 1)|render|str_replace_first('<ul>', '')|trim|substr(0,-5)|raw  }}
+                            </div>
+                        </li>
+                    </ul>                                
+                </li>
+                {% elseif menu_level == 1 and megasub is not empty %}
+                    {% if mega_menu_title is not empty %}
+                    <div class="{{ item_class }} box ofloat closed">
+                         <h5 class="title">{{ link_icon|raw }}{{ item.title }}</h5>
+                        {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                    </div>
+                    {% else %}
+                    <div class="{{ item_class }} box">
+                        {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                    </div>
+                    {% endif %}
+                {% else %}
+                <li{{ item.attributes.addClass(classes) }}>
+                    {{ link(item.title, item.url) }}
+                    {{ menus.menu_links(item.below, attributes, menu_level + 1)|render|str_replace('<ul>', '<ul class="sub">')|raw }}
+                </li>
+                {% endif %}
+            {% elseif menu_level == 1 and megasub is not empty %}
+                {% if mega_menu_title is not empty %}
+                <div class="{{ item_class }} box ofloat closed">
+                     <h5 class="title">{{ link_icon|raw }}{{ item.title }}</h5>
+                    {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                </div>
+                {% else %}
+                <div class="{{ item_class }} box">
+                    {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                </div>
+                {% endif %}
+            {% else %}
+                {% if item.attributes.class  == 'menu-cart' %}
+                    {# Link to shopping cart #}
+                    <li class="display-none">
+                        <a href="javascript:void(0)"><div class="main-menu-title"><span aria-hidden="true" class="icon_cart"></span>{{ 'CART'|t }} (<span class="count-cart-item">0</span>)</div></a>
+                    </li>
+                {% else %}
+                <li{{ item.attributes }}>
+                    {% set item_title = link_icon ~ item.title %}
+                    <a href="{{ item.url }}"><div class="main-menu-title">{{ link_icon|raw }}{{ item.title }}</div></a>
+                    {% if item.below %}
+                        {{ menus.menu_links(item.below, attributes, menu_level + 1)|render|str_replace('<ul>', '<ul class="sub">')|raw }}
+                    {% endif %}
+                </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+            </ul>
+    {% endif %}
+{% endmacro %}

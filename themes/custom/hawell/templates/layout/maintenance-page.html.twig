@@ -1,0 +1,36 @@
+<!-- HEADER 1  -->
+<header id="nav" class="header header-1">	
+	<div class="header-wrapper">
+		<div class="container-m-30 clearfix">
+			<div class="logo-row">				
+				<!-- LOGO -->
+				<div class="logo-container-2">
+				{% if page.header_branding %}
+					{{ page.header_branding }}
+				{% elseif logo %}
+					<div class="logo-2">
+						<a href="{{ front_page }}" class="clearfix">
+							<img src="{{ logo }}" class="logo-img" alt="{{ site_name }}">
+						</a>
+					</div>
+				{% endif %}
+				</div>
+			</div>
+		</div>		
+	</div>
+	<!-- END header-wrapper -->	
+</header>
+<!-- COTENT CONTAINER -->
+<div class="container maintenance-container">
+	<div class="row m-bot-40">
+		<div class="col-md-4 text-center maintenance-icon-container">
+			<span aria-hidden="true" class="icon_tools maintenance-icon"></span>
+		</div>
+		<div class="col-md-8 maintenance-text-container">
+			{{ messages }}
+			{{ page.content }}			
+		</div>
+		
+	</div>
+</div>
+{% include directory ~ '/templates/layout/footer.html.twig' %}

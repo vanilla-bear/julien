@@ -1,0 +1,14 @@
+uuid: 2bc0cb76-d18c-467d-ba82-00ab2a129f68
+langcode: en
+status: true
+dependencies: {  }
+name: image_770x264
+label: 'Image 770x264'
+effects:
+  eaf2acfe-1a3c-4e68-8a38-07568cf0d8d8:
+    uuid: eaf2acfe-1a3c-4e68-8a38-07568cf0d8d8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 770
+      height: 264

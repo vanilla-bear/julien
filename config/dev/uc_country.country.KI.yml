@@ -1,0 +1,21 @@
+uuid: 0bee715f-4511-44b4-95c6-79499bf0625c
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: '-pJ1RIr3QZy6PXOPER2Cqt5GJf5LwbaQwoSlhPo6AnQ'
+name: Kiribati
+alpha_2: KI
+alpha_3: KIR
+numeric: 296
+zones:
+  KI-G: 'Gilbert Islands'
+  KI-L: 'Line Islands'
+  KI-P: 'Phoenix Islands'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_name  !postal_code'
+  - '!country_name_if'

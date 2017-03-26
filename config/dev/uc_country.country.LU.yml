@@ -1,0 +1,19 @@
+uuid: 5edcc97e-faa5-4aa3-81a7-913ad9f3f0a9
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: hPEHTN6ii4mGwmKLfhBfySqg6vfQpezAM9XhLnsvg6A
+name: Luxembourg
+alpha_2: LU
+alpha_3: LUX
+numeric: 442
+zones:
+  L: Letzebuerg
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city !zone_code !postal_code'
+  - '!country_name_if'

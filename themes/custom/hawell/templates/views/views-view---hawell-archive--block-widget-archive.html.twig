@@ -1,0 +1,5 @@
+{% if rows %}
+<div class="widget-body">
+	{{ rows|render|str_replace_first('<ul', '<ul class="clearlist widget-menu"')|str_replace('(', '<small><span class="slash-divider">/</span>')|str_replace(')', '</small>')|raw }}
+</div>
+{% endif %}

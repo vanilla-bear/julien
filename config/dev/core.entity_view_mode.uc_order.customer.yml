@@ -1,0 +1,12 @@
+uuid: 7a48d15c-ee1d-4400-abf1-63f4ce5e7486
+langcode: fr
+status: false
+dependencies:
+  module:
+    - uc_order
+_core:
+  default_config_hash: H8kIY04wsQkbAG2XgV7aJ5mJzJWqU6zAXV2r1k_uGPE
+id: uc_order.customer
+label: 'Vue client'
+targetEntityType: uc_order
+cache: false

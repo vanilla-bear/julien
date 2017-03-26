@@ -1,0 +1,52 @@
+uuid: 73a3d012-de61-4429-9804-680e2fc1461d
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_magazine
+  module:
+    - block_attributes
+    - block_visibility_groups
+    - ntv_block_background
+    - tweets
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: 'col-md-4 col-sm-4'
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: twitterblock_2
+theme: hawell
+region: '-1'
+weight: -16
+provider: null
+plugin: twitter_block
+settings:
+  id: twitter_block
+  label: 'RECENT TWEETS'
+  provider: tweets
+  label_display: visible
+  access_token: 1336019568-oWNgtSGW5AHlHXNLXT4auXpzu5KYusLRg4CtZiW
+  token_secret: IuCAwDSDTsrhC2szhS9yOWxxYeRs36j2OLfflbUxakc2d
+  consumer_key: mmAebBz16VpIWwNzMVVkUyCh1
+  consumer_secret: LvJ8M7Z1TeI6fLlOfgQDD0Uonzw0gs9IJlW3ZawAlk6m5spUrZ
+  tweets_username: drupal
+  tweets_limit: '2'
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_magazine
+    context_mapping: {  }

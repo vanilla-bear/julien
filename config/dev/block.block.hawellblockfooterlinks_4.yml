@@ -1,0 +1,51 @@
+uuid: d26bd02a-0f95-461d-8a6e-022d6ef418d4
+langcode: en
+status: false
+dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_cart
+  content:
+    - 'block_content:basic:baa0f013-778e-49b2-aa20-ed362c1a7868'
+  module:
+    - block_attributes
+    - block_content
+    - block_visibility_groups
+    - ntv_block_background
+  theme:
+    - hawell
+third_party_settings:
+  block_attributes:
+    attr_class: 'col-md-3 col-sm-3'
+    attr_id: ''
+    block_title: ''
+    block_divider: 'no'
+    block_title_icon: ''
+  ntv_block_background:
+    disable: disable
+    color: '#000000'
+    bg_image: {  }
+    bg_image_type: default
+    bg_repeat: 'no'
+    bg_image_position: ''
+    bg_image_size: ''
+    background_overlay: ''
+id: hawellblockfooterlinks_4
+theme: hawell
+region: '-1'
+weight: -11
+provider: null
+plugin: 'block_content:baa0f013-778e-49b2-aa20-ed362c1a7868'
+settings:
+  id: 'block_content:baa0f013-778e-49b2-aa20-ed362c1a7868'
+  label: 'ABOUT US'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  condition_group:
+    id: condition_group
+    negate: false
+    block_visibility_group: home_cart
+    context_mapping: {  }

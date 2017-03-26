@@ -1,0 +1,26 @@
+uuid: eb51c167-b8ee-45b1-8551-470e38d99c52
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+id: shop
+label: Shop
+logic: or
+conditions:
+  cacdf752-775f-4307-8a27-43de2f935761:
+    id: request_path
+    pages: "/shop*\r\n/product*\r\n/cart"
+    negate: false
+    context_mapping: {  }
+    uuid: cacdf752-775f-4307-8a27-43de2f935761
+  d01ff395-0a13-4f2e-8a57-582f20690249:
+    id: 'entity_bundle:node'
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: d01ff395-0a13-4f2e-8a57-582f20690249
+allow_other_conditions: false

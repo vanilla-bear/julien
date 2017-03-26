@@ -1,0 +1,26 @@
+uuid: 84767c58-8557-4817-b0e4-45d11a3736d2
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: HyGtIjw7ZUKg2blDJwgQYbChHgB7oFywLLtYy8wl5dA
+name: Australie
+alpha_2: AU
+alpha_3: AUS
+numeric: 36
+zones:
+  NSW: 'Nouvelle-Galles du Sud'
+  QLD: Queensland
+  SA: 'Australie du sud'
+  TAS: Tasmanie
+  VIC: Victoria
+  WA: Australie-Occidentale
+  NT: 'Territoire du Nord'
+  ACT: 'Territoire de la capitale australienne'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city !zone_code !postal_code'
+  - '!country_name_if'

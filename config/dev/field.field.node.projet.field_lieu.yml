@@ -1,0 +1,28 @@
+uuid: 8c785871-58f1-4ecf-8966-210560f7ec28
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lieu
+    - node.type.projet
+    - taxonomy.vocabulary.lieu_projet
+id: node.projet.field_lieu
+field_name: field_lieu
+entity_type: node
+bundle: projet
+label: Lieu
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lieu_projet: lieu_projet
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

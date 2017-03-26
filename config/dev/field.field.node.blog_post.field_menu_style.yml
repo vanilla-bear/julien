@@ -1,0 +1,23 @@
+uuid: 42d89041-67b2-4798-8abe-e3d2f2954579
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_menu_style
+    - node.type.blog_post
+  module:
+    - options
+id: node.blog_post.field_menu_style
+field_name: field_menu_style
+entity_type: node
+bundle: blog_post
+label: 'Menu style'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: white_notransparent
+default_value_callback: ''
+settings: {  }
+field_type: list_string

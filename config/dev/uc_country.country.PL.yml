@@ -1,0 +1,34 @@
+uuid: e719cf39-fb07-41f9-acc2-79c85f0545d3
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: nFUg_BDKku0J_GOsXRqWMK7_VOF4cA7gR-z60IdsZA8
+name: Pologne
+alpha_2: PL
+alpha_3: POL
+numeric: 616
+zones:
+  DO: Dolnośląskie
+  KP: Couïavie-Poméranie
+  LO: Łódzkie
+  LL: Lubelskie
+  LU: Lubuskie
+  ML: Małopolskie
+  MZ: Mazowieckie
+  OP: Opolskie
+  PP: Podkarpackie
+  PL: Podlaskie
+  PM: 'Voïvodie de Poméranie'
+  SL: Śląskie
+  SW: Świętokrzyskie
+  WM: Warmińsko-Mazurskie
+  WP: Wielkopolskie
+  ZA: 'Voïvodie de Poméranie occidentale'
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_code !postal_code'
+  - '!country_name_if'

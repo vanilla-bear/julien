@@ -1,0 +1,24 @@
+uuid: eea504c9-a19f-4abc-a1bd-906d0aac4c4a
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: IH8IF3JiStjfoMPMLWENZotL7m227W4IlxTrPHveAeU
+name: Chypre
+alpha_2: CY
+alpha_3: CYP
+numeric: 196
+zones:
+  CY-04: Famagusta
+  CY-06: Kyrenia
+  CY-03: Larnaca
+  CY-01: Nicosia
+  CY-02: Limassol
+  CY-05: Paphos
+address_format:
+  - '!company'
+  - '!first_name !last_name'
+  - '!street1'
+  - '!street2'
+  - '!city, !zone_code !postal_code'
+  - '!country_name_if'

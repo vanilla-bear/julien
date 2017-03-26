@@ -1,0 +1,18 @@
+uuid: 11f407dd-4b40-4765-81b6-0d044818abe7
+langcode: fr
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: rlzcTvKI-TQ_BdIAUKHeeXrY0DxSU00AJyrlTiML7VM
+name: Bulgarie
+alpha_2: BG
+alpha_3: BGR
+numeric: 100
+zones: {  }
+address_format:
+  - '!first_name !last_name'
+  - '!company'
+  - '!street1'
+  - '!street2'
+  - '!zone_name'
+  - '!postal_code !city !country_name_if'

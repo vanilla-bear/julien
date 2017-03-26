@@ -1,0 +1,20 @@
+uuid: 22b6b50e-3028-426c-a143-0ccb3bf5a70b
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  0: 'access content'
+  1: 'use text format restricted_html'
+  2: 'access comments'
+  3: 'access site-wide contact form'
+  4: 'search content'
+  5: 'access user profiles'
+  7: 'subscribe to newsletters'
+  8: 'post comments'
+  9: 'vote on node:product:field_votes'

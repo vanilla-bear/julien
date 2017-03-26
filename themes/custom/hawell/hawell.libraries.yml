@@ -1,0 +1,65 @@
+global-styling:
+    version: VERSION
+    css:
+        theme:
+            css/bootstrap.min.css: {}
+            //fonts.googleapis.com/css?family=Lato:300,400,700%7COpen+Sans:400,300,700: { type: external }
+            css/icons-fonts.css: {}
+            css/style.css: {}
+            css/animate.min.css: {}
+            css/update.css: {}
+            css/julien_site.css: {}
+            css/jssor_slider.css: {}
+
+theme-settings:
+    css:
+        component:
+            colorpicker/css/colorpicker.css: {}
+            css/drupalet_base/theme_color.css: {}
+            themesettings/css/themesetting.css: {}
+    js:
+       colorpicker/js/colorpicker.js: {}
+       js/drupalet_admin/admin.js: {}
+       themesettings/js/custom.js: {}
+
+global-scripts:
+    version: VERSION
+    js:
+        js/bootstrap.min.js: {}
+        js/jquery.magnific-popup.min.js: {}
+        js/isotope.pkgd.min.js: {}
+        js/imagesloaded.pkgd.min.js: {}
+        js/masonry.pkgd.min.js: {}
+        js/jquery.countTo.js: {}
+        js/jquery.appear.js: {}
+        //maps.google.com/maps/api/js?key=AIzaSyA6ehUn3UDfxQXHsUSwM4z4bG3_Y-coVew&amp;language=en: { type: external }
+        js/gmap3.min.js: {}
+        js/owl.carousel.min.js: {}
+        js/jquery.nav.js: {}
+        js/jquery.stellar.min.js: {}
+        js/main.js: {}
+        js/fs-menu.js: {}
+        js/side-menu.js: {}
+        js/jquery.flexslider-min.js: {}
+        js/flex-slider.js: {}
+        js/jquery.countdown.min.js: {}
+        js/update.js: {}
+        js/realisation.js: {}
+    dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+home-scripts:
+    version: VERSION
+    js:
+        js/jssor.slider-22.2.15.mini.js: {}
+        js/sliderhome.js: {}
+    dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

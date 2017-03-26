@@ -1,0 +1,17 @@
+uuid: 50b41950-1bbc-4637-a94b-246d5f4a2814
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: coming_soon_2
+label: 'Coming soon 2'
+logic: and
+conditions:
+  93214f51-91b3-437a-9a62-81725893143c:
+    id: request_path
+    pages: /node/123
+    negate: false
+    context_mapping: {  }
+    uuid: 93214f51-91b3-437a-9a62-81725893143c
+allow_other_conditions: false
