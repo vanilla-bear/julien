@@ -64,7 +64,8 @@ function hawell_preprocess_node(&$variables) {
 
     //  if($variables['elements']['#node']->getType() == "page_generales" && $variables["teaser"]){
     if($variables['elements']['#node']->getType() == "projet" ){
-        if (isset($variables['elements']['#node']->get('field_categorie')->getValue()[0]["target_id"])) {
+        $var = $variables['elements']['#node']->get('field_categorie')->getValue()[0]["target_id"];
+        if (isset($var)) {
             $variables["term_id"] = $variables['elements']['#node']->get('field_categorie')->getValue()[0]["target_id"];
         }
         $term = \Drupal\taxonomy\Entity\Term::load($variables['elements']['#node']->get('field_categorie')->getValue()[0]["target_id"]);
