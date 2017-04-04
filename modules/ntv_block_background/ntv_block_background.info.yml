@@ -1,0 +1,5 @@
+name: Hello World
+core: 8.x
+type: module
+package: Tutos Drupal-Addict.com
+description: Mini module test pour Drupal 8.
