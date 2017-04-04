@@ -2,6 +2,8 @@ uuid: 7e16f3fd-3e41-41cc-adf5-b57b6677598a
 langcode: fr
 status: true
 dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_page
   content:
     - 'block_content:carto:da8937a0-0d38-439a-9557-c43bd5a1c8f9'
   module:
@@ -45,5 +47,5 @@ visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: ''
+    block_visibility_group: home_page
     context_mapping: {  }

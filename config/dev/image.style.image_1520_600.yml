@@ -1,0 +1,14 @@
+uuid: df2b6c67-c44a-4605-8801-ed7373c99804
+langcode: fr
+status: true
+dependencies: {  }
+name: image_1520_600
+label: 'Image 1520 * 600'
+effects:
+  f9f94cc0-4948-4179-aa8e-15c42b3121ec:
+    uuid: f9f94cc0-4948-4179-aa8e-15c42b3121ec
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1520
+      height: 450

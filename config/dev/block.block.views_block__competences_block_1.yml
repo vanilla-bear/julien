@@ -1,16 +1,15 @@
-uuid: a01d168f-5281-4973-889d-be318b32c779
+uuid: 2c6a0ceb-cb9b-425b-b98d-5898a5e337f8
 langcode: fr
-status: false
+status: true
 dependencies:
   config:
     - block_visibility_groups.block_visibility_group.home_page
-  content:
-    - 'block_content:bloc_3_colonnes:8deb455c-6ec7-4064-8607-c72faeaad39e'
+    - views.view.competences
   module:
     - block_attributes
-    - block_content
     - block_visibility_groups
     - ntv_block_background
+    - views
   theme:
     - hawell
 third_party_settings:
@@ -29,20 +28,19 @@ third_party_settings:
     bg_image_position: ''
     bg_image_size: ''
     background_overlay: ''
-id: homeservices
+id: views_block__competences_block_1
 theme: hawell
-region: '-1'
-weight: 0
+region: content
+weight: -16
 provider: null
-plugin: 'block_content:8deb455c-6ec7-4064-8607-c72faeaad39e'
+plugin: 'views_block:competences-block_1'
 settings:
-  id: 'block_content:8deb455c-6ec7-4064-8607-c72faeaad39e'
-  label: 'Home services'
-  provider: block_content
+  id: 'views_block:competences-block_1'
+  label: ''
+  provider: views
   label_display: '0'
-  status: true
-  info: ''
-  view_mode: full
+  views_label: ''
+  items_per_page: none
 visibility:
   condition_group:
     id: condition_group

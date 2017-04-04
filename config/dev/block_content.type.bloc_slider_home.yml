@@ -1,0 +1,8 @@
+uuid: b975afb4-5c8b-4bac-803b-a605425a823b
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_slider_home
+label: 'Bloc slider home'
+revision: 0
+description: ''

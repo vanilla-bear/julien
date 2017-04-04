@@ -1,3 +1,4 @@
+uuid: c8bc4fb9-a90b-4226-a510-d5b9a92394ae
 langcode: en
 status: true
 dependencies: {  }
@@ -6,14 +7,14 @@ template: false
 id: contact_form_1
 title: 'Contact form 1'
 description: 'Basic contac form style 1'
-elements: "your_name:\n  '#type': textfield\n  '#title': 'Your name'\n  '#title_display': invisible\n  '#description_display': invisible\n  '#maxlength': '100'\n  '#placeholder': NAME\n  '#wrapper_attributes':\n    class:\n      - 'col-md-12 mb-30'\n  '#attributes':\n    class:\n      - form-control\n  '#required': true\nemail:\n  '#type': email\n  '#title': Email\n  '#title_display': invisible\n  '#description_display': invisible\n  '#maxlength': '100'\n  '#placeholder': EMAIL\n  '#required': true\n  '#wrapper_attributes':\n    class:\n      - 'col-md-12 mb-30'\n  '#attributes':\n    class:\n      - form-control\nmessage:\n  '#type': textarea\n  '#title': Message\n  '#title_display': invisible\n  '#description_display': invisible\n  '#rows': '3'\n  '#placeholder': MESSAGE\n  '#required': true\n  '#wrapper_attributes':\n    class:\n      - 'col-md-12 mb-40'\n  '#attributes':\n    class:\n      - form-control\n"
+elements: "prestation:\r\n  '#type': select_other\r\n  '#title': Prestation\r\n  '#title_display': invisible\r\n  '#wrapper_attributes':\r\n    class:\r\n      - 'col-md-12 mb-20'\r\n  '#attributes':\r\n    class:\r\n      - form-control\r\n  '#options':\r\n    a: a\r\n    b: b\r\n    c: c\r\n  '#empty_option': Prestation\r\n  '#other__option_label': ''\r\n  '#other__placeholder': 'Préciser votre choix'\r\nmessage:\r\n  '#type': textarea\r\n  '#title': 'Mon besoin'\r\n  '#title_display': invisible\r\n  '#description_display': invisible\r\n  '#rows': '3'\r\n  '#placeholder': 'Mon besoin'\r\n  '#wrapper_attributes':\r\n    class:\r\n      - 'col-md-12 mb-20'\r\n  '#attributes':\r\n    class:\r\n      - form-control\r\nemail:\r\n  '#type': email\r\n  '#title': 'Votre email'\r\n  '#title_display': invisible\r\n  '#description_display': invisible\r\n  '#maxlength': '100'\r\n  '#placeholder': 'Votre email *'\r\n  '#wrapper_attributes':\r\n    class:\r\n      - 'col-md-12 mb-20'\r\n  '#attributes':\r\n    class:\r\n      - form-control\r\n  '#required': true\r\nyour_name:\r\n  '#type': textfield\r\n  '#title': Nom\r\n  '#title_display': invisible\r\n  '#description_display': invisible\r\n  '#maxlength': '100'\r\n  '#placeholder': 'Nom *'\r\n  '#wrapper_attributes':\r\n    class:\r\n      - 'col-md-12 mb-20'\r\n  '#attributes':\r\n    class:\r\n      - form-control\r\n  '#required': true\r\ntelephone:\r\n  '#type': tel\r\n  '#title': Téléphone\r\n  '#title_display': invisible\r\n  '#placeholder': 'Téléphone *'\r\n  '#wrapper_attributes':\r\n    class:\r\n      - 'col-md-12 mb-20'\r\n  '#attributes':\r\n    class:\r\n      - form-control\r\n  '#required': true\r\nadresse:\r\n  '#type': textfield\r\n  '#title': Adresse\r\n  '#title_display': invisible\r\n  '#description_display': invisible\r\n  '#maxlength': '100'\r\n  '#placeholder': Adresse\r\n  '#wrapper_attributes':\r\n    class:\r\n      - 'col-md-12 mb-20'\r\n  '#attributes':\r\n    class:\r\n      - form-control\r\ncode_postal:\r\n  '#type': textfield\r\n  '#title': 'Code postal'\r\n  '#title_display': invisible\r\n  '#description_display': invisible\r\n  '#maxlength': '100'\r\n  '#placeholder': 'Code postal'\r\n  '#wrapper_attributes':\r\n    class:\r\n      - 'col-md-12 mb-20'\r\n  '#attributes':\r\n    class:\r\n      - form-control\r\nville:\r\n  '#type': textfield\r\n  '#title': Ville\r\n  '#title_display': invisible\r\n  '#description_display': invisible\r\n  '#maxlength': '100'\r\n  '#placeholder': Ville\r\n  '#wrapper_attributes':\r\n    class:\r\n      - 'col-md-12 mb-20'\r\n  '#attributes':\r\n    class:\r\n      - form-control\r\n"
 css: ''
 javascript: ''
 settings:
   page: true
   page_submit_path: ''
   page_confirm_path: ''
-  form_submit_label: 'SEND MESSAGE'
+  form_submit_label: Envoyer
   form_submit_attributes: {  }
   form_exception_message: ''
   form_closed_message: ''
@@ -110,4 +111,3 @@ handlers:
       html: true
       attachments: false
       debug: false
-uuid: c8bc4fb9-a90b-4226-a510-d5b9a92394ae

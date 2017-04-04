@@ -1,0 +1,14 @@
+uuid: 176b01b4-1b17-4cea-a7f6-341359d08ab5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.admin_renov
+  module:
+    - user
+id: user_remove_role_action.admin_renov
+label: 'Retirer le rôle Admin renov aux utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: admin_renov

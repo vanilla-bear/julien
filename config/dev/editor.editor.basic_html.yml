@@ -1,14 +1,58 @@
-uuid: 3480a4ec-b5d9-4948-8bf7-52de971db19c
+uuid: c61dd200-59f4-4f63-8ac2-5308c8a3885f
 langcode: fr
 status: true
 dependencies:
   config:
     - filter.format.basic_html
   module:
-    - bueditor
+    - ckeditor
 format: basic_html
-editor: bueditor
+editor: ckeditor
 settings:
-  default_editor: basic_html
-  roles_editors: {  }
-image_upload: {  }
+  toolbar:
+    rows:
+      -
+        -
+          name: Formats
+          items:
+            - Bold
+            - Italic
+            - Underline
+        -
+          name: Liens
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Listes
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Média
+          items:
+            - ImceLink
+            - ImceImage
+            - DrupalImage
+        -
+          name: Outils
+          items:
+            - Source
+        -
+          name: style
+          items:
+            - Format
+            - Styles
+  plugins:
+    stylescombo:
+      styles: 'strong.orange|Orange gras'
+    language:
+      language_list: un
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

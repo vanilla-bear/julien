@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.parallax_extra_image
+    - field.field.block_content.parallax_extra_image.field_image_centrale
     - field.field.block_content.parallax_extra_image.field_image_de_fond
     - field.field.block_content.parallax_extra_image.field_slogan
     - field.field.block_content.parallax_extra_image.field_titre
@@ -15,6 +16,13 @@ targetEntityType: block_content
 bundle: parallax_extra_image
 mode: default
 content:
+  field_image_centrale:
+    weight: 6
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
   field_image_de_fond:
     weight: 5
     settings:

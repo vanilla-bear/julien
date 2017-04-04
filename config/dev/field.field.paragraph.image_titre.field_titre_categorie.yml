@@ -1,0 +1,28 @@
+uuid: fe5c03e7-d25e-4844-8fec-08685e90c72a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titre_categorie
+    - paragraphs.paragraphs_type.image_titre
+    - taxonomy.vocabulary.categorie_projet
+id: paragraph.image_titre.field_titre_categorie
+field_name: field_titre_categorie
+entity_type: paragraph
+bundle: image_titre
+label: 'Titre catégorie'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      categorie_projet: categorie_projet
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,29 @@
+uuid: 2df9bb15-5648-430b-9193-e87b0163dc51
+langcode: fr
+status: true
+dependencies: {  }
+id: admin_renov
+label: 'Admin renov'
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'view the administration theme'
+  - 'delete terms in categorie_projet'
+  - 'edit terms in categorie_projet'
+  - 'access toolbar'
+  - 'administer users'
+  - 'administer blocks'
+  - 'access content overview'
+  - 'view own unpublished content'
+  - 'create projet content'
+  - 'delete any projet content'
+  - 'delete own projet content'
+  - 'delete projet revisions'
+  - 'edit any projet content'
+  - 'edit own projet content'
+  - 'revert projet revisions'
+  - 'view projet revisions'
+  - 'access in-place editing'
+  - 'administer menu'
+  - 'access contextual links'

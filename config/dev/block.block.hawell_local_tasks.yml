@@ -9,7 +9,7 @@ _core:
 id: hawell_local_tasks
 theme: hawell
 region: content
-weight: -10
+weight: -19
 provider: null
 plugin: local_tasks_block
 settings:

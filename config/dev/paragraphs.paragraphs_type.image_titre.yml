@@ -1,0 +1,6 @@
+uuid: f32b9da2-1eb0-464a-a411-5d9def64887f
+langcode: fr
+status: true
+dependencies: {  }
+id: image_titre
+label: 'Image / titre'

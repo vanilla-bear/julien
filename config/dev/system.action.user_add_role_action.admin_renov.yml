@@ -1,0 +1,14 @@
+uuid: 0677aace-65c0-4b26-bb29-a254bd272e24
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.admin_renov
+  module:
+    - user
+id: user_add_role_action.admin_renov
+label: 'Ajouter le rôle Admin renov aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: admin_renov

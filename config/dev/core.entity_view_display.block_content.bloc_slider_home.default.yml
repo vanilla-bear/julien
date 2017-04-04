@@ -1,0 +1,24 @@
+uuid: 704445b6-4fca-4f10-a4cf-082331e4002a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_slider_home
+    - field.field.block_content.bloc_slider_home.field_slide
+  module:
+    - entity_reference_revisions
+id: block_content.bloc_slider_home.default
+targetEntityType: block_content
+bundle: bloc_slider_home
+mode: default
+content:
+  field_slide:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true

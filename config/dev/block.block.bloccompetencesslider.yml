@@ -1,11 +1,11 @@
-uuid: a01d168f-5281-4973-889d-be318b32c779
+uuid: 1a0ab69f-1091-44ac-8650-c5e7bc0a262a
 langcode: fr
-status: false
+status: true
 dependencies:
   config:
     - block_visibility_groups.block_visibility_group.home_page
   content:
-    - 'block_content:bloc_3_colonnes:8deb455c-6ec7-4064-8607-c72faeaad39e'
+    - 'block_content:bloc_slider_home:63c1a171-a4f8-4953-870d-e5b6cd8f25a9'
   module:
     - block_attributes
     - block_content
@@ -29,15 +29,15 @@ third_party_settings:
     bg_image_position: ''
     bg_image_size: ''
     background_overlay: ''
-id: homeservices
+id: bloccompetencesslider
 theme: hawell
-region: '-1'
-weight: 0
+region: content
+weight: -17
 provider: null
-plugin: 'block_content:8deb455c-6ec7-4064-8607-c72faeaad39e'
+plugin: 'block_content:63c1a171-a4f8-4953-870d-e5b6cd8f25a9'
 settings:
-  id: 'block_content:8deb455c-6ec7-4064-8607-c72faeaad39e'
-  label: 'Home services'
+  id: 'block_content:63c1a171-a4f8-4953-870d-e5b6cd8f25a9'
+  label: 'bloc competences slider'
   provider: block_content
   label_display: '0'
   status: true

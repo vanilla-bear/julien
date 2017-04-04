@@ -32,7 +32,7 @@ third_party_settings:
 id: blocaccueil
 theme: hawell
 region: content
-weight: -10
+weight: -18
 provider: null
 plugin: 'block_content:98d4ea5c-bf78-4b42-aff4-3dfb6bc7c52a'
 settings:

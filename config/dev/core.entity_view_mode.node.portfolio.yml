@@ -1,0 +1,10 @@
+uuid: 229be572-56fa-4754-9738-21298c11b84e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.portfolio
+label: Portfolio
+targetEntityType: node
+cache: true

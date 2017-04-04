@@ -1,0 +1,11 @@
+uuid: 30c5550e-6c0b-4647-b01d-4ca0917f46ef
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_slider_home
+id: block_content.bloc_slider_home
+target_entity_type_id: block_content
+target_bundle: bloc_slider_home
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,42 @@
+uuid: d2c1fac2-0d68-433d-aab4-57ea65fdf8d0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_titre.field_image
+    - field.field.paragraph.image_titre.field_titre
+    - field.field.paragraph.image_titre.field_titre_categorie
+    - paragraphs.paragraphs_type.image_titre
+  module:
+    - image_url_formatter
+id: paragraph.image_titre.default
+targetEntityType: paragraph
+bundle: image_titre
+mode: default
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      url_type: '1'
+      image_style: image_1520_600
+      image_link: ''
+    third_party_settings: {  }
+    type: image_url
+  field_titre:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_titre_categorie:
+    weight: 2
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+hidden:
+  created: true
+  uid: true

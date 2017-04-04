@@ -2,6 +2,8 @@ uuid: 7508c568-503d-4d14-8ad6-abf93bf9e38b
 langcode: fr
 status: true
 dependencies:
+  config:
+    - block_visibility_groups.block_visibility_group.home_page
   content:
     - 'block_content:footer_formulaire_de_contact:51946746-8c35-4caf-94fd-cc6fbe04c063'
   module:
@@ -45,5 +47,5 @@ visibility:
   condition_group:
     id: condition_group
     negate: false
-    block_visibility_group: ''
+    block_visibility_group: home_page
     context_mapping: {  }

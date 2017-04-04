@@ -11,7 +11,7 @@ _core:
 id: hawell_content
 theme: hawell
 region: content
-weight: -9
+weight: -14
 provider: null
 plugin: system_main_block
 settings:

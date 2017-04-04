@@ -1,0 +1,40 @@
+uuid: 6099c437-1895-4f7f-b7ff-88ed3ee4df13
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_titre.field_image
+    - field.field.paragraph.image_titre.field_titre
+    - field.field.paragraph.image_titre.field_titre_categorie
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.image_titre
+  module:
+    - image
+id: paragraph.image_titre.default
+targetEntityType: paragraph
+bundle: image_titre
+mode: default
+content:
+  field_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_titre:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_titre_categorie:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+hidden:
+  created: true
+  status: true
+  uid: true

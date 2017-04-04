@@ -4,15 +4,10 @@ status: true
 dependencies:
   module:
     - menu_ui
-    - uc_product
 third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-  uc_product:
-    product: false
-    shippable: false
-    image_field: ''
 name: Projet
 type: projet
 description: ''

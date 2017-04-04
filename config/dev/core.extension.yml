@@ -24,7 +24,6 @@ module:
   devel_generate: 0
   dynamic_page_cache: 0
   editor: 0
-  entity_clone: 0
   entity_reference_revisions: 0
   field: 0
   field_group: 0
@@ -44,6 +43,7 @@ module:
   locale: 0
   md_slider: 0
   menu_ui: 0
+  metatag: 0
   naviteam_twig: 0
   node: 0
   nvt_block_settings: 0
@@ -70,21 +70,13 @@ module:
   tour: 0
   tweets: 0
   twig_tweak: 0
-  uc_attribute: 0
-  uc_cart: 0
   uc_country: 0
-  uc_order: 0
-  uc_product: 0
-  uc_report: 0
-  uc_store: 0
   unset_html_head_link: 0
   update: 0
   user: 0
   vardumper: 0
   video_embed_field: 0
   views_ui: 0
-  votingapi: 0
-  votingapi_widgets: 0
   yamlform: 0
   yamlform_devel: 0
   yamlform_node: 0

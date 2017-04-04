@@ -1,0 +1,33 @@
+uuid: 617786c4-5120-4511-8074-da474fbf64f4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_slider_home
+    - field.storage.block_content.field_slide
+    - paragraphs.paragraphs_type.image_titre
+  module:
+    - entity_reference_revisions
+id: block_content.bloc_slider_home.field_slide
+field_name: field_slide
+entity_type: block_content
+bundle: bloc_slider_home
+label: slide
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      image_titre: image_titre
+    target_bundles_drag_drop:
+      image_titre:
+        enabled: true
+        weight: 3
+      image_titre_sous_titre_texte:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

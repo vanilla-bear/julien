@@ -1,0 +1,13 @@
+uuid: be00f7b2-b14d-494f-926f-85ccea53ada1
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yBqw6UD3j0MM1yoDSVDif7nw4SNdoS2e385nw--3ysk
+id: front
+label: 'Front page'
+tags:
+  title: 'Trouvez votre entreprise de second œuvre à Le Thor : RENOV''ROUARD '
+  description: 'Faites appel à l’entreprise RENOV''ROUARD pour tous vos travaux de peinture, plomberie, placo, électricité et de revêtement de sol... en neuf ou en rénovation dans le département du Vaucluse '
+  canonical_url: '[site:url]'
+  shortlink: '[site:url]'
