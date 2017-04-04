@@ -6,6 +6,8 @@ module:
   bg_image_formatter: 0
   block: 0
   block_content: 0
+  block_attributes: 0
+  ntv_block_background: 0
   block_visibility_groups: 0
   blog: 0
   breakpoint: 0
