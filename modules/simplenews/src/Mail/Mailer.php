@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains «Drupal\simplenews\Mail\Mailer.
- */
-
 namespace Drupal\simplenews\Mail;
 
 use Drupal\Component\Utility\Unicode;
@@ -22,6 +17,7 @@ use Drupal\simplenews\Entity\Subscriber;
 use Drupal\simplenews\NewsletterInterface;
 use Drupal\simplenews\Mail\MailEntity;
 use Drupal\simplenews\Mail\MailInterface;
+use Drupal\simplenews\SkipMailException;
 use Drupal\simplenews\Spool\SpoolStorageInterface;
 use Drupal\simplenews\SubscriberInterface;
 
@@ -162,7 +158,7 @@ class Mailer implements MailerInterface {
       $anonymous_user = new AnonymousUserSession();
       $this->accountSwitcher->switchTo($anonymous_user);
 
-      $count_fail = $count_success = 0;
+      $count_fail = $count_skipped = $count_success = 0;
       $sent = array();
 
       $this->startTimer();
@@ -185,6 +181,9 @@ class Mailer implements MailerInterface {
             else {
               $sent[$row->entity_type][$row->entity_id][$row->langcode]++;
             }
+          }
+          elseif ($row_result['status'] == SpoolStorageInterface::STATUS_SKIPPED) {
+            $count_skipped++;
           }
           if ($row_result['error']) {
             $count_fail++;
@@ -223,6 +222,9 @@ class Mailer implements MailerInterface {
             }
           }
         }
+        elseif ($row_result['status'] == SpoolStorageInterface::STATUS_SKIPPED) {
+          $count_skipped++;
+        }
         if ($row_result['error']) {
           $count_fail++;
         }
@@ -247,10 +249,10 @@ class Mailer implements MailerInterface {
       // Report sent result and elapsed time. On Windows systems getrusage() is
       // not implemented and hence no elapsed time is available.
       if (function_exists('getrusage')) {
-        $this->logger->notice('%success emails sent in %sec seconds, %fail failed sending.', array('%success' => $count_success, '%sec' => round($this->getCurrentExecutionTime(), 1), '%fail' => $count_fail));
+        $this->logger->notice('%success emails sent in %sec seconds, %skipped skipped, %fail failed sending.', array('%success' => $count_success, '%sec' => round($this->getCurrentExecutionTime(), 1), '%skipped' => $count_skipped, '%fail' => $count_fail));
       }
       else {
-        $this->logger->notice('%success emails sent, %fail failed.', array('%success' => $count_success, '%fail' => $count_fail));
+        $this->logger->notice('%success emails sent, %skipped skipped, %fail failed.', array('%success' => $count_success, '%skipped' => $count_skipped, '%fail' => $count_fail));
       }
 
       $this->state->set('simplenews.last_cron', REQUEST_TIME);
@@ -268,33 +270,42 @@ class Mailer implements MailerInterface {
     $params['simplenews_mail'] = $mail;
 
     // Send mail.
-    $message = $this->mailManager->mail('simplenews', $mail->getKey(), $mail->getRecipient(), $mail->getLanguage(), $params, $mail->getFromFormatted());
+    try {
+      $message = $this->mailManager->mail('simplenews', $mail->getKey(), $mail->getRecipient(), $mail->getLanguage(), $params, $mail->getFromFormatted());
 
-    // Log sent result in watchdog.
-    if ($this->config->get('mail.debug')) {
+      // Log sent result in watchdog.
+      if ($this->config->get('mail.debug')) {
+        if ($message['result']) {
+          $this->logger->debug('Outgoing email. Message type: %type<br />Subject: %subject<br />Recipient: %to', array('%type' => $mail->getKey(), '%to' => $message['to'], '%subject' => $message['subject']));
+        }
+        else {
+          $this->logger->error('Outgoing email failed. Message type: %type<br />Subject: %subject<br />Recipient: %to', array('%type' => $mail->getKey(), '%to' => $message['to'], '%subject' => $message['subject']));
+        }
+      }
+
+      // Build array of sent results for spool table and reporting.
       if ($message['result']) {
-        $this->logger->debug('Outgoing email. Message type: %type<br />Subject: %subject<br />Recipient: %to', array('%type' => $mail->getKey(), '%to' => $message['to'], '%subject' => $message['subject']));
+        $result = array(
+          'status' => SpoolStorageInterface::STATUS_DONE,
+          'error' => FALSE,
+        );
       }
       else {
-        $this->logger->error('Outgoing email failed. Message type: %type<br />Subject: %subject<br />Recipient: %to', array('%type' => $mail->getKey(), '%to' => $message['to'], '%subject' => $message['subject']));
+        // This error may be caused by faulty mailserver configuration or overload.
+        // Mark "pending" to keep trying.
+        $result = array(
+          'status' => SpoolStorageInterface::STATUS_PENDING,
+          'error' => TRUE,
+        );
       }
     }
-
-    // Build array of sent results for spool table and reporting.
-    if ($message['result']) {
+    catch (SkipMailException $e) {
       $result = array(
-        'status' => SpoolStorageInterface::STATUS_DONE,
+        'status' => SpoolStorageInterface::STATUS_SKIPPED,
         'error' => FALSE,
       );
     }
-    else {
-      // This error may be caused by faulty mailserver configuration or overload.
-      // Mark "pending" to keep trying.
-      $result = array(
-        'status' => SpoolStorageInterface::STATUS_PENDING,
-        'error' => TRUE,
-      );
-    }
+
     return $result;
   }
 
@@ -316,10 +327,15 @@ class Mailer implements MailerInterface {
       if (!empty($mail)) {
         $subscriber = simplenews_subscriber_load_by_mail($mail);
         if (!$subscriber) {
-          // @todo: Find a cleaner way to do this.
-          $subscriber = Subscriber::create(array());
-          $subscriber->setUserId(0);
-          $subscriber->setMail($mail);
+          // Create a stub subscriber. Use values from the user having the given
+          // address, or if there is no such user, the anonymous user.
+          if ($user = user_load_by_mail($mail)) {
+            $subscriber = Subscriber::create()->fillFromAccount($user);
+          }
+          else {
+            $subscriber = Subscriber::create(['mail' => $mail]);
+          }
+          // Keep the current language.
           $subscriber->setLangcode(\Drupal::languageManager()->getCurrentLanguage());
         }
 

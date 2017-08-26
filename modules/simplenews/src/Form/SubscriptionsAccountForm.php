@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\simplenews\Form\SubscriptionsAccountForm.
- */
-
 namespace Drupal\simplenews\Form;
 
 use Drupal\Core\Access\AccessResult;
@@ -54,6 +49,14 @@ class SubscriptionsAccountForm extends SubscriptionsFormBase {
       return $this->t('Your newsletter subscriptions have been updated.');
     }
     return $this->t('The newsletter subscriptions for user %account have been updated.', array('%account' => $user->label()));
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    parent::submitUpdate($form, $form_state);
+    $form_state->setRedirectUrl($this->entity->getUser()->toUrl());
   }
 
   /**

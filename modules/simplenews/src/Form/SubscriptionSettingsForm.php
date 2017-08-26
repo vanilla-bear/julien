@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\simplenews\Form\SubscriptionSettingsForm.
- */
-
 namespace Drupal\simplenews\Form;
 
 use Drupal\Core\Form\ConfigFormBase;
@@ -62,7 +57,7 @@ class SubscriptionSettingsForm extends ConfigFormBase {
       );
 
       $form['subscription_mail']['token_help']['browser'] = array(
-        '#theme' => 'token_tree',
+        '#theme' => 'token_tree_link',
         '#token_types' => array('simplenews-newsletter', 'simplenews-subscriber'),
       );
     }
@@ -197,14 +192,14 @@ class SubscriptionSettingsForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $this->config('simplenews.settings')
       ->set('subscription.use_combined', $form_state->getValue('simplenews_use_combined'))
-      ->set('subscription.use_combined', $form_state->getValue('simplenews_confirm_subscribe_subject'))
+      ->set('subscription.confirm_subscribe_subject', $form_state->getValue('simplenews_confirm_subscribe_subject'))
       ->set('subscription.confirm_subscribe_unsubscribed', $form_state->getValue('simplenews_confirm_subscribe_unsubscribed'))
       ->set('subscription.confirm_subscribe_subscribed', $form_state->getValue('simplenews_confirm_subscribe_subscribed'))
-      ->set('subscription.confirm_unsubscribe_unsubscribed', $form_state->getValue('simplenews_confirm_unsubscribe_subscribed'))
+      ->set('subscription.confirm_unsubscribe_subscribed', $form_state->getValue('simplenews_confirm_unsubscribe_subscribed'))
       ->set('subscription.confirm_unsubscribe_unsubscribed', $form_state->getValue('simplenews_confirm_unsubscribe_unsubscribed'))
       ->set('subscription.confirm_combined_subject', $form_state->getValue('simplenews_confirm_combined_subject'))
       ->set('subscription.confirm_combined_body', $form_state->getValue('simplenews_confirm_combined_body'))
-      ->set('subscription.combined_body_unchanged', $form_state->getValue('simplenews_confirm_combined_body_unchanged'))
+      ->set('subscription.confirm_combined_body_unchanged', $form_state->getValue('simplenews_confirm_combined_body_unchanged'))
       ->set('subscription.confirm_combined_line_subscribe_unsubscribed', $form_state->getValue('simplenews_confirm_combined_line_subscribe_unsubscribed'))
       ->set('subscription.confirm_combined_line_subscribe_subscribed', $form_state->getValue('simplenews_confirm_combined_line_subscribe_subscribed'))
       ->set('subscription.confirm_combined_line_unsubscribe_subscribed', $form_state->getValue('simplenews_confirm_combined_line_unsubscribe_subscribed'))

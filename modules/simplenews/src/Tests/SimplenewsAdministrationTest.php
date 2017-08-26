@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\simplenews\Tests\SimplenewsAdministrationTest.
- */
-
 namespace Drupal\simplenews\Tests;
 
 use Drupal\block\Entity\Block;
@@ -20,6 +15,21 @@ use Drupal\simplenews\SubscriberInterface;
  * @group simplenews
  */
 class SimplenewsAdministrationTest extends SimplenewsTestBase {
+
+  /**
+   * Modules to enable.
+   *
+   * @var array
+   */
+  public static $modules = array('help');
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setUp() {
+    parent::setUp();
+    $this->drupalPlaceBlock('help_block');
+  }
 
   /**
    * Implement getNewsletterFieldId($newsletter_id)
@@ -52,6 +62,8 @@ class SimplenewsAdministrationTest extends SimplenewsTestBase {
     $this->drupalLogin($admin_user);
 
     $this->drupalGet('admin/config/services/simplenews');
+    // Check if the help text is displayed.
+    $this->assertText('Newsletter allow you to send periodic e-mails to subscribers.');
 
     // Create a newsletter for all possible setting combinations.
     $new_account = array('none', 'off', 'on', 'silent');
@@ -74,6 +86,11 @@ class SimplenewsAdministrationTest extends SimplenewsTestBase {
         $this->drupalPostForm(NULL, $edit, t('Save'));
       }
     }
+
+    // New title should be saved correctly.
+    $this->drupalPostForm('admin/config/services/simplenews/manage/default', ['subject' => 'Edited subject'], t('Save'));
+    $this->drupalGet('admin/config/services/simplenews/manage/default');
+    $this->assertFieldByName('subject', 'Edited subject');
 
     $newsletters = simplenews_newsletter_get_all();
 
@@ -161,6 +178,7 @@ class SimplenewsAdministrationTest extends SimplenewsTestBase {
       'subscriptions[' . $off_double_newsletter_id . ']' => FALSE,
     );
     $this->drupalPostForm(NULL, $edit, t('Save'));
+    $this->drupalGet('user/' . $user->id() . '/simplenews');
     $this->assertNoFieldChecked($this->getNewsletterFieldId($off_double_newsletter_id));
 
     // Get a newsletter which has the block enabled.
@@ -231,6 +249,11 @@ class SimplenewsAdministrationTest extends SimplenewsTestBase {
     \Drupal::entityManager()->getStorage('simplenews_newsletter')->resetCache();
     $this->assertFalse(simplenews_newsletter_load($edit_newsletter->newsletter_id));
     $this->assertFalse(db_query('SELECT newsletter_id FROM {simplenews_newsletter} WHERE newsletter_id = :newsletter_id', array(':newsletter_id' => $edit_newsletter->newsletter_id))->fetchField());*/
+    // Check if the help text is displayed.
+    $this->drupalGet('admin/help/simplenews');
+    $this->assertText('Simplenews adds elements to the newsletter node add/edit');
+    $this->drupalGet('admin/config/services/simplenews/add');
+    $this->assertText('You can create different newsletters (or subjects)');
   }
 
   /**
@@ -428,6 +451,23 @@ class SimplenewsAdministrationTest extends SimplenewsTestBase {
     foreach ($unconfirmed as $mail) {
       $subscription_manager->subscribe($mail, $first, TRUE);
     }
+
+    // Export unconfirmed active and inactive users.
+    $edit = array(
+      'states[active]' => TRUE,
+      'states[inactive]' => TRUE,
+      'subscribed[subscribed]' => FALSE,
+      'subscribed[unconfirmed]' => TRUE,
+      'subscribed[unsubscribed]' => FALSE,
+      'newsletters[' . $first . ']' => TRUE,
+    );
+    $this->drupalPostForm(NULL, $edit, t('Export'));
+
+    $export_field = $this->xpath($this->constructFieldXpath('name', 'emails'));
+    $exported_mails = (string) $export_field[0];
+    $exported_mails = explode(', ', $exported_mails);
+    $this->assertTrue(in_array($unconfirmed[0], $exported_mails));
+    $this->assertTrue(in_array($unconfirmed[1], $exported_mails));
 
     // Only export unconfirmed mail addresses.
     $edit = array(
@@ -745,14 +785,13 @@ class SimplenewsAdministrationTest extends SimplenewsTestBase {
     $this->drupalPostForm(NULL, array('test_address' => 'invalid_address'), t('Send test newsletter issue'));
     $this->assertText(t('Invalid email address "invalid_address"'));
     $this->drupalPostForm(NULL, array('test_address' => $admin_user->getEmail()), t('Send test newsletter issue'));
-    $this->assertText(t('Test newsletter sent to anonymous @email', array('@email' => $admin_user->getEmail())));
+    $this->assertText(t('Test newsletter sent to user @name &lt;@email&gt;', array('@name' => $admin_user->getAccountName(), '@email' => $admin_user->getEmail())));
 
     $mails = $this->drupalGetMails();
     $this->assertEqual('simplenews_test', $mails[0]['id']);
     $this->assertEqual($admin_user->getEmail(), $mails[0]['to']);
     $this->assertEqual(t('[Default newsletter] @title', array('@title' => $node->getTitle())), $mails[0]['subject']);
-    // @todo: This mail should be sent for the admin user. https://www.drupal.org/node/2421477
-    $this->assertTrue(strpos($mails[0]['body'], 'User ID: not yet assigned'));
+    $this->assertTrue(strpos($mails[0]['body'], 'User ID: ' . $admin_user->id()));
 
     // Update the content type, remove the simpletest checkbox.
     $edit = array(
@@ -783,6 +822,8 @@ class SimplenewsAdministrationTest extends SimplenewsTestBase {
     $this->drupalGet('admin/content/simplenews');
     $this->clickLink(t('Add Newsletter Issue'));
     $this->assertUrl('node/add/simplenews_issue');
+    // Check if the help text is displayed.
+    $this->assertText('Add this newsletter issue to a newsletter by selecting a newsletter from the select list.');
   }
 
   /**
@@ -905,7 +946,7 @@ class SimplenewsAdministrationTest extends SimplenewsTestBase {
       'node_bulk_form[1]' => TRUE,
       'action' => 'simplenews_send_action'
     );
-    $this->drupalPostForm(NULL, $edit, t('Apply'));
+    $this->drupalPostForm(NULL, $edit, t('Apply to selected items'));
     // Check the relevant messages.
     $this->assertText('Newsletter issue Test_issue_2 is unpublished and will be sent on publish.');
     $this->assertText('The following newsletter(s) are now pending: Test_issue_1.');
@@ -917,7 +958,7 @@ class SimplenewsAdministrationTest extends SimplenewsTestBase {
       }
       else {
         $this->assertEqual('Newsletter issue is pending, 0 mails sent out of 3.', trim((string) $row->td[5]->img['title']));
-        $this->assertEqual(file_create_url(drupal_get_path('module', 'simplenews')) . '/images/sn-cron.png', trim((string) $row->td[5]->img['src']));
+        $this->assertEqual(file_url_transform_relative(file_create_url(drupal_get_path('module', 'simplenews') . '/images/sn-cron.png')), trim((string) $row->td[5]->img['src']));
       }
     }
     // Stop sending the pending newsletters.
@@ -926,7 +967,7 @@ class SimplenewsAdministrationTest extends SimplenewsTestBase {
       'node_bulk_form[1]' => TRUE,
       'action' => 'simplenews_stop_action'
     );
-    $this->drupalPostForm(NULL, $edit, t('Apply'));
+    $this->drupalPostForm(NULL, $edit, t('Apply to selected items'));
     // Check the stop message.
     $this->assertText('Sending of Test_issue_1 was stopped. 3 pending email(s) were deleted.');
     $rows = $this->xpath('//tbody/tr');
@@ -946,7 +987,7 @@ class SimplenewsAdministrationTest extends SimplenewsTestBase {
       'node_bulk_form[1]' => TRUE,
       'action' => 'simplenews_send_action'
     );
-    $this->drupalPostForm(NULL, $edit, t('Apply'));
+    $this->drupalPostForm(NULL, $edit, t('Apply to selected items'));
     // Run cron to send the mails.
     $this->cronRun();
     $this->drupalGet('admin/content/simplenews');
@@ -958,7 +999,7 @@ class SimplenewsAdministrationTest extends SimplenewsTestBase {
       }
       else {
         $this->assertEqual('Newsletter issue sent to 3 subscribers.', trim((string) $row->td[5]->img['title']));
-        $this->assertEqual(file_create_url(drupal_get_path('module', 'simplenews')) . '/images/sn-sent.png', trim((string) $row->td[5]->img['src']));
+        $this->assertEqual(file_url_transform_relative(file_create_url(drupal_get_path('module', 'simplenews') . '/images/sn-sent.png')), trim((string) $row->td[5]->img['src']));
       }
     }
   }

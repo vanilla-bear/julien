@@ -6,6 +6,7 @@ use Drupal\Core\Url;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\image\Plugin\Field\FieldFormatter\ImageFormatter;
 use Drupal\Core\Form\FormStateInterface;
+use Zend\Stdlib\ArrayUtils;
 
 /**
  * @FieldFormatter(
@@ -33,8 +34,17 @@ class BgImageFormatter extends ImageFormatter {
         'bg_image_background_size_ie8' => 0,
         'bg_image_media_query' => 'all',
         'bg_image_important' => 1,
+        'bg_image_z_index' => 'auto',
       ),
     );
+  }
+
+  /**
+   * Merges default settings values into $settings.
+   */
+  protected function mergeDefaults() {
+    $this->settings = ArrayUtils::merge(self::defaultSettings(), $this->settings);
+    $this->defaultSettingsMerged = TRUE;
   }
 
   /**
@@ -77,6 +87,15 @@ class BgImageFormatter extends ImageFormatter {
       '#theme' => 'token_tree_link',
       '#token_types' => ['user', $form['#entity_type']],
     );
+
+    // The selector for the background property.
+    $element['css_settings']['bg_image_z_index'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Z Index'),
+      '#description' => $this->t('The z-index property specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order. Note: z-index only works on positioned elements (position:absolute, position:relative, or position:fixed)'),
+      '#default_value' => $settings['css_settings']['bg_image_z_index'],
+    );
+
     // The selector for the background property.
     $element['css_settings']['bg_image_color'] = array(
       '#type' => 'textarea',
@@ -210,13 +229,18 @@ class BgImageFormatter extends ImageFormatter {
       'user' => \Drupal::currentUser(),
       $items->getEntity()->getEntityTypeId() => $items->getEntity(),
     );
-    if (!empty($css_settings['bg_image_selector'])) {
-      $css_settings['bg_image_selector'] = \Drupal::token()->replace($css_settings['bg_image_selector'], $token_data);
+    foreach ($selectors as &$selector) {
+      $selector = \Drupal::token()->replace($selector, $token_data);
     }
+
+    // Need an empty element so views renderer will see something to render.
+    $elements[0] = [];
 
     foreach ($files as $delta => $file) {
       $css_settings['bg_image_selector'] = $selectors[$delta % count($selectors)];
-      $css_settings['bg_image_color'] = $colors[$delta % count($colors)];
+      if ($colors) {
+        $css_settings['bg_image_color'] = $colors[$delta % count($colors)];
+      }
 
       if ($image_style) {
         $style = $this->imageStyleStorage->load($image_style);
@@ -280,20 +304,8 @@ class BgImageFormatter extends ImageFormatter {
    *   The array containing the CSS.
    */
   public function getBackgroundImageCss($image_path, $css_settings = array(), $image_style = NULL) {
-    $defaults = [
-      'bg_image_selector' => '',
-      'bg_image_color' => '#FFFFFF',
-      'bg_image_x' => 'left',
-      'bg_image_y' => 'top',
-      'bg_image_attachment' => 'scroll',
-      'bg_image_repeat' => 'no-repeat',
-      'bg_image_important' => 1,
-      'bg_image_background_size' => '',
-      'bg_image_background_size_ie8' => 0,
-      'bg_image_media_query' => 'all',
-    ];
-
-    $css_settings += $defaults;
+    $defaults = self::defaultSettings();
+    $css_settings += $defaults['css_settings'];
 
     // Pull the default css setting if not provided.
     $selector = $css_settings['bg_image_selector'];
@@ -306,6 +318,7 @@ class BgImageFormatter extends ImageFormatter {
     $background_size = $css_settings['bg_image_background_size'];
     $background_size_ie8 = $css_settings['bg_image_background_size_ie8'];
     $media_query = $css_settings['bg_image_media_query'];
+    $z_index = $css_settings['bg_image_z_index'];
 
     // If important is true, we turn it into a string for css output.
     if ($important) {
@@ -347,6 +360,9 @@ class BgImageFormatter extends ImageFormatter {
       }
       if ($bg_x && $bg_y) {
         $style .= sprintf('background-position: %s %s %s;', $bg_x, $bg_y, $important);
+      }
+      if ($z_index) {
+        $style .= sprintf('z-index: %s;', $z_index);
       }
       $style .= $bg_size;
       $style .= $background_size_ie8 ? $ie_bg_size : '';

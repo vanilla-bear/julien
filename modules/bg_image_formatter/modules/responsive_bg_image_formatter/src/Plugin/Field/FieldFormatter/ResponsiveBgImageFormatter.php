@@ -83,6 +83,11 @@ class ResponsiveBgImageFormatter extends BgImageFormatter {
     $selectors = array_filter(preg_split('/$/', $css_settings['bg_image_selector']));
     $files = $this->getEntitiesToView($items, $langcode);
 
+    // Filter out empty selectors
+    $selectors = array_map(function($value) {
+      return trim($value, ',');
+    }, $selectors);
+
     // Early opt-out if the field is empty.
     if (empty($files) || empty($settings['image_style'])) {
       return $elements;
@@ -94,8 +99,11 @@ class ResponsiveBgImageFormatter extends BgImageFormatter {
       $items->getEntity()->getEntityTypeId() => $items->getEntity(),
     );
     foreach ($selectors as &$selector) {
-      $selector =  \Drupal::token()->replace($selector, $token_data);
+      $selector = \Drupal::token()->replace($selector, $token_data);
     }
+
+    // Need an empty element so views renderer will see something to render.
+    $elements[0] = [];
 
     foreach ($files as $delta => $file) {
       // Use specified selectors in round-robin order.

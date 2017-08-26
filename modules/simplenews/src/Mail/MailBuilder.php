@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\simplenews\Mail\MailBuilder.
- */
-
 namespace Drupal\simplenews\Mail;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
@@ -39,6 +34,8 @@ class MailBuilder implements MailBuilderInterface {
    *   The token service.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.
+   * @param \Drupal\simplenews\Subscription\SubscriptionManagerInterface $subscription_manager
+   *   The subscription manager.
    */
   public function __construct(Token $token, ConfigFactoryInterface $config_factory, SubscriptionManagerInterface $subscription_manager) {
     $this->token = $token;
@@ -54,7 +51,6 @@ class MailBuilder implements MailBuilderInterface {
     $message['headers'] = $mail->getHeaders($message['headers']);
     $message['subject'] = $mail->getSubject();
     $message['body']['body'] = $mail->getBody();
-    $message['body']['footer'] = $mail->getFooter();
 
     if ($mail->getFormat() == 'html') {
       // Set the necessary headers to detect this as an HTML mail. Set both the
@@ -66,7 +62,7 @@ class MailBuilder implements MailBuilderInterface {
 
       // Provide a plain text version, both in params][plaintext (Mime Mail) and
       // plain (Swiftmailer).
-      $message['params']['plaintext'] = $mail->getPlainBody() . "\n" . $mail->getPlainFooter();
+      $message['params']['plaintext'] = $mail->getPlainBody();
       $message['plain'] = $message['params']['plaintext'];
 
       // Add attachments, again, both for the attachments key (Mime Mail) and

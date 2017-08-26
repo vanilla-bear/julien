@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\simplenews\Mail\MailTest.
- */
-
 namespace Drupal\simplenews\Mail;
 
 /**
@@ -32,14 +27,6 @@ class MailTest implements MailInterface {
 
   public function getBody() {
     return $this->getFormat() == 'plain' ? $this->getPlainBody() : 'the body';
-  }
-
-  public function getFooter() {
-    return $this->getFormat() == 'plain' ? $this->getPlainFooter() : 'the footer';
-  }
-
-  public function getPlainFooter() {
-    return 'the plain footer';
   }
 
   public function getFormat() {

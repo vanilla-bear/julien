@@ -1,8 +1,5 @@
 <?php
-/**
- * @file
- * Contains \Drupal\simplenews\Subscription\SubscriptionManagerInterface.
- */
+
 namespace Drupal\simplenews\Subscription;
 
 use Drupal\simplenews\SubscriberInterface;
@@ -19,7 +16,7 @@ interface SubscriptionManagerInterface {
    *   FALSE = The user is subscribed
    *   TRUE  = User receives an email to verify the address and complete the
    * subscription A new subscription account is created when the user is
-   * subscribed to the first newsletter
+   * subscribed to the first newsletter.
    *
    * @param string $mail
    *   The email address to subscribe to the newsletter.
@@ -49,7 +46,7 @@ interface SubscriptionManagerInterface {
    * The $confirm parameter determines the action:
    *   FALSE = The user is unsubscribed
    *   TRUE  = User receives an email to verify the address and complete the
-   * subscription cancellation
+   *   subscription cancellation.
    *
    * @param string $mail
    *   The email address to unsubscribe from the mailing list.
@@ -77,7 +74,7 @@ interface SubscriptionManagerInterface {
    * @param string $newsletter_id
    *   The mailing list id.
    *
-   * @return boolean
+   * @return bool
    *   TRUE if the email address is subscribed; otherwise false.
    *
    * @ingroup subscription
@@ -87,43 +84,15 @@ interface SubscriptionManagerInterface {
   public function isSubscribed($mail, $newsletter_id);
 
   /**
-   * Returns a list of active subscriptions for a given newsletter.
-   *
-   * WARNING: Use with caution - this might return a huge list
-   *
-   * @param $newsletter_id
-   *   The newsletter id.
-   *
-   * @return array
-   *   An array keyed by the mail address, containing another array with the
-   *   keys mail, uid, language, snid and status.
-   *
-   * @ingroup subscription
-   */
-  public function getSubscriptionsByNewsletter($newsletter_id);
-
-  /**
-   * Delete subscriptions.
-   *
-   * @param $conditions
-   *   An associative array of conditions matching the records to be delete.
-   *   Example: array('newsletter_id' => 5, 'snid' => 12)
-   *   Delete the subscription of subscriber 12 to newsletter newsletter_id 5.
-   *
-   * @ingroup subscription
-   */
-  public function deleteSubscriptions($conditions = array());
-
-  /**
    * Converts an array of subscription changes into descriptions.
    *
-   * @param $subscriber
+   * @param \Drupal\simplenews\SubscriberInterface $subscriber
    *   Simplenews subscriber object.
-   * @param $changes
+   * @param array $changes
    *   (Optional) Array of changes, each is an array with the keys action and
    *   newsletter_id. Defaults to $subscriber->getChanges(), which contains the
    *   currently saved changes for the subscriber.
-   * @param $langcode
+   * @param string $langcode
    *   (Optional) Specify the language of the description strings, defaults to
    *   the current language.
    *
@@ -144,4 +113,5 @@ interface SubscriptionManagerInterface {
    * Reset static caches.
    */
   public function reset();
+
 }

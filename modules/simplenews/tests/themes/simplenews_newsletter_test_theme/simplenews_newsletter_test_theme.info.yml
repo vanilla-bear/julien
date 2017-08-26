@@ -15,8 +15,8 @@ regions_hidden:
   - sidebar_first
   - sidebar_second
 
-# Information added by Drupal.org packaging script on 2015-11-23
-version: '8.x-1.0-alpha2'
+# Information added by Drupal.org packaging script on 2017-02-14
+version: '8.x-1.0-alpha3'
 core: '8.x'
 project: 'simplenews'
-datestamp: 1448269742
+datestamp: 1487059688

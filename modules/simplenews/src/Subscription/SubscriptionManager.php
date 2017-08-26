@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\simplenews\Subscription\SubscriptionManager.
- */
-
 namespace Drupal\simplenews\Subscription;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
@@ -17,9 +12,6 @@ use Drupal\simplenews\Entity\Subscriber;
 use Drupal\simplenews\Mail\MailerInterface;
 use Drupal\simplenews\NewsletterInterface;
 use Drupal\simplenews\SubscriberInterface;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\TerminableInterface;
 
 /**
  * Default subscription manager.
@@ -171,7 +163,7 @@ class SubscriptionManager implements SubscriptionManagerInterface, DestructableI
   /**
    * {@inheritdoc}
    */
-  public function unsubscribe($mail, $newsletter_id, $confirm = TRUE, $source = 'unknown') {
+  public function unsubscribe($mail, $newsletter_id, $confirm = NULL, $source = 'unknown') {
     $subscriber = simplenews_subscriber_load_by_mail($mail);
 
     // The unlikely case that a user is unsubscribed from a non existing mailing list is logged
@@ -215,37 +207,6 @@ class SubscriptionManager implements SubscriptionManagerInterface, DestructableI
       $this->subscribedCache[$mail][$newsletter_id] = $subscriber && $subscriber->getStatus() && $subscriber->isSubscribed($newsletter_id);
     }
     return $this->subscribedCache[$mail][$newsletter_id];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getSubscriptionsByNewsletter($newsletter_id) {
-    $query = db_select('simplenews_subscriber', 'sn');
-    $query->innerJoin('simplenews_subscription', 'ss', 'ss.snid = sn.snid');
-    $query->fields('sn', array('mail', 'uid', 'language', 'snid'))
-      ->fields('ss', array('status'))
-      ->condition('sn.activated', SubscriberInterface::ACTIVE)
-      ->condition('ss.newsletter_id', $newsletter_id)
-      ->condition('ss.status', SIMPLENEWS_SUBSCRIPTION_STATUS_SUBSCRIBED);
-    return $query->execute()->fetchAllAssoc('mail');
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function deleteSubscriptions($conditions = array()) {
-    // @todo: redo this in a proper way
-    if (!db_table_exists('simplenews_subscriber__subscriptions')) {
-      // This can happen if this is called during uninstall.
-      return;
-    }
-    $query = db_delete('simplenews_subscriber__subscriptions');
-    foreach ($conditions as $key => $condition) {
-      $query->condition($key, $condition);
-    }
-    $query->execute();
-    \Drupal::entityManager()->getStorage('simplenews_subscriber')->resetCache();
   }
 
   /**

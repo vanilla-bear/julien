@@ -97,7 +97,6 @@ class SimplenewsSourceTest extends SimplenewsTestBase {
 
     $this->assertEqual($plain_mail->getSubject(), $mail['subject']);
     $this->assertTrue(strpos($mail['body'], 'the plain body') !== FALSE);
-    $this->assertTrue(strpos($mail['body'], 'the plain footer') !== FALSE);
 
     $html_mail = new MailTest('html');
     \Drupal::service('simplenews.mailer')->sendMail($html_mail);
@@ -116,13 +115,11 @@ class SimplenewsSourceTest extends SimplenewsTestBase {
 
     $this->assertTrue(isset($mail['params']['plaintext']));
     $this->assertTrue(strpos($mail['params']['plaintext'], 'the plain body') !== FALSE);
-    $this->assertTrue(strpos($mail['params']['plaintext'], 'the plain footer') !== FALSE);
     $this->assertTrue(isset($mail['params']['attachments']));
     $this->assertEqual('example://test.png', $mail['params']['attachments'][0]['uri']);
 
     $this->assertEqual($plain_mail->getSubject(), $mail['subject']);
     $this->assertTrue(strpos($mail['body'], 'the body') !== FALSE);
-    $this->assertTrue(strpos($mail['body'], 'the footer') !== FALSE);
   }
 
   /**
@@ -166,7 +163,7 @@ class SimplenewsSourceTest extends SimplenewsTestBase {
       $this->assertTrue(strpos($mail['body'], (string) t('Unsubscribe from this newsletter')));
       // Make sure the mail has the correct unsubscribe hash.
       $hash = simplenews_generate_hash($mail['to'], 'remove');
-      $this->assertTrue(strpos($mail['body'], $hash), 'Correct hash is used in footer');
+      $this->assertTrue(strpos($mail['body'], $hash), 'Correct hash is used');
       $this->assertTrue(strpos($mail['headers']['List-Unsubscribe'], $hash), 'Correct hash is used in header');
     }
 
@@ -299,7 +296,7 @@ class SimplenewsSourceTest extends SimplenewsTestBase {
 
     // Test that tokens are correctly replaced.
     foreach (array_slice($this->drupalGetMails(), 0, 3) as $mail) {
-      // Verify the footer is not displayed for hidden newsletters.
+      // Verify the unsubscribe link is not displayed for hidden newsletters.
       $this->assertFalse(strpos($mail['body'], (string) t('Unsubscribe from this newsletter')));
     }
   }
@@ -356,7 +353,7 @@ class SimplenewsSourceTest extends SimplenewsTestBase {
   }
 
   /**
-   * Test with disabled caching.
+   * Test sending when the issue node is missing.
    */
   function testSendMissingNode() {
     $this->setUpSubscribers(1);
@@ -392,7 +389,7 @@ class SimplenewsSourceTest extends SimplenewsTestBase {
   }
 
   /**
-   * Test with disabled caching.
+   * Test sending when there are no subscribers.
    */
   function testSendMissingSubscriber() {
     $this->setUpSubscribers(1);
@@ -420,5 +417,27 @@ class SimplenewsSourceTest extends SimplenewsTestBase {
 
     $spool_row = db_query('SELECT * FROM {simplenews_mail_spool}')->fetchObject();
     $this->assertEqual(SpoolStorageInterface::STATUS_DONE, $spool_row->status);
+  }
+
+  /**
+   * Test handling of the skip exception.
+   */
+  public function testSkip() {
+    $this->setUpSubscribers(1);
+    // Setting the body to "Nothing interesting" provokes an exception in
+    // simplenews_test_mail_alter().
+    $node = $this->drupalCreateNode([
+      'body' => 'Nothing interesting',
+      'type' => 'simplenews_issue',
+      'simplenews_issue' => ['target_id' => 'default'],
+    ]);
+    \Drupal::service('simplenews.spool_storage')->addFromEntity($node);
+    \Drupal::service('simplenews.mailer')->sendSpool();
+    $this->assertEqual(0, count($this->drupalGetMails()));
+    $spool_row = db_select('simplenews_mail_spool', 'ms')
+      ->fields('ms', ['status'])
+      ->execute()
+      ->fetchAssoc();
+    $this->assertEqual(SpoolStorageInterface::STATUS_SKIPPED, $spool_row['status']);
   }
 }

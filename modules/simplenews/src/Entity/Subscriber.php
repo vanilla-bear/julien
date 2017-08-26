@@ -1,16 +1,12 @@
 <?php
 
-/**
- * @file
- * Contains Drupal\simplenews\Entity\Subscriber.
- */
-
 namespace Drupal\simplenews\Entity;
 
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\simplenews\Plugin\Field\FieldType\SubscriptionItem;
 use Drupal\simplenews\SubscriberInterface;
 use Drupal\user\Entity\User;
@@ -23,6 +19,7 @@ use Drupal\user\UserInterface;
  *   id = "simplenews_subscriber",
  *   label = @Translation("Simplenews subscriber"),
  *   handlers = {
+ *     "storage" = "Drupal\simplenews\Subscription\SubscriptionStorage",
  *     "form" = {
  *       "default" = "Drupal\simplenews\Form\SubscriberForm",
  *       "account" = "Drupal\simplenews\Form\SubscriptionsAccountForm",
@@ -145,6 +142,16 @@ class Subscriber extends ContentEntityBase implements SubscriberInterface {
    */
   public function setLangcode($langcode) {
     $this->set('langcode', $langcode);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function fillFromAccount(AccountInterface $account) {
+    $this->setUserId($account->id());
+    $this->setMail($account->getEmail());
+    $this->setLangcode($account->getPreferredLangcode());
+    return $this;
   }
 
   /**
