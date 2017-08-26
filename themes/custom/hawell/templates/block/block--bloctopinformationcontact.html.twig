@@ -34,13 +34,13 @@
   {% block content %}
     <ul class="top-bar-section right">
       <li>
-        <a href="tel:{{ content.field_telephone }}"><i class="fa fa-phone mr-5"></i> {{ content.field_telephone }}</a>
+        <a href="tel:{{ content.field_numero_a_apeller }}"><i class="fa fa-phone mr-5"></i> {{ content.field_telephone }}</a>
       </li>
       <li>
         <i class="fa  fa-clock-o mr-5"></i> {{ content.field_horaire_d_ouverture }}
       </li>
       <li class="display-no-xxs">
-        <a href="mailto:info@domain.com" title="E-mail"><i class="fa fa-envelope mr-7"></i>
+        <a href="mailto:{{ content.field_adresse_email }}" title="E-mail"><i class="fa fa-envelope mr-7"></i>
           {{ content.field_adresse_email }}
         </a>
       </li>
