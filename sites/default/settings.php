@@ -753,26 +753,26 @@ $settings['file_scan_ignore_directories'] = [
 if (file_exists(__DIR__ . '/settings.local.php')) {
    include __DIR__ . '/settings.local.php';
 }
-//$databases['default']['default'] = array (
-//  'database' => 'dp8dev',
-//  'username' => 'mysql',
-//  'password' => 'mysql',
-//  'prefix' => '',
-//  'host' => 'mysql',
-//  'port' => '3306',
-//  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-//  'driver' => 'mysql',
-//);
 $databases['default']['default'] = array (
-  'database' => 'renovrouard_web',
-  'username' => 'renovrouard_julien',
-  'password' => 'voXRva4D',
+  'database' => 'dp8dev',
+  'username' => 'mysql',
+  'password' => 'mysql',
   'prefix' => '',
-  'host' => 'localhost',
+  'host' => 'mysql',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
+//$databases['default']['default'] = array (
+//  'database' => 'renovrouard_web',
+//  'username' => 'renovrouard_julien',
+//  'password' => 'voXRva4D',
+//  'prefix' => '',
+//  'host' => 'localhost',
+//  'port' => '3306',
+//  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+//  'driver' => 'mysql',
+//);
 $settings['install_profile'] = 'standard';
 $config_directories['sync'] = 'sites/default/files/config_1cUzrrcCam7rvmqGZqSTvUoRmZtw3e33Xs_FA3X0mzYd8zIr9V83Nqr7wy4JLxFH7T2mKFGSoQ/sync';
 ini_set('memory_limit', '800M');
