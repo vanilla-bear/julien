@@ -29,7 +29,7 @@ third_party_settings:
     background_overlay: ''
 id: flickrblock
 theme: hawell
-region: '-1'
+region: topbar
 weight: 0
 provider: null
 plugin: flickr_block

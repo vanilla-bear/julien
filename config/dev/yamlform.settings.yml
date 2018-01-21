@@ -21,7 +21,7 @@ settings:
   default_draft_saved_message: 'Soumissions enregistrées. Vous pourrez revenir sur ce formulaire plus tard, cela restaurera les valeurs actuelles.'
   default_draft_loaded_message: 'Un formulaire partiellement complété a été trouvé. Veuillez compléter les portions restantes.'
   default_confirmation_message: 'New submission added to [yamlform:title].'
-  default_confirmation_back_label: 'Back to form'
+  default_confirmation_back_label: 'Retour au formulaire'
   confirmation_classes: "messages messages--error\nmessages messages--warning\nmessages messages--status\n"
   confirmation_back_classes: "button\n"
   default_limit_total_message: 'No more submissions are permitted.'

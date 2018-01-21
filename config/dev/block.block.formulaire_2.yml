@@ -27,7 +27,7 @@ third_party_settings:
     background_overlay: ''
 id: formulaire_2
 theme: hawell
-region: '-1'
+region: topbar
 weight: 0
 provider: null
 plugin: yamlform_block

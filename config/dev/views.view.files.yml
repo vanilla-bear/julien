@@ -10,7 +10,7 @@ _core:
 id: files
 label: Fichiers
 module: file
-description: 'Find and manage files.'
+description: 'Trouver et gérer les fichiers.'
 tag: default
 base_table: file_managed
 base_field: fid
@@ -19,7 +19,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Maître
+    display_title: Master
     position: 0
     display_options:
       access:
@@ -42,8 +42,8 @@ display:
         options:
           submit_button: Filtrer
           reset_button: false
-          reset_button_label: Réinitialiser
-          exposed_sorts_label: 'Trier par'
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -59,12 +59,12 @@ display:
             next: 'Next ›'
           expose:
             items_per_page: false
-            items_per_page_label: 'Éléments par page'
+            items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- Tout -'
+            items_per_page_options_all_label: '- All -'
             offset: false
-            offset_label: Décalage
+            offset_label: Offset
       style:
         type: table
         options:
@@ -165,7 +165,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Fid
+          label: 'Identifiant (FID)'
           exclude: true
           element_type: ''
           element_class: ''
@@ -354,7 +354,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Statut
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -410,7 +410,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Upload date'
+          label: 'Date de transfert'
           exclude: false
           alter:
             alter_text: false
@@ -568,7 +568,7 @@ display:
           decimal: .
           separator: ','
           format_plural: true
-          format_plural_string: "1 place\x03@count places"
+          format_plural_string: "@count emplacement\x03@count emplacements"
           prefix: ''
           suffix: ''
           plugin_id: numeric
@@ -666,7 +666,7 @@ display:
           exposed: true
           expose:
             operator_id: status_op
-            label: Statut
+            label: Status
             description: ''
             use_operator: false
             operator: status_op
@@ -704,7 +704,7 @@ display:
           table: views
           field: area_text_custom
           empty: true
-          content: 'No files available.'
+          content: 'Aucun fichier disponible.'
           plugin_id: text_custom
       relationships:
         fid:
@@ -731,7 +731,7 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: 'Files overview'
+    display_title: 'Vue d''ensemble des fichiers'
     position: 1
     display_options:
       path: admin/content/files
@@ -798,12 +798,12 @@ display:
             next: 'Next ›'
           expose:
             items_per_page: false
-            items_per_page_label: 'Éléments par page'
+            items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- Tout -'
+            items_per_page_options_all_label: '- All -'
             offset: false
-            offset_label: Décalage
+            offset_label: Offset
       filters: {  }
       filter_groups:
         operator: AND
@@ -915,7 +915,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Registering module'
+          label: 'Enregistrement du module'
           exclude: false
           alter:
             alter_text: false
@@ -1028,9 +1028,9 @@ display:
           exception:
             value: all
             title_enable: false
-            title: Tout
+            title: All
           title_enable: true
-          title: 'File usage information for {{ arguments.fid }}'
+          title: 'Information d''utilisation du fichier {{ arguments.fid }}'
           default_argument_type: fixed
           default_argument_options:
             argument: ''

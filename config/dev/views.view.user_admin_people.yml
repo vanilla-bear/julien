@@ -9,7 +9,7 @@ _core:
 id: user_admin_people
 label: Personnes
 module: user
-description: 'Find and manage people interacting with your site.'
+description: 'Trouver et gérer les personnes interagissant avec votre site.'
 tag: default
 base_table: users_field_data
 base_field: uid
@@ -18,7 +18,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Maître
+    display_title: Master
     position: 0
     display_options:
       access:
@@ -40,8 +40,8 @@ display:
         options:
           submit_button: Filtrer
           reset_button: true
-          reset_button_label: Réinitialiser
-          exposed_sorts_label: 'Trier par'
+          reset_button_label: Reset
+          exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
@@ -59,12 +59,12 @@ display:
             last: 'Last »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Éléments par page'
+            items_per_page_label: 'Items per page'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- Tout -'
+            items_per_page_options_all_label: '- All -'
             offset: false
-            offset_label: Décalage
+            offset_label: Offset
           quantity: 9
       style:
         type: table
@@ -251,7 +251,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Statut
+          label: Status
           exclude: false
           alter:
             alter_text: false
@@ -296,8 +296,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Active
-            format_custom_false: Blocked
+            format_custom_true: Actif
+            format_custom_false: Bloqué
           entity_type: user
           entity_field: status
         roles_target_id:
@@ -592,7 +592,7 @@ display:
           exposed: true
           expose:
             operator_id: combine_op
-            label: 'Name or email contains'
+            label: 'Nom ou courriel contenant'
             description: ''
             use_operator: false
             operator: combine_op
@@ -727,7 +727,7 @@ display:
               administrator: '0'
           is_grouped: true
           group_info:
-            label: Statut
+            label: Status
             description: ''
             identifier: status
             optional: true
@@ -857,7 +857,7 @@ display:
           plugin_id: text_custom
       use_more: false
       use_more_always: false
-      use_more_text: more
+      use_more_text: plus
       display_comment: ''
       use_ajax: false
       hide_attachment_summary: false
@@ -891,7 +891,7 @@ display:
       menu:
         type: 'default tab'
         title: Lister
-        description: 'Find and manage people interacting with your site.'
+        description: 'Trouver et gérer les personnes interagissant avec votre site.'
         menu_name: admin
         weight: -10
         context: ''

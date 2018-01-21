@@ -29,7 +29,7 @@ third_party_settings:
     background_overlay: ''
 id: simplenewssubscription_22
 theme: hawell
-region: '-1'
+region: topbar
 weight: -7
 provider: null
 plugin: simplenews_subscription_block

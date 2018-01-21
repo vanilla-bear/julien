@@ -10,7 +10,7 @@ _core:
   default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
 id: hawell_powered
 theme: hawell
-region: '-1'
+region: topbar
 weight: -3
 provider: null
 plugin: system_powered_by_block

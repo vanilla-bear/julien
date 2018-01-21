@@ -1,0 +1,8 @@
+uuid: 7f5cfecb-1399-462d-8c38-c1efb7cedb35
+langcode: fr
+status: true
+dependencies: {  }
+id: menu-principal-home
+label: 'Menu principal !home'
+description: 'Menu principal affiché sur toutes les pages sauf la home'
+locked: false

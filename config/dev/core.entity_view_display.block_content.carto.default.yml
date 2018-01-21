@@ -20,6 +20,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_logo:
     weight: 1
     label: hidden
@@ -29,5 +30,6 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image_url
+    region: content
 hidden:
   langcode: true

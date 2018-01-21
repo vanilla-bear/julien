@@ -1,0 +1,13 @@
+uuid: c10c9dec-4184-45c4-95ad-55a838778e0d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - cacheflush_ui
+_core:
+  default_config_hash: GTH53dtHxKVe_ijClirdnJ-0zzDrlukPbNJBQnYH74c
+id: cacheflush_delete_action
+label: 'Supprimer l''entité'
+type: cacheflush
+plugin: cacheflush_delete_action
+configuration: {  }

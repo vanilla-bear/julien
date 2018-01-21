@@ -5,13 +5,15 @@ module:
   better_exposed_filters: 0
   bg_image_formatter: 0
   block: 0
-  block_content: 0
   block_attributes: 0
-  ntv_block_background: 0
+  block_content: 0
   block_visibility_groups: 0
-  blog: 0
   breakpoint: 0
   bueditor: 0
+  cacheflush: 0
+  cacheflush_advanced: 0
+  cacheflush_entity: 0
+  cacheflush_ui: 0
   ckeditor: 0
   color: 0
   comment: 0
@@ -36,11 +38,14 @@ module:
   help: 0
   history: 0
   image: 0
+  image_popup: 0
   image_raw_formatter: 0
   image_url_formatter: 0
   imce: 0
+  juicebox: 0
   kint: 0
   language: 0
+  libraries: 0
   link: 0
   locale: 0
   md_slider: 0
@@ -48,13 +53,13 @@ module:
   metatag: 0
   naviteam_twig: 0
   node: 0
+  ntv_block_background: 0
   nvt_block_settings: 0
   nvt_flickr_feeds: 0
   nvt_menu_attributes: 0
   nvt_views_style: 0
   options: 0
   page_cache: 0
-  paragraphs: 0
   path: 0
   php: 0
   quickedit: 0
@@ -87,6 +92,7 @@ module:
   pathauto: 1
   content_translation: 10
   views: 10
+  paragraphs: 11
   standard: 1000
 theme:
   stable: 0
@@ -97,3 +103,4 @@ theme:
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
 langcode: fr
+profile: standard

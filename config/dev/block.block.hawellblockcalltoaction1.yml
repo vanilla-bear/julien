@@ -31,7 +31,7 @@ third_party_settings:
     background_overlay: ''
 id: hawellblockcalltoaction1
 theme: hawell
-region: '-1'
+region: topbar
 weight: -4
 provider: null
 plugin: 'block_content:769c73c6-41f9-49e7-9708-a804caf4e836'

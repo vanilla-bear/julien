@@ -1,0 +1,19 @@
+uuid: 8f5fe265-56ec-4049-8504-59f6884d0513
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.top_bar_info_contact
+    - field.storage.block_content.field_numero_a_apeller
+id: block_content.top_bar_info_contact.field_numero_a_apeller
+field_name: field_numero_a_apeller
+entity_type: block_content
+bundle: top_bar_info_contact
+label: 'Numéro à apeller'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

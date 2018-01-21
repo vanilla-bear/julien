@@ -22,6 +22,7 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
   field_titre:
     weight: 1
     settings:
@@ -29,11 +30,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   field_titre_categorie:
     weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+    region: content
 hidden:
   created: true
   status: true
