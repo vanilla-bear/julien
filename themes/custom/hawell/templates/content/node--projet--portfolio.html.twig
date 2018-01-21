@@ -85,8 +85,11 @@ term_id
   {{ title_prefix }}
       {#{{ label }}#}
   {{ title_suffix }}
-    <div class="image" style="background-image: url({{ content.field_image_resume }});">
-        <canvas height="1" width="1"></canvas>
+    {#<div class="image" style="background-image: url({{ content.field_image_resume }});">#}
+        {#<canvas height="1" width="1"></canvas>#}
+    {#</div>#}
+    <div class="image">
+        {{ content.field_image_resume }}
     </div>
     <div class="texte">
         {#<h3><span class="bold">{{ label }}</span></h3>#}

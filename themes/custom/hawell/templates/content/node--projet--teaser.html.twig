@@ -70,40 +70,7 @@
  *   in different view modes.
  */
 #}
-{#{%#}
-{#set classes = [#}
-{#'col-sm-6',#}
-{#'col-md-4',#}
-{#'col-lg-4',#}
-{#'wow',#}
-{#'fadeIn',#}
-{#'pb-70',#}
-{#]#}
-{#%}#}
 
-{#<article{{ attributes.addClass(classes) }} data-wow-delay="100ms">#}
-  {#{{ title_prefix }}#}
-  {#{{ title_suffix }}#}
-  {#<a href="{{ url }}" {{ content_attributes }}>#}
-    {#<div class="post-prev-img">#}
-      {#{{ content.field_image_resume }}#}
-    {#</div>#}
-    {#<div class="post-prev-title">#}
-      {#<h3>{{ label }}</h3>#}
-    {#</div>#}
-    {#<div class="post-prev-info">#}
-      {#{{ content.field_categorie }}#}
-    {#</div>#}
-    {#<div class="post-prev-text">#}
-      {#{{ content.field_contenu }}#}
-    {#</div>#}
-    {#<div class="post-prev-more-cont clearfix">#}
-      {#<div class="post-prev-more left">#}
-        {#<span class="blog-more">{{ 'Voir le projet'|t }}</span>#}
-      {#</div>#}
-    {#</div>#}
-  {#</a>#}
-{#</article>#}
 {%
 set classes = [
 'col-xs-12',
@@ -119,8 +86,11 @@ set classes = [
   {#<div class="image">#}
         {#{{ content.field_image_resume }}#}
   {#</div>#}
-  <div class="image" style="background-image: url({{ content.field_image_resume }});">
-    <canvas height="1" width="1"></canvas>
+  {#<div class="image" style="background-image: url();">#}
+    {#<canvas height="1" width="1"></canvas>#}
+  {#</div>#}
+  <div class="image">
+  {{ content.field_image_resume }}
   </div>
   <div class="texte">
     {#<h3><span class="bold">{{ label }}</span></h3>#}
