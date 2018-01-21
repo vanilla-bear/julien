@@ -1,0 +1,19 @@
+name: ImageLightBox
+type: module
+description: Integration with imagelightbox.js
+package: image
+# core: 8.x
+dependencies:
+  - image
+
+# Information added by Drupal.org packaging script on 2016-11-01
+# version: '1.0-beta1'
+# core: '8.x'
+# project: 'imagelightbox'
+# datestamp: 1511784000
+
+# Information added by Drupal.org packaging script on 2017-11-27
+version: '8.x-1.0-beta1'
+core: '8.x'
+project: 'imagelightbox'
+datestamp: 1511782392
