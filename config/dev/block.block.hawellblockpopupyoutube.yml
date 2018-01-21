@@ -33,7 +33,7 @@ third_party_settings:
     background_overlay: ''
 id: hawellblockpopupyoutube
 theme: hawell
-region: '-1'
+region: topbar
 weight: -2
 provider: null
 plugin: 'block_content:b85c4bde-9811-497f-869e-02df4c12a715'

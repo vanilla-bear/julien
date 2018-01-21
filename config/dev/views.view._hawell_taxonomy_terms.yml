@@ -7,7 +7,6 @@ dependencies:
     - taxonomy.vocabulary.product_categories
     - taxonomy.vocabulary.product_tags
   module:
-    - node
     - nvt_views_style
     - taxonomy
     - user

@@ -29,7 +29,7 @@ third_party_settings:
     background_overlay: ''
 id: hawellblockcontactinfoblackfooter_4
 theme: hawell
-region: '-1'
+region: topbar
 weight: -11
 provider: null
 plugin: 'block_content:1297b42f-a1db-4a64-a606-0a31c0738db1'

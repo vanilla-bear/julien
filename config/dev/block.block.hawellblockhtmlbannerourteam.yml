@@ -31,7 +31,7 @@ third_party_settings:
     background_overlay: ''
 id: hawellblockhtmlbannerourteam
 theme: hawell
-region: '-1'
+region: topbar
 weight: -6
 provider: null
 plugin: 'block_content:679b11b1-ad15-4b4c-83a0-4521ca5b725f'

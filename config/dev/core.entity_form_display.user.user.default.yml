@@ -23,10 +23,12 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   contact:
     weight: 6
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_about:
     weight: 3
     settings:
@@ -34,6 +36,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
+    region: content
   field_display_name:
     weight: 2
     settings:
@@ -41,23 +44,28 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   language:
     weight: 4
     settings: {  }
     third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 8
     settings: {  }
     third_party_settings: {  }
+    region: content
   simplenews:
     weight: 5
     settings: {  }
     third_party_settings: {  }
+    region: content
   timezone:
     weight: 7
     settings: {  }
     third_party_settings: {  }
+    region: content
   user_picture:
     type: image_image
     settings:
@@ -67,5 +75,6 @@ content:
       imce:
         enabled: true
     weight: 1
+    region: content
 hidden:
   langcode: true

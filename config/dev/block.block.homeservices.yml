@@ -31,7 +31,7 @@ third_party_settings:
     background_overlay: ''
 id: homeservices
 theme: hawell
-region: '-1'
+region: topbar
 weight: 0
 provider: null
 plugin: 'block_content:8deb455c-6ec7-4064-8607-c72faeaad39e'

@@ -30,7 +30,7 @@ third_party_settings:
     background_overlay: ''
 id: footer
 theme: hawell
-region: '-1'
+region: topbar
 weight: -6
 provider: null
 plugin: 'system_menu_block:footer'

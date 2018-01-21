@@ -5,10 +5,10 @@ features:
   favicon: 1
 logo:
   use_default: 0
-  path: 'public://logo-1.png'
+  path: 'public://Logo2.png'
 favicon:
   use_default: 0
-  path: 'public://favicon.ico'
+  path: favicon.ico
   mimetype: image/vnd.microsoft.icon
 tracking_code: ''
 custom_css: ''

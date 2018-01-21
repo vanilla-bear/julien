@@ -17,6 +17,7 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_comment_body:
     weight: 3
     settings:
@@ -24,6 +25,7 @@ content:
       placeholder: MESSAGE
     third_party_settings: {  }
     type: string_textarea
+    region: content
   field_email:
     weight: 2
     settings:
@@ -31,11 +33,13 @@ content:
       placeholder: EMAIL
     third_party_settings: {  }
     type: email_default
+    region: content
   langcode:
     type: language_select
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   subject:
     type: string_textfield
     weight: 1
@@ -43,4 +47,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: menu-principal
 label: 'Menu principal'
-description: ''
+description: 'Menu principal affiché sur la home'
 locked: false

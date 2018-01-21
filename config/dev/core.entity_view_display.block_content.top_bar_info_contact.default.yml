@@ -6,6 +6,7 @@ dependencies:
     - block_content.type.top_bar_info_contact
     - field.field.block_content.top_bar_info_contact.field_adresse_email
     - field.field.block_content.top_bar_info_contact.field_horaire_d_ouverture
+    - field.field.block_content.top_bar_info_contact.field_numero_a_apeller
     - field.field.block_content.top_bar_info_contact.field_telephone
 id: block_content.top_bar_info_contact.default
 targetEntityType: block_content
@@ -19,6 +20,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_horaire_d_ouverture:
     weight: 1
     label: hidden
@@ -26,6 +28,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
+  field_numero_a_apeller:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_telephone:
     weight: 0
     label: hidden
@@ -33,5 +44,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   langcode: true
